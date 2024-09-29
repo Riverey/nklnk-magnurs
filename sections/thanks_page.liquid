@@ -1,0 +1,11 @@
+<div class="padding-global"><div class="w-layout-blockcontainer container-large w-container"><div class="w-layout-grid auth_layout"><div id="w-node-e67d9c5a-778b-8a82-45e0-05403962cf51-78ccc160" class="thank-you_layout u-vflex-left-top u-gap-large"><h1 class="heading-style-h2">
+{{ section.settings.text_headline }}
+</h1>
+<p class="text-size-medium">
+{{ section.settings.text_text }}
+</p>
+<a li-object:href="routes.root_url" href="{{ routes.root_url }}" class="button w-button">Back to Home</a></div><div id="w-node-e67d9c5a-778b-8a82-45e0-05403962cf6c-78ccc160" class="auth_image-wrap"><img class="auth_image"
+     src="{{ section.settings.image_image | img_url: 'master' }}"
+     alt="{{ section.settings.image_image.alt }}"
+     loading="lazy">
+</div></div></div></div> {% schema %} {"tag":"section","name":"thanks_page","class":"section_thank-you","settings":[{"id":"text_headline","type":"text","label":"Headline","default":"Thanks"},{"id":"text_text","type":"text","label":"Text","default":"We will be in touch soon!"},{"id":"image_image","type":"image_picker","label":"Image"}],"presets":[{"name":"thanks_page","category":"Liquify"}]} {% endschema %}
