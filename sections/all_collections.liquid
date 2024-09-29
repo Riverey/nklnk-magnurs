@@ -1,0 +1,7 @@
+<div class="padding-global padding-section-small"><div class="w-layout-blockcontainer container-large w-container"><div id="w-node-ed5a3b26-04a6-4901-10b6-5e4206cce2c1-78ccc163" class="all-collections_list-wrapper w-dyn-list"><div role="list" class="all-collections_list w-dyn-items">{% for collection in collections %}    <div li-for="collection in collections" role="listitem" class="all-collections_item w-dyn-item">
+                                    
+                            <a li-object:href="collection.url" href="{{ collection.url }}" class="collection-slider_item-component u-vflex-left-top u-gap-xxsmall w-inline-block"><h3 li-object="collection.title" class="heading-style-h4 text-color-brand w-dyn-bind-empty">{{ collection.title }}</h3><img src="{{ collection.featured_image | img_url: 'master' }}" loading="lazy" li-object:src="collection.featured_image | img_url: 'master'" alt="" class="collection-slider_thumb-img w-dyn-bind-empty">
+</a>
+                            
+                        </div>
+{% endfor %}</div><div class="collection-empty w-dyn-empty"><div>No items found.</div></div></div></div></div> {% schema %} {"tag":"section","name":"all_collections","class":"section_collections","presets":[{"name":"all_collections","category":"Liquify"}]} {% endschema %}
