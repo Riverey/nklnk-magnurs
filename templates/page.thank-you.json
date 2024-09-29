@@ -1,0 +1,12 @@
+{
+    "sections": {
+        "thanks_page": {
+            "type": "thanks_page"
+        }
+    },
+    "layout": "page.thank-you",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "thanks_page"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "sections": {
+        "simple_hero": {
+            "type": "simple_hero"
+        },
+        "blog_articles_list": {
+            "type": "blog_articles_list"
+        }
+    },
+    "layout": "blog",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "simple_hero",
+        "blog_articles_list"
+    ]
+}
