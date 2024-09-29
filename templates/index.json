@@ -1,0 +1,32 @@
+{
+    "sections": {
+        "main_hero": {
+            "type": "main_hero"
+        },
+        "categories_slider": {
+            "type": "categories_slider"
+        },
+        "collection_slider": {
+            "type": "collection_slider"
+        },
+        "newsletter": {
+            "type": "newsletter"
+        },
+        "shapes_list": {
+            "type": "shapes_list"
+        },
+        "collection_products": {
+            "type": "collection_products"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "main_hero",
+        "categories_slider",
+        "collection_slider",
+        "newsletter",
+        "shapes_list",
+        "collection_products"
+    ]
+}
