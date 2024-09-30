@@ -1567,7 +1567,7 @@ figcaption {
   inset: auto -.25rem -.25rem auto;
 }
 
-.nav_mini-cart-holder {
+.nav_mini-cart_holder {
   z-index: 10000;
   background-color: #0006;
   justify-content: flex-start;
@@ -1576,15 +1576,16 @@ figcaption {
   inset: 0%;
 }
 
-.nav_mini-cart-holder.w--open {
+.nav_mini-cart_holder.w--open {
   display: flex;
 }
 
 .mini-cart_overlay {
-  background-image: linear-gradient(180deg, var(--mappings--bg--background-secondary), transparent);
+  background-image: linear-gradient(270deg, var(--mappings--bg--background-secondary), transparent);
   opacity: .8;
   mix-blend-mode: multiply;
   flex: 1;
+  transition: opacity .4s;
 }
 
 .success-message {
