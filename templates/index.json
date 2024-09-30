@@ -25,21 +25,14 @@
         "collection_f3tyij": {
           "type": "collection",
           "settings": {
-            "collection_collection": "",
-            "collection_collection_limit": 6
-          }
-        },
-        "collection_NDMeX4": {
-          "type": "collection",
-          "settings": {
-            "collection_collection": "",
-            "collection_collection_limit": 6
+            "collection_collection": "frontpage",
+            "collection_collection_limit": 6,
+            "image_image": "shopify://shop_images/Magnurs_main-hero_image.webp"
           }
         }
       },
       "block_order": [
-        "collection_f3tyij",
-        "collection_NDMeX4"
+        "collection_f3tyij"
       ],
       "settings": {
       }
@@ -51,6 +44,18 @@
     },
     "shapes_list": {
       "type": "shapes_list",
+      "blocks": {
+        "shape_wWbqfq": {
+          "type": "shape",
+          "settings": {
+            "url_url": "",
+            "image_image": "shopify://shop_images/Magnurs_shape_round.webp"
+          }
+        }
+      },
+      "block_order": [
+        "shape_wWbqfq"
+      ],
       "settings": {
       }
     },
