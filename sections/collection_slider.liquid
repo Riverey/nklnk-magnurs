@@ -1,11 +1,15 @@
-<div class="padding-global padding-section-medium"><div class="w-layout-blockcontainer container-large w-container"><div class="feat-colect-slider_layout u-vflex-center-top u-gap-medium"><div class="feat-colect-slider_list-wrapper w-dyn-list"><div role="list" class="feat-colect-slider_list w-dyn-items">{% for block in section.blocks %}
+<div class="padding-global padding-section-medium"><div class="w-layout-blockcontainer container-large w-container"><div class="feat-colect-slider_layout u-vflex-center-top u-gap-medium"><div class="feat-colect-slider_list-wrapper swiper-container w-dyn-list"><div role="list" class="feat-colect-slider_list swiper-wrapper w-dyn-items">{% for block in section.blocks %}
     {% if block.type == "collection" %}
-                    <div li-block="Collection" role="listitem" class="feat-colect-slider_item w-dyn-item">
+                    <div li-block="Collection" role="listitem" class="feat-colect-slider_item swiper-slide w-dyn-item">
                                     <div class="hide">{% for product in block.settings.collection_collection.products limit: block.settings.collection_collection_limit %}
 <div class="li-settings">
     
 </div>
 {% endfor %}
+<img class="li-settings"
+     src="{{ block.settings.image_image | img_url: 'master' }}"
+     alt="{{ block.settings.image_image.alt }}"
+     loading="lazy">
 </div>
                                     <div class="section-collection-heading_component"><div class="section-colect-heading_heading-wrap u-vflex-center-center"><h2 li-object="block.settings.collection_collection.title" class="text-color-brand">{{ block.settings.collection_collection.title }}</h2><div>Collection</div></div><div class="section-colect-heading_line"></div></div>
                                     <div class="feat-colect-slider_image-wrap"><img src="{{ block.settings.collection_collection.image.url | img_url: '1280x1280' }}" loading="lazy" li-object:src="block.settings.collection_collection.image.url | img_url: '1280x1280'" li-object:alt="block.settings.collection_collection.image.alt" alt="{{ block.settings.collection_collection.image.alt }}" class="feat-colect-slider_image w-dyn-bind-empty">
@@ -14,4 +18,6 @@
                             </div>
             {% endif %}
 {% endfor %}
-</div><div class="w-dyn-empty"><div>No items found.</div></div></div></div></div></div> {% schema %} {"tag":"section","name":"collection_slider","class":"section_feat-colect-slider","blocks":[{"name":"Collection","type":"collection","settings":[{"id":"collection_collection","type":"collection","label":"Collection"},{"type":"range","id":"collection_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Collection","default":6}]}],"presets":[{"name":"collection_slider","category":"Liquify"}]} {% endschema %}
+</div>{% if section.blocks == blank %}    <div li-if="section.blocks == blank" class="collection-empty w-dyn-empty">
+    <div>No items found.</div>    </div>
+{% endif %}</div></div></div></div> {% schema %} {"tag":"section","name":"collection_slider","class":"section_feat-colect-slider","blocks":[{"name":"Collection","type":"collection","settings":[{"id":"collection_collection","type":"collection","label":"Collection"},{"type":"range","id":"collection_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Collection","default":6},{"id":"image_image","type":"image_picker","label":"Image"}]}],"presets":[{"name":"collection_slider","category":"Liquify"}]} {% endschema %}
