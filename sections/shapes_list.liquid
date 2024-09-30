@@ -1,7 +1,7 @@
 <div class="padding-global padding-section-small"><div class="w-layout-blockcontainer container-large w-container"><div class="shapes-list_layout u-vflex-stretch-top u-gap-medium"><div class="small-section-heading_wrap"><div class="small-section-heading_text text-style-allcaps">Shop by Shape</div></div><div class="shapes-list_list-wrapper w-dyn-list"><div role="list" class="shapes-list_list u-hflex-between-stretch w-dyn-items">{% for block in section.blocks %}
     {% if block.type == "shape" %}
                     <div li-block="Shape" role="listitem" class="shapes-list_item w-dyn-item">
-                                    <a class="shapes-list_item-conponent u-vflex-center-top u-gap-small w-inline-block" href="{{ block.settings.url_url }}"> <img class="w-dyn-bind-empty" src="{{ block.settings.image_image | img_url: 'master' }}" alt="{{ block.settings.image_image.alt }}" loading="lazy"><div li-settings="Name" class="w-dyn-bind-empty"></div> </a>
+                                    <a class="shapes-list_item-conponent u-vflex-center-top u-gap-small w-inline-block" href="{{ block.settings.url_url }}"> <img class="shapes-list_item-thumb aspect-ratio-square w-dyn-bind-empty" src="{{ block.settings.image_image | img_url: 'master' }}" alt="{{ block.settings.image_image.alt }}" loading="lazy"><div li-settings="Name" class="w-dyn-bind-empty"></div> </a>
 
                             </div>
             {% endif %}
