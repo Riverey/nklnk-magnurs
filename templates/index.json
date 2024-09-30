@@ -22,17 +22,16 @@
     "collection_slider": {
       "type": "collection_slider",
       "blocks": {
-        "collection_f3tyij": {
+        "collection_Rp7xXR": {
           "type": "collection",
           "settings": {
             "collection_collection": "frontpage",
-            "collection_collection_limit": 6,
-            "image_image": "shopify://shop_images/Magnurs_main-hero_image.webp"
+            "collection_collection_limit": 6
           }
         }
       },
       "block_order": [
-        "collection_f3tyij"
+        "collection_Rp7xXR"
       ],
       "settings": {
       }
