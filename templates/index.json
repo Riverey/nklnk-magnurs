@@ -16,6 +16,18 @@
     },
     "categories_slider": {
       "type": "categories_slider",
+      "blocks": {
+        "collection_LwVAtK": {
+          "type": "collection",
+          "settings": {
+            "collection_collection": "frontpage",
+            "collection_collection_limit": 6
+          }
+        }
+      },
+      "block_order": [
+        "collection_LwVAtK"
+      ],
       "settings": {
       }
     },
