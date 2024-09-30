@@ -1,32 +1,73 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
-    "sections": {
-        "main_hero": {
-            "type": "main_hero"
-        },
-        "categories_slider": {
-            "type": "categories_slider"
-        },
-        "collection_slider": {
-            "type": "collection_slider"
-        },
-        "newsletter": {
-            "type": "newsletter"
-        },
-        "shapes_list": {
-            "type": "shapes_list"
-        },
-        "collection_products": {
-            "type": "collection_products"
-        }
+  "sections": {
+    "main_hero": {
+      "type": "main_hero",
+      "settings": {
+      }
     },
-    "layout": "theme",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "main_hero",
-        "categories_slider",
-        "collection_slider",
-        "newsletter",
-        "shapes_list",
-        "collection_products"
-    ]
+    "categories_slider": {
+      "type": "categories_slider",
+      "settings": {
+      }
+    },
+    "collection_slider": {
+      "type": "collection_slider",
+      "blocks": {
+        "collection_f3tyij": {
+          "type": "collection",
+          "settings": {
+            "collection_collection": "",
+            "collection_collection_limit": 6
+          }
+        },
+        "collection_NDMeX4": {
+          "type": "collection",
+          "settings": {
+            "collection_collection": "",
+            "collection_collection_limit": 6
+          }
+        }
+      },
+      "block_order": [
+        "collection_f3tyij",
+        "collection_NDMeX4"
+      ],
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+      }
+    },
+    "shapes_list": {
+      "type": "shapes_list",
+      "settings": {
+      }
+    },
+    "collection_products": {
+      "type": "collection_products",
+      "settings": {
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "main_hero",
+    "categories_slider",
+    "collection_slider",
+    "newsletter",
+    "shapes_list",
+    "collection_products"
+  ]
 }
