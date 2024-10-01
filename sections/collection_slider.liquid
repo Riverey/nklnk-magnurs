@@ -12,14 +12,13 @@
      loading="lazy">
 </div>
                                     <div class="section-collection-heading_component"><div class="section-colect-heading_heading-wrap u-vflex-center-center"><h2 li-object="block.settings.collection_collection.title" class="text-color-brand">{{ block.settings.collection_collection.title }}</h2><div>Collection</div></div><div class="section-colect-heading_line"></div></div>
-                                    <div class="feat-colect-slider_image-wrap"><img src="{{ block.settings.collection_collection.image.url | img_url: '1280x1280' }}" loading="lazy" li-object:src="block.settings.collection_collection.image.url | img_url: '1280x1280'" li-object:alt="block.settings.collection_collection.image.alt" alt="{{ block.settings.collection_collection.image.alt }}" class="feat-colect-slider_image w-dyn-bind-empty">
+                                    <div class="feat-colect-slider_image-wrap"><img src="{{ block.settings.image_image | img_url: '1280x1280' }}" loading="lazy" li-object:src="block.settings.image_image | img_url: '1280x1280'" li-object:alt="block.settings.image_image.alt" alt="{{ block.settings.image_image.alt }}" class="feat-colect-slider_image w-dyn-bind-empty">
 </div>
-                                    <div class="feat-colect-slider_description-wrap max-width-large text-align-center"><div li-object:text="block.settings.collection_collection.description" class="feat-colect-slider_description-text text-size-medium w-dyn-bind-empty w-richtext">
-{{ block.settings.collection_collection.description }}
-</div><a li-object:href="block.settings.collection_collection.url" href="{{ block.settings.collection_collection.url }}" class="feat-colect-slider_link text-size-medium text-color-brand text-weight-semibold">Explore</a></div>
+                                    <div class="feat-colect-slider_description-wrap max-width-large text-align-center"><div class="feat-colect-slider_description-text text-size-medium w-dyn-bind-empty w-richtext"> {{ block.settings.richtext_description }} </div>
+<a li-object:href="block.settings.collection_collection.url" href="{{ block.settings.collection_collection.url }}" class="feat-colect-slider_link text-size-medium text-color-brand text-weight-semibold">Explore</a></div>
                             </div>
             {% endif %}
 {% endfor %}
 </div>{% if section.blocks == blank %}    <div li-if="section.blocks == blank" class="collection-empty w-dyn-empty">
     <div>No items found.</div>    </div>
-{% endif %}</div></div></div></div> {% schema %} {"tag":"section","name":"collection_slider","class":"section_feat-colect-slider","blocks":[{"name":"Collection","type":"collection","settings":[{"id":"collection_collection","type":"collection","label":"Collection"},{"type":"range","id":"collection_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Collection","default":6},{"id":"image_image","type":"image_picker","label":"Image"}]}],"presets":[{"name":"collection_slider","category":"Liquify"}]} {% endschema %}
+{% endif %}</div></div></div></div> {% schema %} {"tag":"section","name":"collection_slider","class":"section_feat-colect-slider","blocks":[{"name":"Collection","type":"collection","settings":[{"id":"collection_collection","type":"collection","label":"Collection"},{"type":"range","id":"collection_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Collection","default":6},{"id":"image_image","type":"image_picker","label":"Image"},{"id":"richtext_description","type":"richtext","label":"Description","default":"<p><\/p>"}]}],"presets":[{"name":"collection_slider","category":"Liquify"}]} {% endschema %}
