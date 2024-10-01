@@ -64,10 +64,18 @@
             "collection_collection": "bracelets",
             "collection_collection_limit": 6
           }
+        },
+        "collection_B7hrh9": {
+          "type": "collection",
+          "settings": {
+            "collection_collection": "earings",
+            "collection_collection_limit": 6
+          }
         }
       },
       "block_order": [
-        "collection_Rp7xXR"
+        "collection_Rp7xXR",
+        "collection_B7hrh9"
       ],
       "settings": {
       }
