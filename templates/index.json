@@ -96,49 +96,56 @@
           "type": "shape",
           "settings": {
             "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_round.webp"
+            "image_image": "shopify://shop_images/Magnurs_shape_round.webp",
+            "text_title": "Round"
           }
         },
         "shape_dGctpT": {
           "type": "shape",
           "settings": {
             "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_princess.webp"
+            "image_image": "shopify://shop_images/Magnurs_shape_princess.webp",
+            "text_title": "Lorem Ipsum"
           }
         },
         "shape_mpkVDG": {
           "type": "shape",
           "settings": {
             "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_emerald.webp"
+            "image_image": "shopify://shop_images/Magnurs_shape_emerald.webp",
+            "text_title": "Lorem Ipsum"
           }
         },
         "shape_hgwEHF": {
           "type": "shape",
           "settings": {
             "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_pear.webp"
+            "image_image": "shopify://shop_images/Magnurs_shape_pear.webp",
+            "text_title": "Lorem Ipsum"
           }
         },
         "shape_bkKnBn": {
           "type": "shape",
           "settings": {
             "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_heart.webp"
+            "image_image": "shopify://shop_images/Magnurs_shape_heart.webp",
+            "text_title": "Lorem Ipsum"
           }
         },
         "shape_kJRAaz": {
           "type": "shape",
           "settings": {
             "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_cushion.webp"
+            "image_image": "shopify://shop_images/Magnurs_shape_cushion.webp",
+            "text_title": "Lorem Ipsum"
           }
         },
         "shape_f8MHj9": {
           "type": "shape",
           "settings": {
             "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_oval.webp"
+            "image_image": "shopify://shop_images/Magnurs_shape_oval.webp",
+            "text_title": "Lorem Ipsum"
           }
         }
       },
