@@ -62,14 +62,16 @@
           "type": "collection",
           "settings": {
             "collection_collection": "bracelets",
-            "collection_collection_limit": 6
+            "collection_collection_limit": 6,
+            "image_image": "shopify://shop_images/magnus_lab-one.webp"
           }
         },
         "collection_B7hrh9": {
           "type": "collection",
           "settings": {
             "collection_collection": "earings",
-            "collection_collection_limit": 6
+            "collection_collection_limit": 6,
+            "image_image": "shopify://shop_images/magnus_lab-one.webp"
           }
         }
       },
