@@ -1,7 +1,8 @@
-<div class="padding-global padding-section-small"><div class="w-layout-blockcontainer container-large w-container"><div class="feat-collect-products_layout u-vflex-center-top u-gap-large"><h2 li-settings="Heading" class="text-color-brand">
+<div class="padding-global padding-section-small"><div class="w-layout-blockcontainer container-large w-container"><div class="feat-collect-products_layout u-vflex-center-top u-gap-large"><h2 class="text-color-brand">
+{{ section.settings.text_heading }}
 </h2>
-<div class="product-list_list-wrapper w-dyn-list"><div role="list" class="product-list_list w-dyn-items">{% for product in section.settings.collection_collection.products limit: section.settings.collection_collection_limit %}
-<div role="listitem" class="product-list_item w-dyn-item">
+<div class="products-row_list-wrapper w-dyn-list"><div role="list" class="products-row_list w-dyn-items">{% for product in section.settings.collection_collection.products limit: section.settings.collection_collection_limit %}
+<div role="listitem" class="products-row_item w-dyn-item">
     
     {% render 'product_item', product: product %}
 
@@ -14,4 +15,4 @@
 {% endif %}{% if section.settings.collection_collection == blank %}    <div li-if="section.settings.collection_collection == blank">
     No Collection Attached.    </div>
 {% endif %}    </div>
-{% endif %}</div></div></div></div> {% schema %} {"tag":"section","name":"product_row","class":"section_feat-collect-products","settings":[{"id":"collection_collection","type":"collection","label":"Collection"},{"type":"range","id":"collection_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Collection","default":6}],"presets":[{"name":"product_row","category":"Liquify"}]} {% endschema %}
+{% endif %}</div></div></div></div> {% schema %} {"tag":"section","name":"product_row","class":"section_feat-collect-products","settings":[{"id":"text_heading","type":"text","label":"Heading","default":"Featured"},{"id":"collection_collection","type":"collection","label":"Collection"},{"type":"range","id":"collection_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Collection","default":6}],"presets":[{"name":"product_row","category":"Liquify"}]} {% endschema %}
