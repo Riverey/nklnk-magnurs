@@ -20,13 +20,37 @@
         "collection_LwVAtK": {
           "type": "collection",
           "settings": {
-            "collection_collection": "frontpage",
+            "collection_collection": "rings",
+            "collection_collection_limit": 6
+          }
+        },
+        "collection_WqPUXY": {
+          "type": "collection",
+          "settings": {
+            "collection_collection": "earings",
+            "collection_collection_limit": 6
+          }
+        },
+        "collection_ktVrRp": {
+          "type": "collection",
+          "settings": {
+            "collection_collection": "necklaces",
+            "collection_collection_limit": 6
+          }
+        },
+        "collection_Qcxzer": {
+          "type": "collection",
+          "settings": {
+            "collection_collection": "bracelets",
             "collection_collection_limit": 6
           }
         }
       },
       "block_order": [
-        "collection_LwVAtK"
+        "collection_LwVAtK",
+        "collection_WqPUXY",
+        "collection_ktVrRp",
+        "collection_Qcxzer"
       ],
       "settings": {
       }
@@ -37,7 +61,7 @@
         "collection_Rp7xXR": {
           "type": "collection",
           "settings": {
-            "collection_collection": "frontpage",
+            "collection_collection": "bracelets",
             "collection_collection_limit": 6
           }
         }
