@@ -1816,7 +1816,7 @@ figcaption {
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
   grid-template-rows: auto;
-  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)) minmax(19rem, 1fr);
   grid-auto-columns: 1fr;
   place-items: stretch stretch;
   display: grid;
@@ -3592,6 +3592,11 @@ figcaption {
   flex: 1;
   display: flex;
   overflow: hidden;
+}
+
+.shapes-list_item-thumb {
+  width: 5rem;
+  height: 5rem;
 }
 
 @media screen and (max-width: 991px) {
