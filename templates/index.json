@@ -63,7 +63,8 @@
           "settings": {
             "collection_collection": "bracelets",
             "collection_collection_limit": 6,
-            "image_image": "shopify://shop_images/magnus_lab-one.webp"
+            "image_image": "shopify://shop_images/magnus_lab-one.webp",
+            "richtext_description": "<p></p>"
           }
         },
         "collection_B7hrh9": {
@@ -71,7 +72,8 @@
           "settings": {
             "collection_collection": "earings",
             "collection_collection_limit": 6,
-            "image_image": "shopify://shop_images/magnus_lab-one.webp"
+            "image_image": "shopify://shop_images/magnus_lab-one.webp",
+            "richtext_description": "<p></p>"
           }
         }
       },
@@ -104,9 +106,11 @@
       "settings": {
       }
     },
-    "collection_products": {
-      "type": "collection_products",
+    "product_row_NFcdHm": {
+      "type": "product_row",
       "settings": {
+        "collection_collection": "frontpage",
+        "collection_collection_limit": 6
       }
     }
   },
@@ -118,6 +122,6 @@
     "collection_slider",
     "newsletter",
     "shapes_list",
-    "collection_products"
+    "product_row_NFcdHm"
   ]
 }
