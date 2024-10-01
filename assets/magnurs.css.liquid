@@ -135,6 +135,7 @@ body {
   font-family: Neue Regrade Variable, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
+  overflow-x: clip;
 }
 
 h1 {
@@ -152,9 +153,7 @@ h2 {
   text-wrap: balance;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 2rem;
-  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -1474,8 +1473,9 @@ figcaption {
   grid-auto-columns: 1fr;
   justify-content: space-between;
   place-items: center stretch;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  margin-left: -2.5rem;
+  margin-right: -2.5rem;
+  padding: 1rem 2.5rem;
   display: grid;
   position: relative;
 }
@@ -3468,6 +3468,11 @@ figcaption {
   color: var(--mappings--border--border-primary);
 }
 
+.small-section-heading_text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .shapes-list_item-conponent {
   padding: 1rem 2rem;
 }
@@ -3549,6 +3554,7 @@ figcaption {
 
 .feat-colect-slider_image-wrap {
   aspect-ratio: 16 / 9;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
