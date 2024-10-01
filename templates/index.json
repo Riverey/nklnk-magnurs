@@ -64,7 +64,7 @@
             "collection_collection": "bracelets",
             "collection_collection_limit": 6,
             "image_image": "shopify://shop_images/magnus_lab-one.webp",
-            "richtext_description": "<p></p>"
+            "richtext_description": ""
           }
         },
         "collection_B7hrh9": {
@@ -73,7 +73,7 @@
             "collection_collection": "earings",
             "collection_collection_limit": 6,
             "image_image": "shopify://shop_images/magnus_lab-one.webp",
-            "richtext_description": "<p></p>"
+            "richtext_description": ""
           }
         }
       },
@@ -98,10 +98,58 @@
             "url_url": "",
             "image_image": "shopify://shop_images/Magnurs_shape_round.webp"
           }
+        },
+        "shape_dGctpT": {
+          "type": "shape",
+          "settings": {
+            "url_url": "",
+            "image_image": "shopify://shop_images/Magnurs_shape_princess.webp"
+          }
+        },
+        "shape_mpkVDG": {
+          "type": "shape",
+          "settings": {
+            "url_url": "",
+            "image_image": "shopify://shop_images/Magnurs_shape_emerald.webp"
+          }
+        },
+        "shape_hgwEHF": {
+          "type": "shape",
+          "settings": {
+            "url_url": "",
+            "image_image": "shopify://shop_images/Magnurs_shape_pear.webp"
+          }
+        },
+        "shape_bkKnBn": {
+          "type": "shape",
+          "settings": {
+            "url_url": "",
+            "image_image": "shopify://shop_images/Magnurs_shape_heart.webp"
+          }
+        },
+        "shape_kJRAaz": {
+          "type": "shape",
+          "settings": {
+            "url_url": "",
+            "image_image": "shopify://shop_images/Magnurs_shape_cushion.webp"
+          }
+        },
+        "shape_f8MHj9": {
+          "type": "shape",
+          "settings": {
+            "url_url": "",
+            "image_image": "shopify://shop_images/Magnurs_shape_oval.webp"
+          }
         }
       },
       "block_order": [
-        "shape_wWbqfq"
+        "shape_wWbqfq",
+        "shape_dGctpT",
+        "shape_mpkVDG",
+        "shape_hgwEHF",
+        "shape_bkKnBn",
+        "shape_kJRAaz",
+        "shape_f8MHj9"
       ],
       "settings": {
       }
