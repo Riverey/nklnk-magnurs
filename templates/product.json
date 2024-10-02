@@ -25,16 +25,23 @@
             "image": "shopify://shop_images/magnurs_icon_box.webp",
             "richtext_text": "<p>Delivers in 10-14 working days.</p><p><a href=\"https://google.com\" target=\"_blank\" title=\"https://google.com\">Shipping & Return</a></p>"
           }
+        },
+        "accordeon_frDUMt": {
+          "type": "accordeon",
+          "settings": {
+            "text_heading": "Description",
+            "richtext_text": "<p>Embrace the power of love and connection in our 18k Gold Vermeil With Love July Birthstone Annex Link Pendant, an ode to the unique traits of July-born individuals. Designed to capture the spirit of July birthdays, this keepsake features a vibrant synthetic ruby and cubic zirconia set in beautifully battered teardrop pendant. Allow the ruby to offer protection and strength as you embrace the magic of new beginnings. Layer you and your loved one’s birthstones together on our She Is Zodiac Necklace and Annex Link Pendant Carriers for a personalised necklace stack that tells your own unique love story.</p><p>Available in 18k gold vermeil and sterling silver.</p><ul><li>Pendant size: 12 x 9mm approx.</li><li>Set with a synthetic ruby.</li><li>Battered front, polished back.</li><li>Features our lotus logo on the bail.</li><li>Front has a battered finish, back is polished.</li><li>Designed to be worn on our Annex Link Necklaces and Bracelet.</li><li>Crafted by a certified member of the Responsible Jewellery Council (RJC).</li></ul>"
+          }
         }
       },
       "block_order": [
         "detail_block_kyzxcA",
-        "detail_block_MWmVWc"
+        "detail_block_MWmVWc",
+        "accordeon_frDUMt"
       ],
       "settings": {
         "url_shop_all_url": "",
-        "text_shop_all_text": "Shop All",
-        "text_headline": "Description"
+        "text_shop_all_text": "Shop All"
       }
     },
     "recommended_products": {
