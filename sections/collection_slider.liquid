@@ -9,7 +9,7 @@
                                     <div class="feat-colect-slider_image-wrap"><img src="{{ block.settings.image.src | img_url: '2560x2560' }}" loading="lazy" li-object:src="block.settings.image.src | img_url: '2560x2560'" li-object:alt="block.settings.image.alt" alt="{{ block.settings.image.alt }}" class="feat-colect-slider_image w-dyn-bind-empty">
 </div>
                                     <div class="feat-colect-slider_description-wrap max-width-large text-align-center"><div class="rich-text-accented text-size-medium w-dyn-bind-empty w-richtext"> {{ block.settings.richtext_description }} </div>
-<a li-object:href="block.settings.collection.url" href="{{ block.settings.collection.url }}" class="feat-colect-slider_link text-size-medium text-color-brand text-weight-semibold">Explore</a></div>
+<div class="padding-top padding-small"><a li-object:href="block.settings.collection.url" href="{{ block.settings.collection.url }}" class="text-style-link text-weight-bold text-color-brand">Explore</a></div></div>
                             </div>
             {% endif %}
 {% endfor %}
