@@ -31,7 +31,13 @@
   .w-dyn-hide, .w-dyn-bind-empty, .w-condition-invisible {
     display: revert !important;
 	}
-</style><!--   [Attributes by Finsweet] Social Share   --><script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-socialshare@1/socialshare.js"></script><script type="application/ld+json">{
+</style><script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script><script>const lenis = new Lenis();
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+</script><!--   [Attributes by Finsweet] Social Share   --><script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-socialshare@1/socialshare.js"></script><script type="application/ld+json">{
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "{{ product.title }}",

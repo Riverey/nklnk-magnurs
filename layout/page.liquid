@@ -31,7 +31,13 @@
   .w-dyn-hide, .w-dyn-bind-empty, .w-condition-invisible {
     display: revert !important;
 	}
-</style><script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
+</style><script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script><script>const lenis = new Lenis();
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+</script><script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
 <body li-page="page">
 
 <div class="page-wrapper">{% render 'global_styles' %}
