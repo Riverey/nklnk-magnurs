@@ -5,32 +5,9 @@
                     <div data-hover="true" data-delay="200" li-block="Dropdown" class="nav_menu-dropdown w-dropdown">
                                     <div class="nav_dropdown-toggle w-dropdown-toggle"><div class="li-settings w-embed"></div>
 <div li-object="block.settings.title" class="nav_link-label">{{ block.settings.title }}</div></div>
-                                    <nav class="nav_dropdown-list w-dropdown-list"><div class="padding-global"><div class="w-layout-blockcontainer container-large w-container"><div class="nav_dropdown-layout"><div class="dropdown-tabs_menu-wrap u-hflex-center-stretch u-hflex-nowrap">{% for block in section.blocks %}
-    {% if block.type == "collection-group" %}
-                    <div data-hover="false" data-delay="0" li-block="Collection Group" class="dropdown-tabs_dropdown_component w-dropdown">
-                                    <div class="dropdown-tabs_dropdown_toggle w-dropdown-toggle"><div class="li-settings w-embed"></div>
-<div li-object="block.settings.group-title">{{ block.settings.group-title }}</div></div>
-                                    <nav class="dropdown-tabs_dropdown_list w-dropdown-list"><div class="w-layout-blockcontainer container-medium w-container"><div class="dropdown-tabs_collections_list-wrapper w-dyn-list"><div role="list" class="dropdown-tabs_collections_list u-hflex-center-top u-gap-large u-hflex-nowrap w-dyn-items">{% for block in section.blocks %}
-    {% if block.type == "collection" %}
-                    <div li-block="Collection" role="listitem" class="dropdown-tabs_collections_item w-dyn-item">
-                                    <div class="li-settings w-embed"></div>
-
-                                    <div class="li-settings w-embed"></div>
-
-                                    <a href="#" class="dropdown-tabs_collections_item-link u-vflex-center-top u-gap-xsmall w-inline-block"><img class="dropdown-tabs_collections_item-thumb aspect-ratio-square" src="{{ block.settings.image.src | img_url: '704x704' }}" alt="{{ block.settings.image.alt }}" sizes="100vw" li-object:src="block.settings.image.src | img_url: '704x704'" loading="lazy" li-object:alt="block.settings.image.alt" srcset="{{ 'magnurs_collection_necklaces.jpg' | asset_url }} 500w, {{ 'magnurs_collection_necklaces.jpg' | asset_url }} 620w">
-<div li-object="block.settings.title" class="text-style-allcaps text-size-small text-weight-medium">{{ block.settings.title }}</div><div li-settings="Description" class="text-size-small">
-</div>
-</a>
-                            </div>
-            {% endif %}
-{% endfor %}
-</div>{% if block.blocks == blank %}    <div li-if="block.blocks == blank" class="collection-empty w-dyn-empty">
-    <div>No Collections Added</div>    </div>
-{% endif %}</div></div></nav>
-                            </div>
-            {% endif %}
-{% endfor %}
-</div></div></div></div></nav>
+                                    <nav class="nav_dropdown-list w-dropdown-list"><div class="li-settings w-embed"></div>
+<div class="padding-global"><div class="w-layout-blockcontainer container-large w-container">{% render 'dropdown_content', block: block %}
+</div></div></nav>
                             </div>
             {% endif %}
 {% endfor %}
@@ -47,4 +24,4 @@
 background-color: {{ color.color.value }};
 }
 {% endfor %}
-</style></div> {% schema %} {"tag":"div","name":"navbar","class":"section_navbar","blocks":[{"name":"Suggestion","type":"suggestion","settings":[{"id":"heading","type":"text","label":"Title"},{"id":"url_link","type":"url","label":"Link"}]},{"name":"Dropdown","type":"dropdown","settings":[{"id":"title","type":"text","label":"Text","default":"Dropdown Name"}]},{"name":"Collection Group","type":"collection-group","settings":[{"id":"group-title","type":"text","label":"Group title","default":"Group"}]},{"name":"Collection","type":"collection","settings":[{"id":"title","type":"text","label":"title","default":"Title"},{"id":"image","type":"image_picker","label":"Image"}]}],"settings":[{"id":"collection_search_featured_collection","type":"collection","label":"Search Featured Collection"},{"type":"range","id":"collection_search_featured_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Search Featured Collection","default":6}],"presets":[{"name":"navbar","category":"Liquify"}]} {% endschema %}
+</style></div> {% schema %} {"tag":"div","name":"navbar","class":"section_navbar","blocks":[{"name":"Suggestion","type":"suggestion","settings":[{"id":"heading","type":"text","label":"Title"},{"id":"url_link","type":"url","label":"Link"}]},{"name":"Dropdown","type":"dropdown","settings":[{"id":"title","type":"text","label":"Text","default":"Dropdown Name"},{"type":"collection_list","id":"collection-list","label":"Collections"},{"id":"group-title","type":"text","label":"Group title","default":"Group"}]}],"settings":[{"id":"collection_search_featured_collection","type":"collection","label":"Search Featured Collection"},{"type":"range","id":"collection_search_featured_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Search Featured Collection","default":6}],"presets":[{"name":"navbar","category":"Liquify"}]} {% endschema %}

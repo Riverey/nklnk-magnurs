@@ -109,7 +109,10 @@
     .product-header_option:last-child {
         border: none;
     }
-    .dropdown-tabs_menu-wrap:not(:has(.w--open)) .dropdown-tabs_dropdown_component:first-of-type .dropdown-tabs_dropdown_list {
+    .dropdown-tabs_menu-wrap:not(:has(.w--open)) .dropdown-tabs_dropdown_component:first-child .dropdown-tabs_dropdown_list {
         display: block;
+    }
+    .dropdown-tabs_menu-wrap:not(:has(.w--open)) .dropdown-tabs_dropdown_component:first-child .dropdown-tabs_dropdown_toggle {
+        border-color: var(--mappings--border--border-secondary);
     }
 </style>
