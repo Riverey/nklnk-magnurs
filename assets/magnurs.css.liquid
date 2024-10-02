@@ -612,7 +612,6 @@ figcaption {
 
 .input.is-quantity {
   width: 5.4rem;
-  min-height: 3.2rem;
   margin-bottom: 0;
 }
 
@@ -1948,10 +1947,13 @@ figcaption {
 .product-header_quantity {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
+  justify-content: space-between;
+  align-items: stretch;
   display: flex;
 }
 
 .product-options_radio_component {
+  cursor: pointer;
   border-radius: 999rem;
   width: 1rem;
   height: 1rem;
@@ -1981,6 +1983,10 @@ figcaption {
 .product-options_radio_button.w--redirected-checked {
   border-style: solid;
   border-width: 0;
+}
+
+.product-options_radio_button.w--redirected-focus {
+  box-shadow: 0 0 #0000;
 }
 
 .product-options_radio_button.w--redirected-focus-visible {
