@@ -115,28 +115,32 @@
         "shape_hgwEHF": {
           "type": "shape",
           "settings": {
-            "heading": "Heading",
+            "heading": "Pear",
+            "image": "shopify://shop_images/Magnurs_shape_pear.webp",
             "url_url": ""
           }
         },
         "shape_bkKnBn": {
           "type": "shape",
           "settings": {
-            "heading": "Heading",
+            "heading": "Heart",
+            "image": "shopify://shop_images/Magnurs_shape_heart.webp",
             "url_url": ""
           }
         },
         "shape_kJRAaz": {
           "type": "shape",
           "settings": {
-            "heading": "Heading",
+            "heading": "Cushion",
+            "image": "shopify://shop_images/Magnurs_shape_cushion.webp",
             "url_url": ""
           }
         },
         "shape_f8MHj9": {
           "type": "shape",
           "settings": {
-            "heading": "Heading",
+            "heading": "Oval",
+            "image": "shopify://shop_images/Magnurs_shape_oval.webp",
             "url_url": ""
           }
         }
