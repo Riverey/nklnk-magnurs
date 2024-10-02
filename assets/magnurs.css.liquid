@@ -607,7 +607,7 @@ figcaption {
   width: 100%;
   height: auto;
   margin-bottom: 0;
-  padding: .5em 1em;
+  padding: .5em 1em .5em 0;
   font-size: 1rem;
 }
 
@@ -680,6 +680,7 @@ figcaption {
 }
 
 .text-style-link {
+  text-transform: uppercase;
   text-decoration: underline;
 }
 
@@ -3335,11 +3336,20 @@ figcaption {
 
 .newsletter-form_component {
   width: 100%;
+  height: 3rem;
   margin-bottom: 0;
 }
 
 .newsletter-form_form {
+  height: 100%;
   display: flex;
+}
+
+.newsletter-form_success {
+  background-color: var(--mappings--bg--background-primary);
+  height: 100%;
+  padding: 0;
+  display: block;
 }
 
 .nav_shadow {
@@ -3954,6 +3964,10 @@ figcaption {
 .dropdown-tabs_collections_item-link {
   text-align: center;
   width: 100%;
+}
+
+.newsletter-form_success-layout {
+  height: 100%;
 }
 
 @media screen and (max-width: 991px) {
