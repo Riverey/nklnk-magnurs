@@ -27,7 +27,7 @@
 
         ],
         "settings": {
-          "collection_search_featured_collection": "",
+          "collection_search_featured_collection": "frontpage",
           "collection_search_featured_collection_limit": 6
         }
       },
