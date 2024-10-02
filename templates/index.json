@@ -91,21 +91,24 @@
         "shape_wWbqfq": {
           "type": "shape",
           "settings": {
-            "heading": "Heading",
+            "heading": "Round",
+            "image": "shopify://shop_images/Magnurs_shape_round.webp",
             "url_url": ""
           }
         },
         "shape_dGctpT": {
           "type": "shape",
           "settings": {
-            "heading": "Heading",
+            "heading": "Princess",
+            "image": "shopify://shop_images/Magnurs_shape_princess.webp",
             "url_url": ""
           }
         },
         "shape_mpkVDG": {
           "type": "shape",
           "settings": {
-            "heading": "Heading",
+            "heading": "Emerald",
+            "image": "shopify://shop_images/Magnurs_shape_emerald.webp",
             "url_url": ""
           }
         },
