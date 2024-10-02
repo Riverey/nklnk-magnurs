@@ -2,12 +2,7 @@
     {% assign first_column_results_size = predictive_search.resources.queries.size | plus: predictive_search.resources.collections.size | plus: predictive_search.resources.pages.size | plus: predictive_search.resources.articles.size | plus: predictive_search.resources.products.size %}
 <div class="u-vflex-stretch-top u-gap-xlarge">{% if first_column_results_size > 0 %}    <div li-if="first_column_results_size > 0" class="li-if">
     <div class="u-vflex-stretch-top u-gap-xlarge">{% if predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0 %}    <div li-if="predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0" class="predictive-search_topic">
-    <div class="predictive-search_headline"><div class="text-style-muted">Suggestions</div></div><ul role="list" class="mini-cart_line-item_list is-small w-list-unstyled">{% for query in predictive_search.resources.queries %}    <li li-for="query in predictive_search.resources.queries" class="mini-cart_line-item_item is-small">
-                                    
-                            <a li-object:href="query.url" href="{{ query.url }}" class="predictive-search_link w-inline-block"><div li-object="query.styled_text">{{ query.styled_text }}</div></a>
-                            
-                        </li>
-{% endfor %}{% for collection in predictive_search.resources.collections %}    <li li-for="collection in predictive_search.resources.collections" class="mini-cart_line-item_item is-small">
+    <div class="predictive-search_headline"><div class="text-style-muted">Suggestions</div></div><ul role="list" class="mini-cart_line-item_list is-small w-list-unstyled">{% for collection in predictive_search.resources.collections %}    <li li-for="collection in predictive_search.resources.collections" class="mini-cart_line-item_item is-small">
                                     
                             <a li-object:href="collection.url" href="{{ collection.url }}" class="predictive-search_link w-inline-block"><div li-object="collection.title">{{ collection.title }}</div></a>
                             
@@ -34,11 +29,11 @@
 {% endif %}{% if first_column_results_size == 0 %}    <div li-if="first_column_results_size == 0" class="li-if">
     <div class="predictive-search_topic"><div class="text-style-muted">Nothing found in "<span li-object="predictive_search.terms">{{ predictive_search.terms }}</span>"</div></div>    </div>
 {% endif %}</div>    </div>
-{% endif %}{% unless predictive_search.performed %}    <div li-unless="predictive_search.performed" class="li-if">
+{% endif %}{% unless predictive_search.performed and first_column_results_size > 0 %}    <div li-unless="predictive_search.performed and first_column_results_size > 0" class="li-if">
     <div class="u-vflex-stretch-top u-gap-xlarge"><div class="predictive-search_topic"><div class="predictive-search_headline"><div class="text-style-muted">Suggestions</div></div><ul role="list" class="mini-cart_line-item_list is-small w-list-unstyled">{% for block in section.blocks %}
-    {% if block.type == "suggested-link-in-search" %}
-                    <li li-block="Suggested Link in Search" class="mini-cart_line-item_item is-small">
-                                    <a class="predictive-search_link w-inline-block" href="{{ block.settings.url_link }}"> <div>{{ block.settings.text_text }}</div> </a>
+    {% if block.type == "suggested-link" %}
+                    <li li-block="Suggested Link" class="mini-cart_line-item_item is-small">
+                                    <a class="predictive-search_link w-inline-block" href="{{ block.settings.url_link }}"> <div li-object="block.settings.heading">{{ block.settings.heading }}</div><div class="li-settings w-embed"></div> </a>
 
                             </li>
             {% endif %}
@@ -56,4 +51,4 @@
 </li>
 {% endfor %}
 </ul></div></div>    </div>
-{% endunless %} {% schema %} {"tag":"div","name":"predictive_search","class":"mini-cart_content u-vflex-stretch-top u-gap-xlarge","blocks":[{"name":"Suggested Link in Search","type":"suggested-link-in-search","settings":[{"id":"url_link","type":"url","label":"Link"},{"id":"text_text","type":"text","label":"Text","default":"Tag"}]}],"settings":[{"id":"collection_search_featured_collection","type":"collection","label":"Search Featured Collection"},{"type":"range","id":"collection_search_featured_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Search Featured Collection","default":6}],"presets":[{"name":"predictive_search","category":"Liquify"}]} {% endschema %}
+{% endunless %} {% schema %} {"tag":"div","name":"predictive_search","class":"mini-cart_content u-vflex-stretch-top u-gap-xlarge","blocks":[{"name":"Suggested Link","type":"suggested-link","settings":[{"id":"url_link","type":"url","label":"Link"},{"id":"heading","type":"text","label":"Title"}]}],"settings":[{"id":"collection_search_featured_collection","type":"collection","label":"Search Featured Collection"},{"type":"range","id":"collection_search_featured_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Search Featured Collection","default":6}],"presets":[{"name":"predictive_search","category":"Liquify"}]} {% endschema %}
