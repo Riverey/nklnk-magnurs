@@ -14,7 +14,7 @@
 </div></nav></div><div class="nav_right-side u-hflex-right-stretch u-gap-large u-hflex-nowrap">{% if shop.customer_accounts_optional %}    <div li-if="shop.customer_accounts_optional" class="li-if">
     <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="nav_icon-dropdown_toggle w-inline-block"><div class="nav_icon-dropdown_label">Register / Login</div></a>    </div>
 {% endif %}{% render 'mini_cart' %}
-</div><div class="nav_menu-button w-nav-button"><div class="menu-icon"><div class="menu-icon_line-top"></div><div class="menu-icon_line-middle"><div class="menu-icon_line-middle-inner"></div></div><div class="menu-icon_line-bottom"></div></div></div></div></div></div></div><div data-w-id="7a248e53-24e4-5d10-f026-208b4625508d" class="nav_animation-trigger"></div><div class="color-metafield-styles hide w-embed"><style>{% for item in shop.metafields.shopify--color-pattern %}
+</div><div class="nav_menu-button w-nav-button"><div class="menu-icon"><div class="menu-icon_line-top"></div><div class="menu-icon_line-middle"><div class="menu-icon_line-middle-inner"></div></div><div class="menu-icon_line-bottom"></div></div></div></div></div></div></div><div data-w-id="7a248e53-24e4-5d10-f026-208b4625508d" class="nav_animation-trigger"></div><div class="color-metafield-styles hide w-embed"><style>/*test*/{% for item in shop.metafields.shopify--color-pattern %}
     [data-color="{{ item.label.value }}"] {
       background-color: {{ item.color.value }};
     }
