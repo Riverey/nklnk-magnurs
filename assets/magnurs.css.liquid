@@ -1458,8 +1458,8 @@ figcaption {
 .mini-cart_line-item_quantity-adjust {
   z-index: 2;
   aspect-ratio: 1;
+  background-color: var(--mappings--bg--background-primary);
   text-align: center;
-  background-color: #0000;
   border: 1px #000;
   justify-content: center;
   align-items: center;
@@ -2857,7 +2857,9 @@ figcaption {
 }
 
 .product-options_component {
+  z-index: 20;
   margin-bottom: 0;
+  position: relative;
 }
 
 .sort_option {
@@ -3371,9 +3373,11 @@ figcaption {
 
 .nav_dropdown-layout {
   flex-flow: column;
-  justify-content: center;
-  align-items: stretch;
+  justify-content: flex-start;
+  align-items: center;
   height: 50vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
   display: flex;
 }
 
@@ -3436,7 +3440,6 @@ figcaption {
 }
 
 .small-section-heading_text {
-  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -3460,6 +3463,7 @@ figcaption {
 
 .collection-empty {
   background-color: var(--mappings--bg--background-alternate);
+  color: var(--mappings--text--primary);
   text-transform: uppercase;
   flex-flow: column;
   justify-content: center;
@@ -3897,6 +3901,59 @@ figcaption {
   grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
   display: grid;
+}
+
+.dropdown-tabs_menu-wrap {
+  border-bottom: .125rem solid var(--mappings--border--border-secondary);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.dropdown-tabs_dropdown_component {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: static;
+}
+
+.dropdown-tabs_dropdown_toggle {
+  color: var(--mappings--text--alternate);
+  text-transform: uppercase;
+  border-bottom: .125rem solid #0000;
+  padding: 1vh 0;
+  font-size: 1.25rem;
+}
+
+.dropdown-tabs_dropdown_toggle.w--open {
+  border-bottom-color: var(--mappings--border--border-secondary);
+}
+
+.dropdown-tabs_dropdown_list {
+  background-color: #0000;
+  height: 35vh;
+  padding: 3vh;
+  left: 0;
+  right: 0;
+}
+
+.dropdown-tabs_dropdown-collection {
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown-tabs_collections_item {
+  flex: 1;
+  max-width: 23vh;
+}
+
+.dropdown-tabs_collections_item-thumb {
+  width: 100%;
+}
+
+.dropdown-tabs_collections_item-link {
+  text-align: center;
+  width: 100%;
 }
 
 @media screen and (max-width: 991px) {
@@ -5206,7 +5263,7 @@ figcaption {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
-#w-node-_7048b639-be81-c25f-3e39-a62262971160-78ccc16a, #w-node-a80f8362-260a-7256-86a7-00b709fa7e52-78ccc16b {
+#w-node-a80f8362-260a-7256-86a7-00b709fa7e52-78ccc16b {
   align-self: center;
 }
 

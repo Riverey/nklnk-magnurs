@@ -1,11 +1,11 @@
-<div class="padding-global padding-section-small"><div class="w-layout-blockcontainer container-large w-container"><div class="shapes-list_layout u-vflex-stretch-top u-gap-medium"><div class="small-section-heading_wrap"><h2 class="small-section-heading_text text-style-allcaps">Shop by Shape</h2></div><div class="shapes-list_list-wrapper w-dyn-list"><div role="list" class="shapes-list_list u-hflex-between-stretch u-hflex-nowrap w-dyn-items">{% for block in section.blocks %}
+<div class="padding-global padding-section-small"><div class="w-layout-blockcontainer container-large w-container"><div class="shapes-list_layout u-vflex-stretch-top u-gap-medium"><div class="small-section-heading_wrap"><h2 class="small-section-heading_text text-style-allcaps text-size-small">Shop by Shape</h2></div><div class="shapes-list_list-wrapper w-dyn-list"><div role="list" class="shapes-list_list u-hflex-between-stretch u-hflex-nowrap w-dyn-items">{% for block in section.blocks %}
     {% if block.type == "shape" %}
                     <div li-block="Shape" role="listitem" class="shapes-list_item w-dyn-item">
                                     <div class="li-settings w-embed"></div>
 
                                     <div class="li-settings w-embed"></div>
 
-                                    <a class="shapes-list_item-conponent u-vflex-center-top u-gap-small w-inline-block" href="{{ block.settings.url_url }}"> <img src="{{ block.settings.image.src | img_url: '80x80' }}" loading="lazy" li-object:src="block.settings.image.src | img_url: '80x80'" li-object:alt="block.settings.image.alt" alt="{{ block.settings.image.alt }}" class="shapes-list_item-thumb w-dyn-bind-empty"><h3 li-object="block.settings.heading" class="text-size-small w-dyn-bind-empty">{{ block.settings.heading }}</h3> </a>
+                                    <a class="shapes-list_item-conponent u-vflex-center-top u-gap-small w-inline-block" href="{{ block.settings.url_url }}"> <img src="{{ block.settings.image.src | img_url: '160x160' }}" loading="lazy" li-object:src="block.settings.image.src | img_url: '160x160'" li-object:alt="block.settings.image.alt" alt="{{ block.settings.image.alt }}" class="shapes-list_item-thumb w-dyn-bind-empty"><h3 li-object="block.settings.heading" class="text-size-small w-dyn-bind-empty">{{ block.settings.heading }}</h3> </a>
 
                             </div>
             {% endif %}

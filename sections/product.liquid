@@ -39,13 +39,13 @@
     <img alt="" src="../images/Magnurs_product-thumb.png" loading="lazy" class="thumbnail-image_image" x-bind:src="selected_or_first_available_variant.featured_image.src" x-bind:alt="selected_or_first_available_variant.featured_image.alt">
     </div>
 {% endif %}{% if product.has_only_default_variant == true %}    <div li-if="product.has_only_default_variant == true" class="li-if">
-    <img li-object:src="product.featured_image | img_url: '640x760'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | img_url: '640x760' }}" loading="lazy" class="thumbnail-image_image">
+    <img li-object:src="product.featured_image | img_url: '1280x1520'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | img_url: '1280x1520' }}" loading="lazy" class="thumbnail-image_image">
     </div>
 {% endif %}</div>{% for image in product.images %}    <div li-for="image in product.images" class="product-header_image-wrap swiper-slide">
                                     <img li-object:src="image.src | img_url: '640x760'" li-object:alt="image.alt" alt="{{ image.alt }}" src="{{ image.src | img_url: '640x760' }}" loading="lazy" class="thumbnail-image_image">
 
                         </div>
-{% endfor %}</div><div id="w-node-_7048b639-be81-c25f-3e39-a62262971160-78ccc16a" class="product-header_product-details u-vflex-stretch-top u-gap-large"><div class="product-header_heading-wrapper u-vflex-left-top u-gap-medium"><h1 li-object:text="product.title" class="product-header_heading heading-style-h2 text-color-brand">
+{% endfor %}</div><div class="product-header_product-details u-vflex-stretch-top u-gap-large"><div class="product-header_heading-wrapper u-vflex-left-top u-gap-medium"><h1 li-object:text="product.title" class="product-header_heading heading-style-h2 text-color-brand">
 {{ product.title }}
 </h1><div class="product-header_price-wrapper"><div li-object="product.price | money" li-js-price="price" class="text-size-large text-weight-bold">{{ product.price | money }}</div><template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
             <div li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
@@ -74,7 +74,7 @@
     </div>
 {% endif %}<div class="product-header_ad-to-cart-wrapper"><template x-if="selected_or_first_available_variant.available == true">
             <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity">
-        <div class="mini-cart_line-item_quantity is-large"><button type="button" fs-inputcounter-element="decrement" class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" fs-inputcounter-element="input" class="mini-cart_line-item_quantity-input" value="1" x-model="quantity">
+        <div class="mini-cart_line-item_quantity is-large"><button type="button" fs-inputcounter-element="decrement" class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" fs-inputcounter-element="input" type="number" class="mini-cart_line-item_quantity-input" x-model="quantity">
 <button type="button" fs-inputcounter-element="increment" class="mini-cart_line-item_quantity-adjust">+</button></div><a li-element="add-to-cart" href="#" class="button max-width-full w-button" @click="addToCart(true)" :disabled="!addToCartButton">Add to cart</a>        </div>
     </template>
 </div>{% endform %}
@@ -97,14 +97,14 @@
                             
                         </li>
 {% endfor %}    </ul>
-{% endunless %}{% if shop.enabled_payment_types == blank or shop.enabled_payment_types.length == 0 %}    <div li-if="shop.enabled_payment_types == blank or shop.enabled_payment_types.length == 0" class="li-if">
-    <div>No payment methods added.</div>    </div>
-{% endif %}<div>Guaranteed Safe Checkout</div></div><div class="payment-options_share-list u-hflex-between-stretch u-gap-large"><a fs-socialshare-element="Facebook" href="#" class="payment-options_share-item w-inline-block"><img src="{{ 'magnurs_icon_facebook.svg' | asset_url }}" loading="lazy" alt="">
+{% endunless %}<div>Guaranteed Safe Checkout</div></div><div class="payment-options_share-list u-hflex-between-stretch u-gap-large"><a fs-socialshare-element="Facebook" href="#" class="payment-options_share-item w-inline-block"><img src="{{ 'magnurs_icon_facebook.svg' | asset_url }}" loading="lazy" alt="">
 </a><a fs-socialshare-element="Twitter" href="#" class="payment-options_share-item w-inline-block"><img src="{{ 'magnurs_icon_twitter.svg' | asset_url }}" loading="lazy" alt="">
-</a></div><div fs-accordion-single="true" fs-accordion-element="group" class="product-header_description-wrap u-vflex-left-top u-gap-small"><div fs-accordion-element="accordion" class="accordeon_item"><div id="accordion-1-header-1" tabindex="0" role="button" aria-controls="accordion-1-content-1" aria-expanded="false" fs-accordion-element="trigger" class="accordeon_header"><h2 class="heading-style-h3 text-size-small text-color-brand">
+</a></div><div fs-accordion-single="true" fs-accordion-element="group" class="product-header_description-wrap u-vflex-left-top u-gap-small">{% if product.description %}    <div li-if="product.description" fs-accordion-element="accordion" class="accordeon_item">
+    <div id="accordion-1-header-1" tabindex="0" role="button" aria-controls="accordion-1-content-1" aria-expanded="false" fs-accordion-element="trigger" class="accordeon_header"><h2 class="heading-style-h3 text-size-small text-color-brand">
 {{ section.settings.text_heading }}
 </h2>
-<div fs-accordion-element="arrow" class="accordeon_icon icon-embed-xsmall is-active-accordion w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M18 12L6 12" stroke="var(--mappings--text--primary)" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 6L12 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div><div id="accordion-1-content-1" aria-labelledby="accordion-header-1" fs-accordion-element="content" class="accordeon_content"><div class="accordeon_body"><div li-object="product.description" class="text-rich-text max-width-large text-size-small w-richtext">{{ product.description }}</div></div></div></div>{% for block in section.blocks %}
+<div fs-accordion-element="arrow" class="accordeon_icon icon-embed-xsmall is-active-accordion w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M18 12L6 12" stroke="var(--mappings--text--primary)" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 6L12 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div><div id="accordion-1-content-1" aria-labelledby="accordion-header-1" fs-accordion-element="content" class="accordeon_content"><div class="accordeon_body"><div li-object="product.description" class="text-rich-text max-width-large text-size-small w-richtext">{{ product.description }}</div></div></div>    </div>
+{% endif %}{% for block in section.blocks %}
     {% if block.type == "accordeon" %}
                     <div li-block="Accordeon" fs-accordion-element="accordion" class="accordeon_item">
                                     <div id="accordion-1-header-1" tabindex="0" role="button" aria-controls="accordion-1-content-1" aria-expanded="false" fs-accordion-element="trigger" class="accordeon_header"><h2 li-object="block.settings.heading" class="heading-style-h3 text-size-small text-color-brand">{{ block.settings.heading }}</h2><div fs-accordion-element="arrow" class="accordeon_icon icon-embed-xsmall is-active-accordion w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M18 12L6 12" stroke="var(--mappings--text--primary)" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 6L12 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="li-settings w-embed"></div>
