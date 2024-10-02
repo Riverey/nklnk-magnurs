@@ -1336,7 +1336,7 @@ figcaption {
   height: 100vh;
   max-height: 100vh;
   display: flex;
-  position: fixed;
+  position: static;
   inset: 0% 0% 0% auto;
 }
 
@@ -3607,6 +3607,11 @@ figcaption {
   transition: opacity .4s;
   position: absolute;
   inset: 0%;
+}
+
+.mini-cart_fixed {
+  position: fixed;
+  inset: 0% 0% 0% auto;
 }
 
 @media screen and (max-width: 991px) {
