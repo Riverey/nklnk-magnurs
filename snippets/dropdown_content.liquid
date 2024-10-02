@@ -5,7 +5,7 @@
 <div li-object="collection.title" class="text-style-allcaps text-size-small text-weight-medium">{{ collection.title }}</div><div li-object="collection.description" class="text-size-small">{{ collection.description }}</div></a>
                             
                         </div>
-{% endfor %}</div>{% if block.blocks == blank %}    <div li-if="block.blocks == blank" class="collection-empty w-dyn-empty">
+{% endfor %}</div>{% if block.settings.collection-list == blank %}    <div li-if="block.settings.collection-list == blank" class="collection-empty w-dyn-empty">
     <div>No Collections Added</div>    </div>
 {% endif %}</div></nav></div>{% for collection in block.settings.collection-list %}    <div data-hover="true" data-delay="0" li-for="collection in block.settings.collection-list" class="dropdown-tabs_dropdown_component w-dropdown">
                                     
@@ -18,8 +18,8 @@
 <div li-object="product.title" class="text-style-allcaps text-size-small text-weight-medium">{{ product.title }}</div></a>
                             
                         </div>
-{% endfor %}</div>{% if block.blocks == blank %}    <div li-if="block.blocks == blank" class="collection-empty w-dyn-empty">
-    <div>No Collections Added</div>    </div>
+{% endfor %}</div>{% if collection.all_products_count == 0 %}    <div li-if="collection.all_products_count == 0" class="collection-empty w-dyn-empty">
+    <div>No products in this collection</div>    </div>
 {% endif %}</div></nav>
                             
                         </div>
