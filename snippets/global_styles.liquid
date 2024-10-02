@@ -62,7 +62,7 @@
         background: var(--mappings--bg--background-primary);
     }
     ::-webkit-scrollbar-thumb {
-        background: var(--mappings--bg--background-secondary)
+        background: var(--mappings--bg--background-secondary);
     }
     ::selection {
         color: var(--mappings--bg--background-primary);
@@ -71,10 +71,23 @@
     .mini-cart_line-item_item:last-child {
         border: none;
     }
-    .nav_mini-cart_holder .mini-cart_overlay {
-        opacity: 0.0;
+    .product-card_link::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        cursor: pointer;
+        z-index: 20;
     }
-    .nav_mini-cart_holder.w--open .mini-cart_overlay {
-        opacity: 0.8;
+    .product-card_link:focus-visible::after {
+        outline-color: var(--mappings--border--border-alternate);
+        outline-offset: .125rem;
+        outline-width: .125rem;
+        outline-style: solid;
     }
-</style><style> {{ section.settings.textarea_global_css }} </style>
+    .product-card_component:has(.product-card_link:hover) .product-card_overlay, .product-card_component:has(.product-card_link:focus-visible) .product-card_overlay {
+        opacity: 0.5;
+    }
+    .product-card_component:has(.product-card_link:hover) .product-card_image.is-hover, .product-card_component:has(.product-card_link:focus-visible) .product-card_image.is-hover {
+        opacity: 1.0;
+    }
+</style>
