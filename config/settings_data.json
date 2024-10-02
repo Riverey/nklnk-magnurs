@@ -16,25 +16,44 @@
           "dropdown_HknAFw": {
             "type": "dropdown",
             "settings": {
-              "title": "Collections"
+              "title": "Collections",
+              "collection-list": [
+                "bracelets",
+                "earings",
+                "necklaces",
+                "rings"
+              ],
+              "group-title": "Group"
             }
           },
           "dropdown_qrqWXh": {
             "type": "dropdown",
             "settings": {
-              "title": "Jewelry"
+              "title": "Jewelry",
+              "collection-list": [
+
+              ],
+              "group-title": "Group"
             }
           },
           "dropdown_FWFTFE": {
             "type": "dropdown",
             "settings": {
-              "title": "Accesories"
+              "title": "Accesories",
+              "collection-list": [
+
+              ],
+              "group-title": "Group"
             }
           },
           "dropdown_RAaUqV": {
             "type": "dropdown",
             "settings": {
-              "title": "The story"
+              "title": "The story",
+              "collection-list": [
+
+              ],
+              "group-title": "Group"
             }
           },
           "suggestion_LxNMbm": {
