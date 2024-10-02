@@ -18,10 +18,18 @@
             "settings": {
               "text_title": "Link"
             }
+          },
+          "suggestion_LxNMbm": {
+            "type": "suggestion",
+            "settings": {
+              "heading": "Bracelets",
+              "url_link": "shopify://collections/bracelets"
+            }
           }
         },
         "block_order": [
-          "dropdown_HknAFw"
+          "dropdown_HknAFw",
+          "suggestion_LxNMbm"
         ],
         "custom_css": [
 
