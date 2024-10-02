@@ -24,7 +24,7 @@
                     li-object:alt="block.settings.image.alt"
                     alt="{{ block.settings.image.alt }}"
                     class="shapes-list_item-thumb w-dyn-bind-empty"
-                    src="{{ block.settings.image | img_url: '80x80' }}"
+                    src="{{ block.settings.image_image.src | img_url: '80x80' }}"
                   >
                   <h3 li-object="block.settings.heading" class="text-size-small w-dyn-bind-empty">
                     {{ block.settings.heading }}
@@ -43,4 +43,4 @@
     </div>
   </div>
 </div>
-{% schema %} {"tag":"section","name":"shapes_list","class":"section_shapes-list","blocks":[{"name":"Shape","type":"shape","settings":[{"id":"heading","type":"text","label":"Heading","default":"Heading"},{"id":"image","type":"image_picker","label":"Image"},{"id":"url_url","type":"url","label":"URL"}]}],"presets":[{"name":"shapes_list","category":"Liquify"}]} {% endschema %}
+{% schema %} {"tag":"section","name":"shapes_list","class":"section_shapes-list","blocks":[{"name":"Shape","type":"shape","settings":[{"id":"heading","type":"text","label":"Heading","default":"Heading"},{"id":"image_image","type":"image_picker","label":"Image"},{"id":"url_url","type":"url","label":"URL"}]}],"presets":[{"name":"shapes_list","category":"Liquify"}]} {% endschema %}
