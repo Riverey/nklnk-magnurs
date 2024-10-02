@@ -59,12 +59,16 @@
         "collection_Rp7xXR": {
           "type": "collection",
           "settings": {
+            "collection": "bracelets",
+            "image": "shopify://shop_images/magnus_lab-one.webp",
             "richtext_description": "<p><strong>LAB ONE</strong> represents the pinnacle of luxury and intricate design, embodying the epitome of grandeur and style.</p>"
           }
         },
         "collection_B7hrh9": {
           "type": "collection",
           "settings": {
+            "collection": "earings",
+            "image": "shopify://shop_images/magnus_lab-one.webp",
             "richtext_description": ""
           }
         }
@@ -87,42 +91,49 @@
         "shape_wWbqfq": {
           "type": "shape",
           "settings": {
+            "heading": "Heading",
             "url_url": ""
           }
         },
         "shape_dGctpT": {
           "type": "shape",
           "settings": {
+            "heading": "Heading",
             "url_url": ""
           }
         },
         "shape_mpkVDG": {
           "type": "shape",
           "settings": {
+            "heading": "Heading",
             "url_url": ""
           }
         },
         "shape_hgwEHF": {
           "type": "shape",
           "settings": {
+            "heading": "Heading",
             "url_url": ""
           }
         },
         "shape_bkKnBn": {
           "type": "shape",
           "settings": {
+            "heading": "Heading",
             "url_url": ""
           }
         },
         "shape_kJRAaz": {
           "type": "shape",
           "settings": {
+            "heading": "Heading",
             "url_url": ""
           }
         },
         "shape_f8MHj9": {
           "type": "shape",
           "settings": {
+            "heading": "Heading",
             "url_url": ""
           }
         }
