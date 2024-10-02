@@ -3,10 +3,8 @@
 </a></div><nav role="navigation" id="w-node-_1f4a994c-7640-c194-e1f7-4193b5553f7f-b641c10b" class="nav_menu w-nav-menu"><div class="nav_spacer"></div><div class="nav_menu-list u-hflex-center-stretch">{% for block in section.blocks %}
     {% if block.type == "dropdown" %}
                     <div data-hover="true" data-delay="200" li-block="Dropdown" class="nav_menu-dropdown w-dropdown">
-                                    <div class="nav_dropdown-toggle w-dropdown-toggle"><div class="nav_link-label">
-{{ block.settings.text_title }}
-</div>
-</div>
+                                    <div class="nav_dropdown-toggle w-dropdown-toggle"><div class="li-settings w-embed"></div>
+<div li-object="block.settings.title" class="nav_link-label">{{ block.settings.title }}</div></div>
                                     <nav class="nav_dropdown-list w-dropdown-list"><div class="container-large"><div class="nav_dropdown-layout"></div></div></nav>
                             </div>
             {% endif %}
@@ -19,4 +17,4 @@
 background-color: {{ color.color.value }};
 }
 {% endfor %}
-</style></div> {% schema %} {"tag":"div","name":"navbar","class":"section_navbar","blocks":[{"name":"Suggestion","type":"suggestion","settings":[{"id":"heading","type":"text","label":"Title"},{"id":"url_link","type":"url","label":"Link"}]},{"name":"Dropdown","type":"dropdown","settings":[{"id":"text_title","type":"text","label":"Title","default":"Link"}]}],"settings":[{"id":"collection_search_featured_collection","type":"collection","label":"Search Featured Collection"},{"type":"range","id":"collection_search_featured_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Search Featured Collection","default":6}],"presets":[{"name":"navbar","category":"Liquify"}]} {% endschema %}
+</style></div> {% schema %} {"tag":"div","name":"navbar","class":"section_navbar","blocks":[{"name":"Suggestion","type":"suggestion","settings":[{"id":"heading","type":"text","label":"Title"},{"id":"url_link","type":"url","label":"Link"}]},{"name":"Dropdown","type":"dropdown","settings":[{"id":"title","type":"text","label":"Text","default":"Link Name"}]}],"settings":[{"id":"collection_search_featured_collection","type":"collection","label":"Search Featured Collection"},{"type":"range","id":"collection_search_featured_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Search Featured Collection","default":6}],"presets":[{"name":"navbar","category":"Liquify"}]} {% endschema %}
