@@ -24,8 +24,7 @@
           "dropdown_HknAFw"
         ],
         "custom_css": [
-          ":root {--swatch-color-gold: #f4c5a1;}",
-          "[data-color] {background-color: var(--swatch-color-gold);}"
+
         ],
         "settings": {
           "collection_search_featured_collection": "",
