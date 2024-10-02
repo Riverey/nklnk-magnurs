@@ -22,29 +22,25 @@
         "collection_LwVAtK": {
           "type": "collection",
           "settings": {
-            "collection_collection": "rings",
-            "collection_collection_limit": 6
+            "collection": "rings"
           }
         },
         "collection_WqPUXY": {
           "type": "collection",
           "settings": {
-            "collection_collection": "earings",
-            "collection_collection_limit": 6
+            "collection": "bracelets"
           }
         },
         "collection_ktVrRp": {
           "type": "collection",
           "settings": {
-            "collection_collection": "necklaces",
-            "collection_collection_limit": 6
+            "collection": "necklaces"
           }
         },
         "collection_Qcxzer": {
           "type": "collection",
           "settings": {
-            "collection_collection": "bracelets",
-            "collection_collection_limit": 6
+            "collection": "earings"
           }
         }
       },
@@ -63,18 +59,12 @@
         "collection_Rp7xXR": {
           "type": "collection",
           "settings": {
-            "collection_collection": "bracelets",
-            "collection_collection_limit": 6,
-            "image_image": "shopify://shop_images/magnus_lab-one.webp",
             "richtext_description": "<p><strong>LAB ONE</strong> represents the pinnacle of luxury and intricate design, embodying the epitome of grandeur and style.</p>"
           }
         },
         "collection_B7hrh9": {
           "type": "collection",
           "settings": {
-            "collection_collection": "earings",
-            "collection_collection_limit": 6,
-            "image_image": "shopify://shop_images/magnus_lab-one.webp",
             "richtext_description": ""
           }
         }
@@ -97,57 +87,43 @@
         "shape_wWbqfq": {
           "type": "shape",
           "settings": {
-            "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_round.webp",
-            "heading": "Round"
+            "url_url": ""
           }
         },
         "shape_dGctpT": {
           "type": "shape",
           "settings": {
-            "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_princess.webp",
-            "heading": "Heading"
+            "url_url": ""
           }
         },
         "shape_mpkVDG": {
           "type": "shape",
           "settings": {
-            "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_emerald.webp",
-            "heading": "Heading"
+            "url_url": ""
           }
         },
         "shape_hgwEHF": {
           "type": "shape",
           "settings": {
-            "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_pear.webp",
-            "heading": "Heading"
+            "url_url": ""
           }
         },
         "shape_bkKnBn": {
           "type": "shape",
           "settings": {
-            "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_heart.webp",
-            "heading": "Heading"
+            "url_url": ""
           }
         },
         "shape_kJRAaz": {
           "type": "shape",
           "settings": {
-            "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_cushion.webp",
-            "heading": "Heading"
+            "url_url": ""
           }
         },
         "shape_f8MHj9": {
           "type": "shape",
           "settings": {
-            "url_url": "",
-            "image_image": "shopify://shop_images/Magnurs_shape_oval.webp",
-            "heading": "Heading"
+            "url_url": ""
           }
         }
       },
@@ -166,9 +142,8 @@
     "product_row_NFcdHm": {
       "type": "product_row",
       "settings": {
-        "text_heading": "Featured",
         "collection_collection": "frontpage",
-        "collection_collection_limit": 6
+        "text_heading": "Featured"
       }
     }
   },
