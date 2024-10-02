@@ -41,8 +41,8 @@
     </div>
 {% endif %}<div class="product-header_ad-to-cart-wrapper"><template x-if="selected_or_first_available_variant.available == true">
             <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity">
-        <div class="mini-cart_line-item_quantity is-large"><button type="button" class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" class="mini-cart_line-item_quantity-input" value="1" x-model="quantity">
-<button type="button" class="mini-cart_line-item_quantity-adjust">+</button></div><a li-element="add-to-cart" href="#" class="button max-width-full w-button" @click="addToCart(true)" :disabled="!addToCartButton">Add to cart</a>        </div>
+        <div class="mini-cart_line-item_quantity is-large"><button class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" class="mini-cart_line-item_quantity-input" value="1" x-model="quantity">
+<button class="mini-cart_line-item_quantity-adjust">+</button></div><a li-element="add-to-cart" href="#" class="button max-width-full w-button" @click="addToCart(true)" :disabled="!addToCartButton">Add to cart</a>        </div>
     </template>
 </div>{% endform %}
 <div class="w-form-done"></div><div class="w-form-fail"></div></div><div class="product-header_details-grid">{% for block in section.blocks %}
@@ -57,14 +57,12 @@
                             </div>
             {% endif %}
 {% endfor %}
-</div><div class="product-header_payment-options-wrap u-vflex-center-center u-gap-medium">{% if shop.enabled_payment_types != blank %}    <ul li-if="shop.enabled_payment_types != blank" role="list" class="payment-options_list u-hflex-center-center u-gap-xxsmall w-list-unstyled">
-    {% for type in shop.enabled_payment_types %}    <li li-for="type in shop.enabled_payment_types" class="payment-options_item">
+</div><div class="product-header_payment-options-wrap u-vflex-center-center u-gap-medium"><ul role="list" class="payment-options_list u-hflex-center-center u-gap-xxsmall w-list-unstyled">{% for type in shop.enabled_payment_types %}    <li li-for="type in shop.enabled_payment_types" class="payment-options_item">
                                     
                             <div li-object="type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color'">{{ type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color' }}</div>
                             
                         </li>
-{% endfor %}    </ul>
-{% endif %}{% if shop.enabled_payment_types == blank %}    <div li-if="shop.enabled_payment_types == blank" class="li-if">
+{% endfor %}<li class="payment-options_item"></li></ul>{% if shop.enabled_payment_types.length < 1 %}    <div li-if="shop.enabled_payment_types.length < 1">
     <div>No payment methods added.</div>    </div>
 {% endif %}<div>Guaranteed Safe Checkout</div></div><div class="payment-options_share-list u-hflex-between-stretch u-gap-large"><a fs-socialshare-element="Facebook" href="#" class="payment-options_share-item w-inline-block"><img src="{{ 'magnurs_icon_facebook.svg' | asset_url }}" loading="lazy" alt="">
 </a><a fs-socialshare-element="Twitter" href="#" class="payment-options_share-item w-inline-block"><img src="{{ 'magnurs_icon_twitter.svg' | asset_url }}" loading="lazy" alt="">
