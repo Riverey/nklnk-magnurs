@@ -90,16 +90,16 @@
                             </div>
             {% endif %}
 {% endfor %}
-</div><div class="product-header_payment-options-wrap u-vflex-center-center u-gap-medium">{% if shop.enabled_payment_types != blank %}    <ul li-if="shop.enabled_payment_types != blank" role="list" class="payment-options_list u-hflex-center-center u-gap-xxsmall w-list-unstyled">
+</div><div class="product-header_payment-options-wrap u-vflex-center-center u-gap-medium">{% unless shop.enabled_payment_types == blank or shop.enabled_payment_types.length == 0 %}    <ul li-unless="shop.enabled_payment_types == blank or shop.enabled_payment_types.length == 0" role="list" class="payment-options_list u-hflex-center-center u-gap-xxsmall w-list-unstyled">
     {% for type in shop.enabled_payment_types %}    <li li-for="type in shop.enabled_payment_types" class="payment-options_item">
                                     
                             <div li-object="type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color'">{{ type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color' }}</div>
                             
                         </li>
 {% endfor %}    </ul>
-{% endif %}{% unless shop.enabled_payment_types %}    <div li-unless="shop.enabled_payment_types" class="li-if">
+{% endunless %}{% if shop.enabled_payment_types == blank or shop.enabled_payment_types.length == 0 %}    <div li-if="shop.enabled_payment_types == blank or shop.enabled_payment_types.length == 0" class="li-if">
     <div>No payment methods added.</div>    </div>
-{% endunless %}<div>Guaranteed Safe Checkout</div></div><div class="payment-options_share-list u-hflex-between-stretch u-gap-large"><a fs-socialshare-element="Facebook" href="#" class="payment-options_share-item w-inline-block"><img src="{{ 'magnurs_icon_facebook.svg' | asset_url }}" loading="lazy" alt="">
+{% endif %}<div>Guaranteed Safe Checkout</div></div><div class="payment-options_share-list u-hflex-between-stretch u-gap-large"><a fs-socialshare-element="Facebook" href="#" class="payment-options_share-item w-inline-block"><img src="{{ 'magnurs_icon_facebook.svg' | asset_url }}" loading="lazy" alt="">
 </a><a fs-socialshare-element="Twitter" href="#" class="payment-options_share-item w-inline-block"><img src="{{ 'magnurs_icon_twitter.svg' | asset_url }}" loading="lazy" alt="">
 </a></div><div fs-accordion-single="true" fs-accordion-element="group" class="product-header_description-wrap u-vflex-left-top u-gap-small"><div fs-accordion-element="accordion" class="accordeon_item"><div id="accordion-1-header-1" tabindex="0" role="button" aria-controls="accordion-1-content-1" aria-expanded="false" fs-accordion-element="trigger" class="accordeon_header"><h2 class="heading-style-h3 text-size-small text-color-brand">
 {{ section.settings.text_heading }}
