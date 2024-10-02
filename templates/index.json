@@ -12,6 +12,8 @@
     "main_hero": {
       "type": "main_hero",
       "settings": {
+        "richtext_heading": "<p><strong>MAGNURS</strong> is redefining luxury jewellery with a bold, modern approach.</p>",
+        "richtext_description": "<p>Our lab-grown diamonds offer unmatched brilliance and quality, focusing on sustainability and ethical sourcing. Designed for those who dare to stand out, MAGNURS is for the trendsetters and trailblazers who value innovation and individuality.</p>"
       }
     },
     "categories_slider": {
@@ -97,7 +99,7 @@
           "settings": {
             "url_url": "",
             "image_image": "shopify://shop_images/Magnurs_shape_round.webp",
-            "text_heading": "Round"
+            "heading": "Round"
           }
         },
         "shape_dGctpT": {
@@ -105,7 +107,7 @@
           "settings": {
             "url_url": "",
             "image_image": "shopify://shop_images/Magnurs_shape_princess.webp",
-            "text_heading": "Lorem Ipsum"
+            "heading": "Heading"
           }
         },
         "shape_mpkVDG": {
@@ -113,7 +115,7 @@
           "settings": {
             "url_url": "",
             "image_image": "shopify://shop_images/Magnurs_shape_emerald.webp",
-            "text_heading": "Lorem Ipsum"
+            "heading": "Heading"
           }
         },
         "shape_hgwEHF": {
@@ -121,7 +123,7 @@
           "settings": {
             "url_url": "",
             "image_image": "shopify://shop_images/Magnurs_shape_pear.webp",
-            "text_heading": "Lorem Ipsum"
+            "heading": "Heading"
           }
         },
         "shape_bkKnBn": {
@@ -129,7 +131,7 @@
           "settings": {
             "url_url": "",
             "image_image": "shopify://shop_images/Magnurs_shape_heart.webp",
-            "text_heading": "Lorem Ipsum"
+            "heading": "Heading"
           }
         },
         "shape_kJRAaz": {
@@ -137,7 +139,7 @@
           "settings": {
             "url_url": "",
             "image_image": "shopify://shop_images/Magnurs_shape_cushion.webp",
-            "text_heading": "Lorem Ipsum"
+            "heading": "Heading"
           }
         },
         "shape_f8MHj9": {
@@ -145,7 +147,7 @@
           "settings": {
             "url_url": "",
             "image_image": "shopify://shop_images/Magnurs_shape_oval.webp",
-            "text_heading": "Lorem Ipsum"
+            "heading": "Heading"
           }
         }
       },
@@ -164,6 +166,7 @@
     "product_row_NFcdHm": {
       "type": "product_row",
       "settings": {
+        "text_heading": "Featured",
         "collection_collection": "frontpage",
         "collection_collection_limit": 6
       }

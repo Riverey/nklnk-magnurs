@@ -23,7 +23,13 @@
         "block_order": [
           "dropdown_HknAFw"
         ],
+        "custom_css": [
+          ":root {--swatch-color-gold: #F4C5A1;}",
+          "[data-color] {background-color: --swatch-color-gold}"
+        ],
         "settings": {
+          "collection_search_featured_collection": "",
+          "collection_search_featured_collection_limit": 6
         }
       },
       "footer": {
