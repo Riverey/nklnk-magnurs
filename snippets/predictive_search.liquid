@@ -32,9 +32,11 @@
 {% endif %}</div>    </div>
 {% endif %}{% unless predictive_search.performed and first_column_results_size > 0 %}    <div li-unless="predictive_search.performed and first_column_results_size > 0" class="li-if">
     <div class="u-vflex-stretch-top u-gap-xlarge"><div class="predictive-search_topic"><div class="predictive-search_headline"><div class="text-style-muted">Suggestions</div></div><ul role="list" class="mini-cart_line-item_list is-small w-list-unstyled">{% for block in section.blocks %}
-    {% if block.type == "suggested-link" %}
-                    <li li-block="Suggested Link" class="mini-cart_line-item_item is-small">
-                                    <a class="predictive-search_link w-inline-block" href="{{ block.settings.url_link }}"> <div li-object="block.settings.heading">{{ block.settings.heading }}</div><div class="li-settings w-embed"></div> </a>
+    {% if block.type == "suggestion" %}
+                    <li li-block="Suggestion" class="mini-cart_line-item_item is-small">
+                                    <div class="li-settings w-embed"></div>
+
+                                    <a class="predictive-search_link w-inline-block" href="{{ block.settings.url_link }}"> <div li-object="block.settings.heading">{{ block.settings.heading }}</div> </a>
 
                             </li>
             {% endif %}
