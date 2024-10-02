@@ -49,8 +49,11 @@
     .styleguide_spacing {
         background: linear-gradient(to top, color-mix(in srgb, var(--mappings--bg--background-secondary) 20%, transparent), transparent);
     }
+    .footer-menu_nav-link-wrap .icon-embed-xxsmall {
+        display: none;
+    }
     .footer-menu_nav-link-wrap:has(.footer-menu_nav-link[href*="https://"]) .icon-embed-xxsmall {
-        display: block;
+        display: flex;
     }
     ::-webkit-scrollbar {
         width: 1em;
@@ -74,4 +77,4 @@
     .nav_mini-cart_holder.w--open .mini-cart_overlay {
         opacity: 0.8;
     }
-</style>
+</style><style> {{ section.settings.textarea_global_css }} </style>

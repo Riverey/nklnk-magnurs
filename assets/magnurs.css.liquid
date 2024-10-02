@@ -1949,6 +1949,7 @@ figcaption {
 }
 
 .product-options_radio_component {
+  cursor: pointer;
   border: 1px #000;
   border-radius: 999rem;
   margin-bottom: 0;
@@ -1964,22 +1965,21 @@ figcaption {
 
 .product-options_radio_button {
   z-index: 2;
-  background-color: var(--mappings--bg--background-primary);
-  border: .25rem solid #0000;
+  background-color: #ececec;
+  border: 1px #000;
   border-radius: 999rem;
-  width: auto;
-  height: auto;
+  width: 1.25rem;
+  height: 1.25rem;
   margin-top: 0;
   margin-left: 0;
-  transition: opacity .2s;
-  position: absolute;
-  inset: .25rem;
+  transition: transform .2s;
+  transform: scale(.75);
 }
 
 .product-options_radio_button.w--redirected-checked {
   background-color: var(--mappings--bg--background-primary);
-  opacity: 0;
   border: 1px #000;
+  transform: scale(1);
 }
 
 .product-header_lieferzeit-wrapper {
