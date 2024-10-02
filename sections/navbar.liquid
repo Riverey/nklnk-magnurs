@@ -14,9 +14,9 @@
 </div></nav></div><div class="nav_right-side u-hflex-right-stretch u-gap-large u-hflex-nowrap">{% if shop.customer_accounts_optional %}    <div li-if="shop.customer_accounts_optional" class="li-if">
     <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="nav_icon-dropdown_toggle w-inline-block"><div class="nav_icon-dropdown_label">Register / Login</div></a>    </div>
 {% endif %}{% render 'mini_cart' %}
-</div><div class="nav_menu-button w-nav-button"><div class="menu-icon"><div class="menu-icon_line-top"></div><div class="menu-icon_line-middle"><div class="menu-icon_line-middle-inner"></div></div><div class="menu-icon_line-bottom"></div></div></div></div></div></div></div><div data-w-id="7a248e53-24e4-5d10-f026-208b4625508d" class="nav_animation-trigger"></div><div class="color-metafield-styles hide w-embed"><style>/*test*/{% for item in shop.metafields.shopify--color-pattern %}
-    [data-color="{{ item.label.value }}"] {
-      background-color: {{ item.color.value }};
+</div><div class="nav_menu-button w-nav-button"><div class="menu-icon"><div class="menu-icon_line-top"></div><div class="menu-icon_line-middle"><div class="menu-icon_line-middle-inner"></div></div><div class="menu-icon_line-bottom"></div></div></div></div></div></div></div><div data-w-id="7a248e53-24e4-5d10-f026-208b4625508d" class="nav_animation-trigger"></div><div class="color-metafield-styles hide w-embed"><style>/*test*/{% for color in shop.metaobjects.shopify--color-pattern %}
+    [data-color="{{ color.label.value }}"] {
+      background-color: {{ color.color.value }};
     }
   {% endfor %}
 </style></div> {% schema %} {"tag":"div","name":"navbar","class":"section_navbar","blocks":[{"name":"Suggested Link in Search","type":"suggested-link-in-search","settings":[{"id":"url_link","type":"url","label":"Link"},{"id":"text_text","type":"text","label":"Text","default":"Tag"}]},{"name":"Dropdown","type":"dropdown","settings":[{"id":"text_title","type":"text","label":"Title","default":"Link"}]}],"settings":[{"id":"collection_search_featured_collection","type":"collection","label":"Search Featured Collection"},{"type":"range","id":"collection_search_featured_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Search Featured Collection","default":6}],"presets":[{"name":"navbar","category":"Liquify"}]} {% endschema %}
