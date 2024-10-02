@@ -18,12 +18,12 @@
                   href="{{ block.settings.url_url }}"
                 >
                   <img
+                    src="{{ block.settings.image.src | image_url: '80x80' }}"
                     loading="lazy"
                     li-object:src="block.settings.image.src | image_url: '80x80'"
                     li-object:alt="block.settings.image.alt"
                     alt="{{ block.settings.image.alt }}"
                     class="shapes-list_item-thumb w-dyn-bind-empty"
-                    src="{{ block.settings.image.src | image_url: '80x80' }}"
                   >
                   <h3 li-object="block.settings.heading" class="text-size-small w-dyn-bind-empty">
                     {{ block.settings.heading }}
