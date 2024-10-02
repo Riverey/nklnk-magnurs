@@ -1,45 +1,15 @@
-<div class="padding-global padding-section-small">
-  <div class="w-layout-blockcontainer container-large w-container">
-    <div class="shapes-list_layout u-vflex-stretch-top u-gap-medium">
-      <div class="small-section-heading_wrap">
-        <h2 class="small-section-heading_text text-style-allcaps">Shop by Shape</h2>
-      </div>
-      <div class="shapes-list_list-wrapper w-dyn-list">
-        <div role="list" class="shapes-list_list u-hflex-between-stretch u-hflex-nowrap w-dyn-items">
-          {% for block in section.blocks %}
-            {% if block.type == 'shape' %}
-              <div li-block="Shape" role="listitem" class="shapes-list_item w-dyn-item">
-                <div class="li-settings w-embed"></div>
+<div class="padding-global padding-section-small"><div class="w-layout-blockcontainer container-large w-container"><div class="shapes-list_layout u-vflex-stretch-top u-gap-medium"><div class="small-section-heading_wrap"><h2 class="small-section-heading_text text-style-allcaps">Shop by Shape</h2></div><div class="shapes-list_list-wrapper w-dyn-list"><div role="list" class="shapes-list_list u-hflex-between-stretch u-hflex-nowrap w-dyn-items">{% for block in section.blocks %}
+    {% if block.type == "shape" %}
+                    <div li-block="Shape" role="listitem" class="shapes-list_item w-dyn-item">
+                                    <div class="li-settings w-embed"></div>
 
-                <div class="li-settings w-embed"></div>
+                                    <div class="li-settings w-embed"></div>
 
-                <a
-                  class="shapes-list_item-conponent u-vflex-center-top u-gap-small w-inline-block"
-                  href="{{ block.settings.url_url }}"
-                >
-                  <img
-                    src="{{ block.settings.image.src | img_url: '80x80' }}"
-                    loading="lazy"
-                    li-object:src="block.settings.image.src | img_url: '80x80'"
-                    li-object:alt="block.settings.image.alt"
-                    alt="{{ block.settings.image.alt }}"
-                    class="shapes-list_item-thumb w-dyn-bind-empty"
-                  >
-                  <h3 li-object="block.settings.heading" class="text-size-small w-dyn-bind-empty">
-                    {{ block.settings.heading }}
-                  </h3>
-                </a>
-              </div>
+                                    <a class="shapes-list_item-conponent u-vflex-center-top u-gap-small w-inline-block" href="{{ block.settings.url_url }}"> <img src="{{ block.settings.image.src | img_url: '80x80' }}" loading="lazy" li-object:src="block.settings.image.src | img_url: '80x80'" li-object:alt="block.settings.image.alt" alt="{{ block.settings.image.alt }}" class="shapes-list_item-thumb w-dyn-bind-empty"><h3 li-object="block.settings.heading" class="text-size-small w-dyn-bind-empty">{{ block.settings.heading }}</h3> </a>
+
+                            </div>
             {% endif %}
-          {% endfor %}
-        </div>
-        {% if section.blocks == blank %}
-          <div li-if="section.blocks == blank" class="collection-empty w-dyn-empty">
-            <div>No Items Added</div>
-          </div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
-{% schema %} {"tag":"section","name":"shapes_list","class":"section_shapes-list","blocks":[{"name":"Shape","type":"shape","settings":[{"id":"heading","type":"text","label":"Heading","default":"Heading"},{"id":"image","type":"image_picker","label":"Image"},{"id":"url_url","type":"url","label":"URL"}]}],"presets":[{"name":"shapes_list","category":"Liquify"}]} {% endschema %}
+{% endfor %}
+</div>{% if section.blocks == blank %}    <div li-if="section.blocks == blank" class="collection-empty w-dyn-empty">
+    <div>No Items Added</div>    </div>
+{% endif %}</div></div></div></div> {% schema %} {"tag":"section","name":"shapes_list","class":"section_shapes-list","blocks":[{"name":"Shape","type":"shape","settings":[{"id":"heading","type":"text","label":"Heading","default":"Heading"},{"id":"image","type":"image_picker","label":"Image"},{"id":"url_url","type":"url","label":"URL"}]}],"presets":[{"name":"shapes_list","category":"Liquify"}]} {% endschema %}
