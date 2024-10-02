@@ -88,7 +88,7 @@
 <div class="color-metafield-styles hide w-embed">
   <style>
     /*test*/
-    {% for color in shop.metaobjects.color_patterns.values %}
+    {% for color in shop.metaobjects.color_pattern.values %}
         [data-color="{{ color.label.value }}"] {
           background-color: {{ color.color.value }};
         }
