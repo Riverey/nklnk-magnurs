@@ -16,7 +16,7 @@
           "dropdown_HknAFw": {
             "type": "dropdown",
             "settings": {
-              "text_title": "Link"
+              "title": "Collections"
             }
           },
           "suggestion_LxNMbm": {
