@@ -45,15 +45,6 @@
               ]
             }
           },
-          "dropdown_RAaUqV": {
-            "type": "dropdown",
-            "settings": {
-              "title": "The story",
-              "collection-list": [
-
-              ]
-            }
-          },
           "suggestion_LxNMbm": {
             "type": "suggestion",
             "settings": {
@@ -66,7 +57,6 @@
           "dropdown_HknAFw",
           "dropdown_qrqWXh",
           "dropdown_FWFTFE",
-          "dropdown_RAaUqV",
           "suggestion_LxNMbm"
         ],
         "custom_css": [
