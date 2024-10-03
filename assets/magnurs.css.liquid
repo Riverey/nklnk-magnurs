@@ -1819,7 +1819,9 @@ figcaption {
 }
 
 .product-list_list-wrapper {
+  z-index: 1;
   width: 100%;
+  position: relative;
 }
 
 .product-list_list {
@@ -2062,6 +2064,11 @@ figcaption {
   grid-auto-columns: 1fr;
   align-items: stretch;
   display: flex;
+}
+
+.filter-form_component {
+  z-index: 2;
+  position: relative;
 }
 
 .filter_form-header {
@@ -3954,11 +3961,17 @@ figcaption {
 }
 
 .dropdown-tabs_dropdown_list {
-  background-color: #0000;
+  background-color: var(--mappings--bg--background-secondary);
+  opacity: 0;
   height: 35vh;
   padding: 3vh;
+  transition: opacity .2s;
   left: 0;
   right: 0;
+}
+
+.dropdown-tabs_dropdown_list.w--open {
+  opacity: 1;
 }
 
 .dropdown-tabs_dropdown-collection {
@@ -4006,8 +4019,10 @@ figcaption {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1rem;
+  height: 3.5rem;
+  padding: 0 1rem;
   display: flex;
+  overflow: hidden;
 }
 
 .filter-dropdown_toggle.w--open {
@@ -4018,11 +4033,6 @@ figcaption {
   border: .0625rem solid var(--mappings--border--border-primary);
   background-color: var(--mappings--bg--background-primary);
   padding: 1rem;
-}
-
-.colect-products_filter-wrap {
-  transition: max-height .2s;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 991px) {
