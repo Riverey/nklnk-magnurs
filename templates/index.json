@@ -13,7 +13,8 @@
       "type": "main_hero",
       "settings": {
         "richtext_heading": "<p><strong>MAGNURS</strong> is redefining luxury jewellery with a bold, modern approach.</p>",
-        "richtext_description": "<p>Our lab-grown diamonds offer unmatched brilliance and quality, focusing on sustainability and ethical sourcing. Designed for those who dare to stand out, MAGNURS is for the trendsetters and trailblazers who value innovation and individuality.</p>"
+        "richtext_description": "<p>Our lab-grown diamonds offer unmatched brilliance and quality, focusing on sustainability and ethical sourcing. Designed for those who dare to stand out, MAGNURS is for the trendsetters and trailblazers who value innovation and individuality.</p>",
+        "url_link_url": ""
       }
     },
     "categories_slider": {
@@ -59,23 +60,32 @@
         "collection_Rp7xXR": {
           "type": "collection",
           "settings": {
-            "collection": "bracelets",
-            "image": "shopify://shop_images/magnus_lab-one.webp",
+            "collection": "lab-one",
+            "image": "shopify://shop_images/magnus_lab-one_5bda9960-b39b-4e43-b764-92d457c9983f.webp",
             "richtext_description": "<p><strong>LAB ONE</strong> represents the pinnacle of luxury and intricate design, embodying the epitome of grandeur and style.</p>"
           }
         },
         "collection_B7hrh9": {
           "type": "collection",
           "settings": {
-            "collection": "earings",
-            "image": "shopify://shop_images/magnus_lab-one.webp",
+            "collection": "lab-two",
+            "image": "shopify://shop_images/magnus_lab-two.webp",
+            "richtext_description": ""
+          }
+        },
+        "collection_yxPr99": {
+          "type": "collection",
+          "settings": {
+            "collection": "lab-three",
+            "image": "shopify://shop_images/magnus_lab-three.webp",
             "richtext_description": ""
           }
         }
       },
       "block_order": [
         "collection_Rp7xXR",
-        "collection_B7hrh9"
+        "collection_B7hrh9",
+        "collection_yxPr99"
       ],
       "settings": {
       }
