@@ -21,8 +21,8 @@
                             
                             <nav class="dropdown-tabs_dropdown_list w-dropdown-list"><div class="dropdown-tabs_collections_list-wrapper w-dyn-list"><div role="list" class="dropdown-tabs_collections_list u-hflex-center-top u-gap-large u-hflex-nowrap w-dyn-items">{% for product in collection.products %}    <div li-for="product in collection.products" role="listitem" class="dropdown-tabs_collections_item w-dyn-item">
                                     
-                            <a li-object:href="product.url" href="{{ product.url }}" class="dropdown-tabs_collections_item-link u-vflex-center-top u-gap-xsmall w-inline-block"><img src="{{ product.featured_image.src | img_url: '704x704' }}" loading="lazy" li-object:src="product.featured_image.src | img_url: '704x704'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" class="dropdown-tabs_collections_thumb aspect-ratio-square">
-<div li-object="product.title" class="text-style-allcaps text-size-small text-weight-medium">{{ product.title }}</div></a>
+                            <a li-object:href="product.url" href="{{ product.url }}" class="dropdown-tabs_collections_item-link u-vflex-center-top u-gap-xsmall w-inline-block"><div class="dropdown-tabs_collections_thumb-wrap aspect-ratio-square"><img src="{{ product.featured_image.src | img_url: '704x704' }}" loading="lazy" li-object:src="product.featured_image.src | img_url: '704x704'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" class="dropdown-tabs_collections_thumb aspect-ratio-square">
+</div><div li-object="product.title" class="text-style-allcaps text-size-small text-weight-medium">{{ product.title }}</div></a>
                             
                         </div>
 {% endfor %}</div>{% if collection.all_products_count == 0 %}    <div li-if="collection.all_products_count == 0" class="collection-empty w-dyn-empty">
