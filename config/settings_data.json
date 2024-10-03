@@ -18,12 +18,10 @@
             "settings": {
               "title": "Collections",
               "collection-list": [
-                "bracelets",
-                "earings",
-                "necklaces",
-                "rings"
-              ],
-              "group-title": "Group"
+                "lab-one",
+                "lab-three",
+                "lab-two"
+              ]
             }
           },
           "dropdown_qrqWXh": {
@@ -35,8 +33,7 @@
                 "earings",
                 "necklaces",
                 "rings"
-              ],
-              "group-title": "Group"
+              ]
             }
           },
           "dropdown_FWFTFE": {
@@ -45,8 +42,7 @@
               "title": "Accesories",
               "collection-list": [
 
-              ],
-              "group-title": "Group"
+              ]
             }
           },
           "dropdown_RAaUqV": {
@@ -55,8 +51,7 @@
               "title": "The story",
               "collection-list": [
 
-              ],
-              "group-title": "Group"
+              ]
             }
           },
           "suggestion_LxNMbm": {
