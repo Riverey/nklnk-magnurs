@@ -117,16 +117,22 @@
     fetch(url)
       .then(response => response.text())
       .then(text => {
-      const html = document.createElement('div');
-      html.innerHTML = text;
-      const recommendations = html.querySelector('.product-recommendations');
-      if (recommendations && recommendations.innerHTML.trim().length) {
-        productRecommendationsSection.innerHTML = recommendations.innerHTML;
-      }
-    })
+        const html = document.createElement('div');
+        html.innerHTML = text;
+        const recommendations = html.querySelector('.product-recommendations');
+        if (recommendations && recommendations.innerHTML.trim().length) {
+          productRecommendationsSection.innerHTML = recommendations.innerHTML;
+          // Force Lenis to recalculate the page height
+          if (window.lenis) {
+            setTimeout(() => {
+              window.lenis.resize();
+            }, 100);
+          }
+        }
+      })
       .catch(e => {
-      console.error(e);
-    });
+        console.error(e);
+      });
   });
 </script>
 </body>
