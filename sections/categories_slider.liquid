@@ -1,4 +1,52 @@
-<div class="padding-global padding-section-medium"><div class="w-layout-blockcontainer container-large w-container"><div class="collection-slider_layout u-vflex-stretch-top u-gap-large"><div class="small-section-heading_wrap"><div class="small-section-heading_text text-style-allcaps text-size-small">Shop by category</div></div><div class="collection-slider_list-wrapper swiper-container w-dyn-list"><div role="list" class="collection-slider_list swiper-wrapper w-dyn-items">{% for block in section.blocks %}
+<div class="section-custom-code w-embed w-script"><script>const assetsToLoad = [
+        { key: "swiper", src: "https://unpkg.com/swiper/swiper-bundle.min.js", defer: true, type: "script" },
+        { key: "swiperCSS", src: "https://unpkg.com/swiper/swiper-bundle.min.css", type: "stylesheet" }
+    ];
+    function loadAssets(assets) {
+        assets.forEach(asset => {
+            if (!window[asset.key]) {
+                window[asset.key] = false;
+                if (asset.type === "script") {
+                    let script = document.createElement("script");
+                    script.src = asset.src;
+                    script.defer = asset.defer || false;
+                    script.onload = function () {
+                        window[asset.key] = true;
+                    };
+                    document.head.appendChild(script);
+                } else if (asset.type === "stylesheet") {
+                    let link = document.createElement("link");
+                    link.rel = "stylesheet";
+                    link.href = asset.src;
+                    link.onload = function () {
+                        window[asset.key] = true;
+                    };
+                    document.head.appendChild(link);
+                }
+            }
+        });
+    }
+    loadAssets(assetsToLoad);
+    document.addEventListener('DOMContentLoaded', function() {
+        // Wait for Swiper to be loaded
+        function initSwiper() {
+            if (window.Swiper) {
+                const swiper = new Swiper(`#{{ section.id }}-{{ section.index }}-slider`, {
+                    slidesPerView: 'auto',
+                    freeMode: true,
+                    grabCursor: true,
+                    navigation: {
+                        nextEl: `#{{ section.id }}-{{ section.index }}-sliderArrow`,
+                    },
+                });
+            } else {
+                // If Swiper is not loaded yet, try again after a short delay
+                setTimeout(initSwiper, 100);
+            }
+        }
+        initSwiper();
+    });
+</script></div><div class="padding-global padding-section-medium"><div class="w-layout-blockcontainer container-large w-container"><div class="collection-slider_layout u-vflex-stretch-top u-gap-large"><div class="small-section-heading_wrap"><div class="small-section-heading_text text-style-allcaps text-size-small">Shop by category</div><div class="slider-arrow_wrap"><button class="slider-arrow" id="{{section.id}}-{{section.index}}-sliderArrow"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></button></div></div><div class="collection-slider_list-wrapper swiper-container w-dyn-list" id="{{section.id}}-{{section.index}}-slider"><div role="list" class="collection-slider_list swiper-wrapper w-dyn-items">{% for block in section.blocks %}
     {% if block.type == "collection" %}
                     <div li-block="Collection" role="listitem" class="collection-slider_item swiper-slide w-dyn-item">
                                     <div class="li-settings w-embed"></div>
