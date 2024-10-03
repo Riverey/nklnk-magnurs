@@ -34,9 +34,12 @@
                 const swiper = new Swiper(`#{{section.id}}-{{section.index}}-slider`, {
                     slidesPerView: 'auto',
                     freeMode: true,
+                    freeModeMomentumBounce: true,
+                    freeModeMomentumBounceRatio: 1,
                     grabCursor: true,
                     navigation: {
-                        nextEl: `#{{section.id}}-{{section.index}}-sliderArrow`,
+                        nextEl: `#{{section.id}}-{{section.index}}-nextSliderArrow`,
+                        prevEl: `#{{section.id}}-{{section.index}}-prevSliderArrow`
                     },
                 });
             } else {
@@ -59,4 +62,4 @@
 {% endfor %}
 </div>{% if section.blocks == blank %}    <div li-if="section.blocks == blank" class="collection-empty w-dyn-empty">
     <div>No items found.</div>    </div>
-{% endif %}</div><div class="feat-colect-slider_nav"><button class="slider-arrow" id="{{section.id}}-{{section.index}}-sliderArrow"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></button></div></div></div></div> {% schema %} {"tag":"section","name":"collection_slider","class":"section_feat-colect-slider","blocks":[{"name":"Collection","type":"collection","settings":[{"id":"collection","type":"collection","label":"Collection"},{"id":"image","type":"image_picker","label":"Image"},{"id":"richtext_description","type":"richtext","label":"Description","default":"<p><\/p>"}]}],"presets":[{"name":"collection_slider","category":"Liquify"}]} {% endschema %}
+{% endif %}</div><div class="feat-colect-slider_nav"><button class="slider-arrow" id="{{section.id}}-{{section.index}}-prevSliderArrow"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M10 16L6 12M6 12L10 8M6 12L18 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></button><button class="slider-arrow" id="{{section.id}}-{{section.index}}-nextSliderArrow"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></button></div></div></div></div> {% schema %} {"tag":"section","name":"collection_slider","class":"section_feat-colect-slider","blocks":[{"name":"Collection","type":"collection","settings":[{"id":"collection","type":"collection","label":"Collection"},{"id":"image","type":"image_picker","label":"Image"},{"id":"richtext_description","type":"richtext","label":"Description","default":"<p><\/p>"}]}],"presets":[{"name":"collection_slider","category":"Liquify"}]} {% endschema %}

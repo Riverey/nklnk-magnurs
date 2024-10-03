@@ -34,9 +34,11 @@
                 const swiper = new Swiper(`#{{section.id}}-{{section.index}}-slider`, {
                     slidesPerView: 'auto',
                     freeMode: true,
+                    freeModeMomentumBounce: true,
+                    freeModeMomentumBounceRatio: 1,
                     grabCursor: true,
                     navigation: {
-                        nextEl: `#{{section.id}}-{{section.index}}-sliderArrow`,
+                        nextEl: `#{{section.id}}-{{section.index}}-nextSliderArrow`
                     },
                 });
             } else {
