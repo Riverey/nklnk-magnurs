@@ -74,7 +74,7 @@
     </div>
 {% endif %}<div class="product-header_ad-to-cart-wrapper"><template x-if="selected_or_first_available_variant.available == true">
             <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity">
-        <div class="mini-cart_line-item_quantity is-large"><button type="button" fs-inputcounter-element="decrement" class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" type="number" name="quantity" class="mini-cart_line-item_quantity-input" x-model="quantity">
+        <div class="mini-cart_line-item_quantity is-large"><button type="button" fs-inputcounter-element="decrement" class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" fs-inputcounter-element="input" type="number" name="quantity" class="mini-cart_line-item_quantity-input" x-model="quantity">
 <button type="button" fs-inputcounter-element="increment" class="mini-cart_line-item_quantity-adjust">+</button></div><a li-element="add-to-cart" href="#" class="button max-width-full w-button" @click="addToCart(true)" :disabled="!addToCartButton">Add to cart</a>        </div>
     </template>
 </div>{% endform %}
