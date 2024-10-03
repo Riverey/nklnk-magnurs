@@ -1644,6 +1644,7 @@ figcaption {
 .nav_dropdown-list {
   color: var(--mappings--text--alternate);
   background-color: #0000;
+  border-style: none;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   position: absolute;
@@ -1652,7 +1653,7 @@ figcaption {
 }
 
 .nav_dropdown-list.w--open {
-  border: 1px solid var(--colours--neutral--light-grey);
+  border: 1px #000;
   height: 50vh;
   position: absolute;
 }
@@ -3491,6 +3492,7 @@ figcaption {
 .collection-slider_list-wrapper.swiper-container {
   margin: -.25rem;
   padding: .25rem;
+  overflow: hidden;
 }
 
 .collection-slider_list {
@@ -3559,6 +3561,11 @@ figcaption {
   overflow: hidden;
 }
 
+.feat-colect-slider_list.swiper-wrapper {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
 .section_simple-hero {
   position: relative;
 }
@@ -3576,8 +3583,14 @@ figcaption {
   overflow: hidden;
 }
 
-.feat-colect-slider_item, .feat-colect-slider_item.swiper-slide {
+.feat-colect-slider_item {
   width: 100%;
+}
+
+.feat-colect-slider_item.swiper-slide {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .rich-text-accented, .rich-text-accented.text-size-medium p {
@@ -4105,12 +4118,13 @@ figcaption {
 .feat-colect-slider_nav {
   z-index: 2;
   pointer-events: none;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  padding-left: 1rem;
   padding-right: 1rem;
   display: flex;
   position: absolute;
-  inset: 0% 0% 0% auto;
+  inset: 0%;
 }
 
 .feat-colect-slider_item-layout {
