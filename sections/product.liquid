@@ -56,13 +56,18 @@
             // Swiper initialization
             let swiper;
             function initSwiper() {
-                if (window.innerWidth < 992 && !swiper) {
-                    swiper = new Swiper("#{{section.id}}-{{section-index}}-slider", {
-                        slidesPerView: 1
-                    });
-                } else if (window.innerWidth >= 992 && swiper) {
-                    swiper.destroy(true, true);
-                    swiper = null;
+                if (window.Swiper) {
+                    if (window.innerWidth < 992 && !swiper) {
+                        swiper = new Swiper("#{{section.id}}-{{section-index}}-slider", {
+                            slidesPerView: 1
+                        });
+                    } else if (window.innerWidth >= 992 && swiper) {
+                        swiper.destroy(true, true);
+                        swiper = null;
+                    }
+                } else {
+                    // If Swiper is not loaded yet, try again after a short delay
+                    setTimeout(initSwiper, 100);
                 }
             }
             // Initialize Swiper on load
