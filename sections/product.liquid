@@ -1,6 +1,5 @@
 <div class="section-custom-code w-embed w-script"><script>const assetsToLoad = [
         { key: "swiper", src: "https://unpkg.com/swiper/swiper-bundle.min.js", defer: true, type: "script" },
-        { key: "inputCounter", src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-inputcounter@1/inputcounter.js", defer: true, type: "script" },
         { key: "socialShare", src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-socialshare@1/socialshare.js", defer: true, type: "script" },
         { key: "fsA11y", src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-a11y@1/a11y.js", defer: true, type: "script" },
         { key: "accordion", src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-accordion@1/accordion.js", defer: true, type: "script" },
@@ -31,6 +30,31 @@
         });
     }
     loadAssets(assetsToLoad);
+    document.addEventListener('DOMContentLoaded', function() {
+        const quantityInput = document.getElementById('{{section.id}}-{{section-index}}-quantityInput');
+        const incrementButton = document.getElementById('{{section.id}}-{{section-index}}-incrementButton');
+        const decrementButton = document.getElementById('{{section.id}}-{{section-index}}-decrementButton');
+        if (quantityInput && incrementButton && decrementButton) {
+            incrementButton.addEventListener('click', function() {
+                let currentValue = parseInt(quantityInput.value, 10);
+                quantityInput.value = currentValue + 1;
+                quantityInput.dispatchEvent(new Event('change'));
+            });
+            decrementButton.addEventListener('click', function() {
+                let currentValue = parseInt(quantityInput.value, 10);
+                if (currentValue > 1) {
+                    quantityInput.value = currentValue - 1;
+                    quantityInput.dispatchEvent(new Event('change'));
+                }
+            });
+            quantityInput.addEventListener('change', function() {
+                let currentValue = parseInt(this.value, 10);
+                if (isNaN(currentValue) || currentValue < 1) {
+                    this.value = 1;
+                }
+            });
+        }
+    });
 </script></div><div class="padding-global"><div class="w-layout-blockcontainer container-large w-container"><div id="w-node-_09b817e0-2611-684b-6972-4b132a0a4e49-78ccc16a" class="breadcrumbs_wrapper"><div id="w-node-_09b817e0-2611-684b-6972-4b132a0a4e4a-78ccc16a" class="breadcrumbs_layout u-hflex-left-stretch u-gap-medium hide"><div class="breadcrumbs_group"><a class="breadcrumbs_link is-link" href="{{ section.settings.url_shop_all_url }}"> {{ section.settings.text_shop_all_text }} </a>
 </div><div class="breadcrumbs_group u-hflex-left-center u-gap-medium"><div>/</div><div li-object:text="product.title" class="breadcrumbs_link">
 {{ product.title }}
@@ -45,7 +69,7 @@
                                     <img li-object:src="image.src | img_url: '640x760'" li-object:alt="image.alt" alt="{{ image.alt }}" src="{{ image.src | img_url: '640x760' }}" loading="lazy" class="thumbnail-image_image">
 
                         </div>
-{% endfor %}</div><div class="product-header_product-details u-vflex-stretch-top u-gap-large"><div class="product-header_heading-wrapper u-vflex-left-top u-gap-medium"><h1 li-object:text="product.title" class="product-header_heading heading-style-h2 text-color-brand">
+{% endfor %}</div><div id="w-node-_7048b639-be81-c25f-3e39-a62262971160-78ccc16a" class="product-header_product-details u-vflex-stretch-top u-gap-large"><div class="product-header_heading-wrapper u-vflex-left-top u-gap-medium"><h1 li-object:text="product.title" class="product-header_heading heading-style-h2 text-color-brand">
 {{ product.title }}
 </h1><div class="product-header_price-wrapper"><div li-object="product.price | money" li-js-price="price" class="text-size-large text-weight-bold">{{ product.price | money }}</div><template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
             <div li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
@@ -74,8 +98,8 @@
     </div>
 {% endif %}<div class="product-header_ad-to-cart-wrapper"><template x-if="selected_or_first_available_variant.available == true">
             <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity">
-        <div class="mini-cart_line-item_quantity is-large"><button type="button" fs-inputcounter-element="decrement" class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" fs-inputcounter-element="input" type="number" name="quantity" class="mini-cart_line-item_quantity-input" x-model="quantity">
-<button type="button" fs-inputcounter-element="increment" class="mini-cart_line-item_quantity-adjust">+</button></div><a li-element="add-to-cart" href="#" class="button max-width-full w-button" @click="addToCart(true)" :disabled="!addToCartButton">Add to cart</a>        </div>
+        <div class="mini-cart_line-item_quantity is-large"><button type="button" class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" type="number" name="quantity" class="mini-cart_line-item_quantity-input" value="1" x-model="quantity">
+<button type="button" class="mini-cart_line-item_quantity-adjust">+</button></div><a li-element="add-to-cart" href="#" class="button max-width-full w-button" @click="addToCart(true)" :disabled="!addToCartButton">Add to cart</a>        </div>
     </template>
 </div>{% endform %}
 <div class="w-form-done"></div><div class="w-form-fail"></div></div><div class="product-header_details-grid">{% for block in section.blocks %}
