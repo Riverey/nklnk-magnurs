@@ -43,13 +43,20 @@
           "settings": {
             "collection": "earings"
           }
+        },
+        "collection_AcxqhQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "pendants"
+          }
         }
       },
       "block_order": [
         "collection_LwVAtK",
         "collection_WqPUXY",
         "collection_ktVrRp",
-        "collection_Qcxzer"
+        "collection_Qcxzer",
+        "collection_AcxqhQ"
       ],
       "settings": {
       }
