@@ -2,7 +2,7 @@
 </div><div class="nav_center"><div class="nav_center-spacer"></div><div id="w-node-_04356bfa-2020-97b7-1c93-392a83cba41d-b641c10b" class="nav_logo-wrap u-hflex-center-center"><a href="{{ routes.root_url }}" li-object:href="routes.root_url" id="w-node-_1f4a994c-7640-c194-e1f7-4193b5553f7d-b641c10b" class="nav_logo-link w-nav-brand"><img src="{{ shop.brand.logo.src | img_url: '512x512' }}" loading="lazy" li-object:src="shop.brand.logo.src | img_url: '512x512'" li-object:alt="shop.brand.logo.alt" alt="{{ shop.brand.logo.alt }}" class="nav_logo-img">
 </a></div><nav role="navigation" id="w-node-_1f4a994c-7640-c194-e1f7-4193b5553f7f-b641c10b" class="nav_menu w-nav-menu"><div class="nav_spacer"></div><div class="nav_menu-list u-hflex-center-stretch u-hflex-nowrap">{% for block in section.blocks %}
     {% if block.type == "dropdown" %}
-                    <div data-hover="true" data-delay="1000" li-block="Dropdown" class="nav_menu-dropdown w-dropdown">
+                    <div data-hover="true" data-delay="0" li-block="Dropdown" class="nav_menu-dropdown w-dropdown">
                                     <div class="nav_dropdown-toggle w-dropdown-toggle"><div class="li-settings w-embed"></div>
 <div li-object="block.settings.title" class="nav_link-label">{{ block.settings.title }}</div></div>
                                     <nav class="nav_dropdown-list w-dropdown-list"><div class="li-settings w-embed"></div>
@@ -18,7 +18,7 @@
                                     
                             <div class="dropdown-tabs_dropdown_toggle w-dropdown-toggle"><div li-object="collection.title">{{ collection.title }}</div></div>
                             
-                            <nav class="dropdown-tabs_dropdown_list w-dropdown-list"><div class="dropdown-tabs_collections_list-wrapper w-dyn-list"><div role="list" class="dropdown-tabs_collections_list u-hflex-center-top u-gap-large u-hflex-nowrap w-dyn-items">{% for product in collection.products %}    <div li-for="product in collection.products" role="listitem" class="dropdown-tabs_collections_item w-dyn-item">
+                            <nav class="dropdown-tabs_dropdown_list w-dropdown-list"><div class="nav_dropdown-bg"></div><div class="dropdown-tabs_collections_list-wrapper w-dyn-list"><div role="list" class="dropdown-tabs_collections_list u-hflex-center-top u-gap-large u-hflex-nowrap w-dyn-items">{% for product in collection.products %}    <div li-for="product in collection.products" role="listitem" class="dropdown-tabs_collections_item w-dyn-item">
                                     
                             <a li-object:href="product.url" href="{{ product.url }}" class="dropdown-tabs_collections_item-link u-vflex-center-top u-gap-xsmall w-inline-block"><div class="dropdown-tabs_collections_thumb-wrap aspect-ratio-square"><img src="{{ product.featured_image.src | img_url: '704x704' }}" loading="lazy" li-object:src="product.featured_image.src | img_url: '704x704'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" class="dropdown-tabs_collections_thumb aspect-ratio-square">
 </div><div li-object="product.title" class="text-style-allcaps text-size-small text-weight-medium">{{ product.title }}</div></a>
