@@ -1,4 +1,4 @@
-<div class="section-custom-code w-embed w-script"><script>const assetsToLoad = [
+<div class="section-custom-code w-embed w-script"><script>var assetsToLoad = [
         { key: "swiper", src: "https://unpkg.com/swiper/swiper-bundle.min.js", defer: true, type: "script" },
         { key: "swiperCSS", src: "https://unpkg.com/swiper/swiper-bundle.min.css", type: "stylesheet" }
     ];
@@ -31,12 +31,12 @@
         // Wait for Swiper to be loaded
         function initSwiper() {
             if (window.Swiper) {
-                const swiper = new Swiper(`#{{ section.id }}-{{ section.index }}-slider`, {
+                const swiper = new Swiper(`#{{section.id}}-{{section.index}}-slider`, {
                     slidesPerView: 'auto',
                     freeMode: true,
                     grabCursor: true,
                     navigation: {
-                        nextEl: `#{{ section.id }}-{{ section.index }}-sliderArrow`,
+                        nextEl: `#{{section.id}}-{{section.index}}-sliderArrow`,
                     },
                 });
             } else {
