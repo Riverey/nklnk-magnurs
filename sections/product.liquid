@@ -62,10 +62,10 @@
             function initSwiper() {
                 if (window.Swiper) {
                     if (window.innerWidth < 992 && !swiper) {
-                        swiper = new Swiper("#{{section.id}}-{{section-index}}-slider", {
+                        swiper = new Swiper("#{{ section.id }}-{{ section.index }}-slider", {
                             slidesPerView: 1,
                             pagination: {
-                                el: "#{{section.id}}-{{section-index}}-paginationWrap",
+                                el: "#{{ section.id }}-{{ section.index }}-paginationWrap",
                                 clickable: true,
                                 renderBullet: function (index, className) {
                                     return '<button class="' + className + '">';
