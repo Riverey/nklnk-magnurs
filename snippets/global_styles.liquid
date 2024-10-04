@@ -106,9 +106,9 @@
         outline-width: .125rem;
         outline-style: solid;
     }
-    .product-header_option:last-child {
+    /* .product-header_option:last-child {
         border: none;
-    }
+    } */
     .dropdown-tabs_menu-wrap:not(:has(.w--open)) .dropdown-tabs_dropdown_component:first-child .dropdown-tabs_dropdown_list {
         display: block;
         opacity: 1.0;
@@ -152,5 +152,11 @@
     .shopify-policy__title h1 {
         font-size: 2rem;
         text-align: left;
+    }
+    .product-header_radio-list::-webkit-scrollbar {
+        height: 0.0625rem;
+    }
+    .product-header_radio-list::-webkit-scrollbar-track {
+        background-color: var(--mappings--border--border-primary);
     }
 </style>
