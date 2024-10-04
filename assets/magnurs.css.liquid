@@ -4791,12 +4791,14 @@ figcaption {
     flex-flow: row;
     justify-content: space-between;
     display: flex;
-    position: absolute;
-    inset: auto 1rem 1rem;
   }
 
   .product-slider_pagination-wrap.swiper-pagination {
     z-index: 200;
+    position: absolute;
+    bottom: 2rem;
+    left: 2.5rem;
+    right: 2.5rem;
   }
 
   .product-slider_pagination-dot {
@@ -5302,6 +5304,11 @@ figcaption {
     grid-template-columns: 1.5fr;
     grid-auto-flow: row dense;
   }
+
+  .product-slider_pagination-wrap.swiper-pagination {
+    left: 2rem;
+    right: 2rem;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -5607,6 +5614,12 @@ figcaption {
   .contact-form_component {
     margin-bottom: 1em;
     padding: 0;
+  }
+
+  .product-slider_pagination-wrap.swiper-pagination {
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
   }
 }
 
