@@ -33,7 +33,7 @@
                             </div>
             {% endif %}
 {% endfor %}
-<div class="nav_menu-nav u-hflex-center-stretch u-hflex-nowrap"><button id="mobile-search" class="nav_menu-dropdown is-mobile-search"><div li-object="link.title" class="nav_link-label">{{ link.title }}</div></button>{% for link in linklists['main-menu'].links %}    <div li-for="link in linklists['main-menu'].links" class="nav_menu-dropdown">
+<div class="nav_menu-nav u-hflex-center-stretch u-hflex-nowrap"><button id="mobile-search" class="nav_menu-dropdown is-mobile-search"><div class="nav_link-label">Search</div></button>{% for link in linklists['main-menu'].links %}    <div li-for="link in linklists['main-menu'].links" class="nav_menu-dropdown">
                                     
                             <a li-object:href="link.url" href="{{ link.url }}" class="nav_dropdown-toggle w-inline-block"><div li-object="link.title" class="nav_link-label">{{ link.title }}</div></a>
                             
