@@ -9,15 +9,17 @@
 */
 {
   "sections": {
-    "simple_page": {
-      "type": "simple_page",
+    "story_XHBXWc": {
+      "type": "story",
       "settings": {
+        "richtext_heading": "<p><strong>MAGNURS </strong>is the epitome of innovation,meticulously crafting lab-grown diamonds thatnot only match but surpass the brilliance and quality of their mined counterparts.</p>",
+        "richtext_main_text": "<p><br/>                  This is not a brand for the conformists; it is for the trailblazers, the trendsetters, and the bold spirits who believe in making a statement. MAGNURS is here to redefine luxury, to offer a new kind of diamond that aligns with the values and aspirations of a discerning, modern audience. It’s not just about wearing a piece of jewellery;it’s about wearing a piece of the future.<br/>                </p>"
       }
     }
   },
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
-    "simple_page"
+    "story_XHBXWc"
   ]
 }
