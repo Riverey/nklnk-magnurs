@@ -621,10 +621,12 @@ figcaption {
 
 .input:focus-visible {
   border-bottom-color: var(--mappings--bg--background-secondary);
+  outline-style: none;
 }
 
 .input[data-wf-focus-visible] {
   border-bottom-color: var(--mappings--bg--background-secondary);
+  outline-style: none;
 }
 
 .input.is-text-area {
@@ -4795,10 +4797,11 @@ figcaption {
 
   .product-slider_pagination-wrap.swiper-pagination {
     z-index: 200;
+    width: auto;
     position: absolute;
     bottom: 2rem;
-    left: 2.5rem;
     right: 2.5rem;
+    left: 2.5rem !important;
   }
 
   .product-slider_pagination-dot {
@@ -5306,8 +5309,8 @@ figcaption {
   }
 
   .product-slider_pagination-wrap.swiper-pagination {
-    left: 2rem;
     right: 2rem;
+    left: 2rem !important;
   }
 }
 
@@ -5618,8 +5621,8 @@ figcaption {
 
   .product-slider_pagination-wrap.swiper-pagination {
     bottom: 1.25rem;
-    left: 1.25rem;
     right: 1.25rem;
+    left: 1.25rem !important;
   }
 }
 
