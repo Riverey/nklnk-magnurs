@@ -6,7 +6,7 @@
 </div>{% endif %}
 {% if form.errors %}    <div li-if="form.errors" class="li-if">
     <div li-object="form.errors | default_errors" class="text-color-error">{{ form.errors | default_errors }}</div>    </div>
-{% endif %}</div>{% form 'customer_login', return_to: '/account', class: 'login-form_form u-vflex-left-top u-gap-medium' %}
+{% endif %}</div>{% form 'customer_login', return_to: '/account', class: 'login-form_form u-vflex-left-top u-gap-large' %}
 <div class="form_field-wrapper"><input class="input w-input" maxlength="256" name="customer[email]" data-name="" placeholder="E-Mail-Address" type="email" id="field">
 </div><div class="form_field-wrapper"><input class="input w-input" maxlength="256" name="customer[password]" data-name="" placeholder="Password" type="password" id="field-2" required="">
 </div><input type="submit" data-wait="Please Wait" id="w-node-a1ceb44a-b8cb-2c93-169d-8a1bedb58b87-78ccc164" class="button w-button" value="Login">

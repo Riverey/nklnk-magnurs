@@ -1,14 +1,14 @@
 <div class="padding-global padding-section-medium"><div class="w-layout-blockcontainer container-large w-container"><h2 option:text="Headline" class="heading-style-h2">Other Articles</h2><div class="spacer-medium"></div>{% assign currentArticle = article.title %}
-<div class="w-dyn-list"><div li-for:inside="article in blog.articles limit: 3" role="list" class="blog_list w-dyn-items">
+<div class="w-dyn-list"><div li-for:inside="article in blog.articles limit: 3" role="list" class="all-collections_list w-dyn-items">
         {% for article in blog.articles limit: 3 %}                            
-                            {% if article.title != currentArticle %}    <div li-if="article.title != currentArticle" role="listitem" class="w-dyn-item">
-    <a li-object:href="article.url" href="{{ article.url }}" class="blog_item-grid w-inline-block"><div id="w-node-c45bff24-6242-fee4-5061-f2f14b06a7be-4b06a7bd" class="blog_tags-wrapper"><img src="{{ article.image | img_url: 'master' }}" loading="lazy" id="w-node-c45bff24-6242-fee4-5061-f2f14b06a7bf-4b06a7bd" li-object:src="article.image | img_url: 'master'" alt="{{ article.image.alt }}" li-object:alt="article.image.alt" class="blog_img">
-<div class="blog_tags">{% for tags in article.tags %}    <div li-for="tags in article.tags" class="hide">
+                            {% if article.title != currentArticle %}    <div li-if="article.title != currentArticle" role="listitem" class="all-collections_item w-dyn-item">
+    <a li-object:href="article.url" href="{{ article.url }}" class="collection-slider_item-component u-vflex-left-top u-gap-xxsmall w-inline-block"><h3 li-object="article.title" class="heading-style-h4 text-color-brand">{{ article.title }}</h3><div id="w-node-c45bff24-6242-fee4-5061-f2f14b06a7be-4b06a7bd" class="collection-slider_thumb-wrap"><img src="{{ article.image | img_url: 'master' }}" loading="lazy" id="w-node-c45bff24-6242-fee4-5061-f2f14b06a7bf-4b06a7bd" li-object:src="article.image | img_url: 'master'" alt="{{ article.image.alt }}" li-object:alt="article.image.alt" class="collection-slider_thumb-img">
+<div class="blog_tags u-hflex-left-top u-gap-small">{% for tags in article.tags %}    <div li-for="tags in article.tags">
                                     
-                            <div li-object="tag" class="blog_tag">{{ tag }}</div>
+                            <div li-object="tag" class="product-card_tag">{{ tag }}</div>
                             
                         </div>
-{% endfor %}</div></div><div id="w-node-_6b97875b-5fce-9f5a-43fd-5792b69faf23-4b06a7bd" class="spacer-small"></div><div class="blog_info-wrapper"><h3 li-object="article.title" class="heading-style-h3">{{ article.title }}</h3></div></a>    </div>
+{% endfor %}</div></div></a>    </div>
 {% endif %}
                             
                     {% endfor %}    </div>
