@@ -20,12 +20,18 @@
       "type": "collection_products",
       "settings": {
       }
+    },
+    "octopus_nLkmg9": {
+      "type": "octopus",
+      "settings": {
+      }
     }
   },
   "layout": "collection",
   "wrapper": "main.main-wrapper",
   "order": [
     "collection_hero",
-    "collection_products"
+    "collection_products",
+    "octopus_nLkmg9"
   ]
 }
