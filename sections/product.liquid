@@ -65,7 +65,7 @@
                         swiper = new Swiper("#{{section.id}}-{{section-index}}-slider", {
                             slidesPerView: 1,
                             pagination: {
-                                el: "{{section.index}}-{{section.id}}-paginationWrap",
+                                el: "#{{section.id}}-{{section-index}}-paginationWrap",
                                 clickable: true,
                                 renderBullet: function (index, className) {
                                     return '<button class="' + className + '">';
@@ -86,7 +86,7 @@
             // Reinitialize Swiper on window resize
             window.addEventListener('resize', initSwiper);
         }
-        const shareButton = document.querySelector('[nklnk-webshare_trigger]="{{section.index}}-{{section.id}}-copyButton"');
+        const shareButton = document.querySelector('[nklnk-webshare_trigger="{{section.index}}-{{section.id}}-copyButton"]');
         if (!navigator.share) {
             shareButton.style.display = 'none';
             return;
