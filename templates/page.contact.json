@@ -29,8 +29,8 @@
         "contact_TB3ci4": {
           "type": "contact",
           "settings": {
-            "heading": "Heading",
-            "richtext_details": "<p>611 5th Ave,</p>"
+            "heading": "Contact",
+            "richtext_details": "<p><a href=\"mailto:info@magnurs.com\" target=\"_blank\" title=\"mailto:info@magnurs.com\">info@magnurs.com</a></p><p><a href=\"tel:+961 23 656 6666\" target=\"_blank\" title=\"tel:+961 23 656 6666\">+961 23 656 6666</a></p>"
           }
         }
       },
