@@ -22,8 +22,8 @@
         "contact_8yWHkT": {
           "type": "contact",
           "settings": {
-            "heading": "Heading",
-            "richtext_details": "<p>611 5th Ave,</p>"
+            "heading": "Open hours",
+            "richtext_details": "<p>Monday - Friday</p><p>10am - 6pm EST</p>"
           }
         },
         "contact_TB3ci4": {
