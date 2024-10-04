@@ -1991,8 +1991,6 @@ figcaption {
 }
 
 .filter_list {
-  grid-column-gap: .25rem;
-  grid-row-gap: .25rem;
   flex-flow: column;
   display: flex;
 }
@@ -2004,9 +2002,8 @@ figcaption {
 .filter_form_checkbox {
   align-items: center;
   margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 1.25rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
   display: flex;
 }
 
@@ -2019,7 +2016,9 @@ figcaption {
   min-width: 1.125rem;
   height: 1.125rem;
   min-height: 1.125rem;
-  margin: auto .75rem auto -1.25rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: .75rem;
   transition: background-color .2s, border-color .2s;
 }
 
@@ -4042,6 +4041,11 @@ figcaption {
   height: 1.75rem;
 }
 
+.filter-dropdown_link {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+}
+
 @media screen and (max-width: 991px) {
   .padding-medium {
     padding: 1.5rem;
@@ -4317,22 +4321,8 @@ figcaption {
     grid-template-columns: 1fr;
   }
 
-  .filter-form_component {
-    z-index: 9999;
-    background-color: #fff;
-    width: 100%;
-    max-width: none;
-    height: auto;
-    padding: 3rem 5% 0;
-    position: fixed;
-    inset: 0%;
-    overflow: scroll;
-    transform: translate(0, 100%);
-  }
-
   .filter-form_form {
     z-index: 999;
-    max-width: 100%;
   }
 
   .pagination_list {
@@ -4912,11 +4902,6 @@ figcaption {
   .section_searchbar {
     top: 5.2rem;
     overflow: scroll;
-  }
-
-  .colect-products_layout {
-    grid-column-gap: 2.5rem;
-    grid-row-gap: 2.5rem;
   }
 
   .colect-products_filter_header-wrap {
