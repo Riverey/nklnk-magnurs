@@ -32,14 +32,23 @@
             "heading": "Contact",
             "richtext_details": "<p><a href=\"mailto:info@magnurs.com\" target=\"_blank\" title=\"mailto:info@magnurs.com\">info@magnurs.com</a></p><p><a href=\"tel:+961 23 656 6666\" target=\"_blank\" title=\"tel:+961 23 656 6666\">+961 23 656 6666</a></p>"
           }
+        },
+        "contact_nBjwK4": {
+          "type": "contact",
+          "settings": {
+            "heading": "",
+            "richtext_details": "<p><a href=\"mailto:orders@magnurs.com\" target=\"_blank\" title=\"mailto:orders@magnurs.com\">orders@magnurs.com</a></p><p><a href=\"mailto:orders@magnurs.com\" target=\"_blank\" title=\"mailto:orders@magnurs.com\">press@magnurs.com</a></p>"
+          }
         }
       },
       "block_order": [
         "contact_RrHAxY",
         "contact_8yWHkT",
-        "contact_TB3ci4"
+        "contact_TB3ci4",
+        "contact_nBjwK4"
       ],
       "settings": {
+        "richtext_description": "<p>Our team of experts is ready to assist you with any support you may need, whether it’s help with your orders, style guidance, or gift suggestions. Don’t hesitate to reach out to us through one of the channels below:</p>",
         "text_headline": "Contact us"
       }
     }
