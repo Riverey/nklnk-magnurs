@@ -64,12 +64,14 @@
         ],
         "settings": {
           "collection_search_featured_collection": "frontpage",
-          "collection_search_featured_collection_limit": 6
+          "collection_search_featured_collection_limit": 6,
+          "url_instagram_url": ""
         }
       },
       "footer": {
         "type": "footer",
         "settings": {
+          "logo": "shopify://shop_images/Magners_footer_logo.webp"
         }
       }
     },
