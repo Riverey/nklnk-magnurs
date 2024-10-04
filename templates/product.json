@@ -61,8 +61,8 @@
         "text_heading": "Description"
       }
     },
-    "recommended_products": {
-      "type": "recommended_products",
+    "product_recommended_3rJ6mj": {
+      "type": "product_recommended",
       "settings": {
         "text_headline": "Recommended"
       }
@@ -72,6 +72,6 @@
   "wrapper": "main.main-wrapper",
   "order": [
     "product",
-    "recommended_products"
+    "product_recommended_3rJ6mj"
   ]
 }
