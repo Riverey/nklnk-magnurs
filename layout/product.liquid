@@ -122,27 +122,25 @@
         const recommendations = html.querySelector('.product-recommendations');
         if (recommendations && recommendations.innerHTML.trim().length) {
           productRecommendationsSection.innerHTML = recommendations.innerHTML;
-          // Wait for all images in the recommendations to load
-          const images = productRecommendationsSection.querySelectorAll('img');
-          const imagePromises = Array.from(images).map(img => {
-            if (img.complete) return Promise.resolve();
-            return new Promise(resolve => {
-              img.onload = img.onerror = resolve;
-            });
-          });
-          // When all images are loaded, resize Lenis
-          Promise.all(imagePromises).then(() => {
-            if (window.lenis) {
-              // Give a small delay for final render
-              setTimeout(() => {
-                window.lenis.resize();
-                // Double-check after a short delay
-                setTimeout(() => {
+          // Create an Intersection Observer
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                if (window.lenis) {
+                  // Resize Lenis when the section enters the viewport
                   window.lenis.resize();
-                }, 100);
-              }, 50);
-            }
-          });
+                  // Double-check after a short delay
+                  setTimeout(() => {
+                    window.lenis.resize();
+                  }, 100);
+                }
+                // Disconnect the observer after resizing
+                observer.disconnect();
+              }
+            });
+          }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+          // Start observing the product recommendations section
+          observer.observe(productRecommendationsSection);
         }
       })
       .catch(e => {
