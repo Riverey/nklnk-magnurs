@@ -66,12 +66,18 @@
       "settings": {
         "text_headline": "Recommended"
       }
+    },
+    "newsletter_ii4HW7": {
+      "type": "newsletter",
+      "settings": {
+      }
     }
   },
   "layout": "product",
   "wrapper": "main.main-wrapper",
   "order": [
     "product",
-    "product_recommended_3rJ6mj"
+    "product_recommended_3rJ6mj",
+    "newsletter_ii4HW7"
   ]
 }
