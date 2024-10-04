@@ -118,7 +118,7 @@
           "settings": {
             "heading": "Princess",
             "image": "shopify://shop_images/Magnurs_shape_princess.webp",
-            "url_url": ""
+            "url_url": "shopify://pages/custom"
           }
         },
         "shape_mpkVDG": {
@@ -126,7 +126,7 @@
           "settings": {
             "heading": "Emerald",
             "image": "shopify://shop_images/Magnurs_shape_emerald.webp",
-            "url_url": ""
+            "url_url": "shopify://pages/custom"
           }
         },
         "shape_hgwEHF": {
@@ -134,7 +134,7 @@
           "settings": {
             "heading": "Pear",
             "image": "shopify://shop_images/Magnurs_shape_pear.webp",
-            "url_url": ""
+            "url_url": "shopify://pages/custom"
           }
         },
         "shape_bkKnBn": {
@@ -142,7 +142,7 @@
           "settings": {
             "heading": "Heart",
             "image": "shopify://shop_images/Magnurs_shape_heart.webp",
-            "url_url": ""
+            "url_url": "shopify://pages/custom"
           }
         },
         "shape_kJRAaz": {
@@ -150,7 +150,7 @@
           "settings": {
             "heading": "Cushion",
             "image": "shopify://shop_images/Magnurs_shape_cushion.webp",
-            "url_url": ""
+            "url_url": "shopify://pages/custom"
           }
         },
         "shape_f8MHj9": {
@@ -158,7 +158,7 @@
           "settings": {
             "heading": "Oval",
             "image": "shopify://shop_images/Magnurs_shape_oval.webp",
-            "url_url": ""
+            "url_url": "shopify://pages/custom"
           }
         }
       },
