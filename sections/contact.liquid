@@ -1,16 +1,16 @@
-<div class="padding-global"><div class="w-layout-blockcontainer container-large w-container"><div class="w-layout-grid contact_layout"><div id="w-node-_7c0ca0b1-08d4-6697-0dc0-7450d3fc7c5a-78ccc15f" class="contact_content-wrap u-vflex-stretch-center u-gap-large"><div class="text-weight-medium"> {{ section.settings.richtext_description }} </div>
+<div class="padding-global"><div class="w-layout-blockcontainer container-large w-container"><div class="w-layout-grid contact_layout"><div id="w-node-_7c0ca0b1-08d4-6697-0dc0-7450d3fc7c5a-78ccc15f" class="contact_content-wrap u-vflex-stretch-center u-gap-xlarge"><div class="text-weight-medium"> {{ section.settings.richtext_description }} </div>
 <ul role="list" class="contact_contacts-grid w-list-unstyled">{% for block in section.blocks %}
     {% if block.type == "contact" %}
                     <li li-block="Contact" class="contact_contacts-item">
                                     <div class="li-settings w-embed"></div>
 
-                                    <h2 li-object="block.settings.heading" class="heading-style-h4 text-color-brand text-weight-semibold">{{ block.settings.heading }}</h2>
+                                    <div class="contact_heading-wrap"><h2 li-object="block.settings.heading" class="heading-style-h4 text-color-brand text-weight-semibold">{{ block.settings.heading }}</h2></div>
                                     <div class="text-rich-text text-weight-medium w-richtext"> {{ block.settings.richtext_details }} </div>
 
                             </li>
             {% endif %}
 {% endfor %}
-</ul></div><div id="w-node-fc040479-f469-17e6-4116-24f85d6b36ca-78ccc15f" class="contact-form_component u-vflex-stretch-top u-gap-medium w-form"><div class="login-form_heading-wrapper"><h2>
+</ul></div><div id="w-node-fc040479-f469-17e6-4116-24f85d6b36ca-78ccc15f" class="contact-form_component u-vflex-stretch-top u-gap-medium w-form"><div class="login-form_heading-wrapper"><h2 class="text-color-brand">
 {{ section.settings.text_headline }}
 </h2>
 </div>{% form 'contact', return_to: '/', class: 'contact-form_form u-vflex-left-top u-gap-large' %}
