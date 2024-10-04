@@ -32,8 +32,34 @@
     .w-condition-invisible {
         display: revert !important;
     }
-</style><script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script><script>// Initialize Lenis
-    const lenis = new Lenis()
+</style><script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script><script>// Initialize Lenis with horizontal scroll handling
+    const lenis = new Lenis({
+        smoothWheel: true,
+        wheelEventTarget: window,
+        shouldScroll: event => {
+            // First check if shift key is pressed for horizontal scrolling
+            if (event.shiftKey) {
+                const element = document.elementFromPoint(event.clientX, event.clientY)
+                const hasHorizontalScroll = el => {
+                    if (!el) return false
+                    const style = window.getComputedStyle(el)
+                    const overflow = style.getPropertyValue('overflow-x')
+                    const isScrollable = overflow === 'scroll' || overflow === 'auto'
+                    const hasScroll = el.scrollWidth > el.clientWidth
+                    return isScrollable && hasScroll
+                }
+                let currentElement = element
+                while (currentElement) {
+                    if (hasHorizontalScroll(currentElement)) {
+                        return false // Let native scroll handle horizontal scrolling
+                    }
+                    currentElement = currentElement.parentElement
+                }
+            }
+            // Return false if any modal is open to prevent scrolling
+            return !isAnyModalOpen()
+        }
+    })
     // Function to check if any modal is open
     function isAnyModalOpen() {
         const modals = document.querySelectorAll('[modal]')
@@ -70,7 +96,6 @@
     const observeModalChanges = () => {
         const modals = document.querySelectorAll('[modal]')
         modals.forEach(modal => {
-            // Create an observer instance
             const observer = new MutationObserver(mutations => {
                 mutations.forEach(mutation => {
                     if (mutation.attributeName === 'class') {
@@ -82,7 +107,6 @@
                     }
                 })
             })
-            // Start observing the modal for class changes
             observer.observe(modal, { attributes: true })
         })
     }
@@ -91,7 +115,6 @@
         lenis.raf(time)
         requestAnimationFrame(raf)
     }
-    // Start the animation frame loop
     requestAnimationFrame(raf)
     // Initial setup
     lenis.on('scroll', () => {
