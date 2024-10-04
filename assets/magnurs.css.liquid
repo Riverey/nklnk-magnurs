@@ -2,18 +2,17 @@
   --mappings--bg--background-primary: var(--colours--neutral--light-grey);
   --colours--neutral--black: black;
   --mappings--border--border-alternate: var(--colours--accent--brand);
-  --mappings--border--border-primary: var(--colours--neutral--grey);
-  --sizes--radius--small: .25rem;
+  --mappings--bg--background-secondary: var(--colours--accent--brand);
   --colours--neutral--dark-grey: #6d6d6d;
   --mappings--links--link-secondary: var(--mappings--text--primary);
   --mappings--text--secondary: var(--colours--neutral--dark-grey);
-  --mappings--bg--background-secondary: var(--colours--accent--brand);
   --mappings--border--border-secondary: var(--colours--neutral--white);
   --colours--neutral--white: white;
   --mappings--text--alternate: var(--colours--neutral--white);
   --mappings--bg--background-tertiary\<deleted\|variable-8905b868-e691-e604-2195-2c08eb398b7f\>: var(--colours--pink\<deleted\|variable-5d90780e-c6ff-a950-aff7-98d960409980\>);
   --mappings--text--primary: var(--colours--neutral--black);
   --colours--neutral--light-grey: #f7f7f7;
+  --mappings--border--border-primary: var(--colours--neutral--grey);
   --colours--accent--brand: #b50000;
   --mappings--text--red: var(--colours--accent--red);
   --colours--neutral--grey: #dfdfdf;
@@ -32,6 +31,7 @@
   --mappings--bg--background-error: var(--colours--accent--red);
   --mappings--links--link-primary: var(--colours--accent--brand);
   --mappings--text--green: var(--colours--accent--green);
+  --sizes--radius--small: .25rem;
   --sizes--radius--large: 1rem;
   --sizes--size--navbar-height: 12rem;
   --sizes--size--color: white;
@@ -348,8 +348,8 @@ figcaption {
 }
 
 .checkbox_button {
-  border: .0625rem solid var(--mappings--border--border-primary);
-  border-radius: var(--sizes--radius--small);
+  border: .125rem solid var(--mappings--border--border-alternate);
+  border-radius: 0;
   flex: none;
   width: 1.25em;
   height: 1.25em;
@@ -357,11 +357,10 @@ figcaption {
 }
 
 .checkbox_button.w--redirected-checked {
-  background-size: 90%;
-  border-radius: .125rem;
-  width: .875rem;
-  height: .875rem;
-  margin: 0 .5rem 0 0;
+  background-color: var(--mappings--bg--background-secondary);
+  width: 1.25em;
+  height: 1.25em;
+  margin: .125em 1em 0 0;
 }
 
 .checkbox_button.w--redirected-focus {
@@ -5144,8 +5143,8 @@ figcaption {
   }
 
   .contact_layout {
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
+    grid-column-gap: 4rem;
+    grid-row-gap: 4rem;
     grid-template-columns: auto;
     justify-content: stretch;
   }
