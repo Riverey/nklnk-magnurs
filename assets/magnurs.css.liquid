@@ -1055,9 +1055,8 @@ figcaption {
 
 .cart_quantity {
   border: .0625rem solid var(--mappings--border--border-primary);
-  width: 3.3em;
+  width: 5em;
   margin-bottom: 0;
-  margin-left: 1em;
   padding: 6px .3em 6px 1em;
 }
 
@@ -4328,7 +4327,6 @@ figcaption {
   }
 
   .nav_menu {
-    z-index: -1;
     background-color: var(--mappings--bg--background-secondary);
     color: var(--mappings--bg--background-primary);
     height: auto;
@@ -4447,7 +4445,7 @@ figcaption {
   }
 
   .product-header_layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     min-height: auto;
   }
 
@@ -4738,6 +4736,11 @@ figcaption {
     min-width: 8rem;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .collection-slider_layout {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .collection-slider_item.swiper-slide {
@@ -5417,6 +5420,7 @@ figcaption {
   }
 
   .table-row.is-grid {
+    grid-template-columns: 1fr 1fr;
     grid-auto-flow: row;
   }
 
@@ -5426,6 +5430,8 @@ figcaption {
   }
 
   .cart_info-order {
+    grid-column-gap: .5rem;
+    grid-row-gap: .5rem;
     margin-left: 1.3rem;
     padding-left: 0;
   }
@@ -5526,8 +5532,12 @@ figcaption {
     padding-top: .75rem;
   }
 
-  .footer_layout, .footer-menu {
+  .footer_layout {
     grid-template-columns: 1fr;
+  }
+
+  .footer-menu {
+    grid-template-columns: 1fr 1fr;
   }
 
   .section_searchbar {
@@ -5664,6 +5674,14 @@ figcaption {
 
   .div-block {
     height: 100vh;
+  }
+
+  .cart_price-wrapper.u-hflex-left-center.u-hflex-nowrap.u-gap-medium {
+    grid-column-gap: 0rem;
+    grid-row-gap: 0rem;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .contact-form_component {
@@ -5997,12 +6015,17 @@ figcaption {
   }
 
   #w-node-_51dd9338-e259-f546-1410-ab7878c921b7-78ccc15d {
-    grid-column: span 1 / span 1;
+    grid-column: span 2 / span 2;
     justify-self: stretch;
   }
 
   #w-node-_51dd9338-e259-f546-1410-ab7878c921b8-78ccc15d {
     grid-area: span 3 / span 1 / span 3 / span 1;
+  }
+
+  #updates\[\].w-node-cb651c21-bfb0-25f5-c8cc-93f2439889bf-78ccc15d {
+    grid-area: 2 / 2 / 3 / 3;
+    justify-self: end;
   }
 
   #w-node-_3d7cbf18-159c-e09d-034b-aa8947f77c7f-78ccc15d {
