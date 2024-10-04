@@ -1398,8 +1398,8 @@ figcaption {
 .mini-cart_line-item_quantity-adjust {
   z-index: 2;
   aspect-ratio: 1;
+  background-color: var(--mappings--bg--background-primary);
   text-align: center;
-  background-color: #fff;
   border: 1px #000;
   justify-content: center;
   align-items: center;
@@ -3449,11 +3449,11 @@ figcaption {
   padding-right: 1rem;
 }
 
-.rich-text-accented, .rich-text-accented.text-size-xlarge p {
+.rich-text-accented, .rich-text-accented.text-size-medium p {
   display: inline;
 }
 
-.rich-text-accented.text-size-xlarge.text-weight-normal.is-story {
+.rich-text-accented.text-size-medium.text-weight-normal.is-story {
   text-transform: none;
 }
 
@@ -3463,6 +3463,18 @@ figcaption {
 
 .rich-text-accented p {
   display: inline;
+}
+
+.rich-text-accented.text-size-xlarge.text-weight-medium.is-story {
+  text-transform: none;
+}
+
+.rich-text-accented.text-size-xlarge.text-weight-regular {
+  font-weight: 400;
+}
+
+.rich-text-accented.text-size-xlarge.text-weight-regular.is-story {
+  text-transform: none;
 }
 
 .mini-cart_line-item_item-layout {
@@ -3623,6 +3635,7 @@ figcaption {
 }
 
 .mini-cart_line-item_quantity-input {
+  background-color: var(--mappings--bg--background-primary);
   text-align: center;
   border: 1px #000;
   justify-content: center;
@@ -4515,6 +4528,13 @@ figcaption {
     font-size: 1.875rem;
   }
 
+  .footer-menu_nav-link {
+    justify-content: center;
+    align-items: center;
+    min-height: 33px;
+    display: inline-flex;
+  }
+
   .shapes-list_list.u-hflex-between-stretch.u-hflex-nowrap {
     scrollbar-width: none;
     overflow: auto;
@@ -4533,6 +4553,14 @@ figcaption {
 
   .collection-slider_item.swiper-slide {
     width: 33.3333%;
+  }
+
+  .products-row_list {
+    margin: -.5rem;
+  }
+
+  .products-row_item {
+    padding-left: .5rem;
   }
 
   .product-header_images_list.swiper-wrapper {

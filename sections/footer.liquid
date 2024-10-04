@@ -2,7 +2,7 @@
                                     
                             <div li-object="link.title" class="footer-menu_column-header text-weight-bold text-style-allcaps">{{ link.title }}</div>
                             
-                            <div class="footer-menu_column-list">{% for child_link in link.links %}    <div li-for="child_link in link.links" class="footer-menu_nav-link-wrap u-hflex-left-center u-gap-small u-hflex-nowrap">
+                            <div class="footer-menu_column-list u-vflex-left-top u-gap-xxsmall">{% for child_link in link.links %}    <div li-for="child_link in link.links" class="footer-menu_nav-link-wrap u-hflex-left-center u-gap-small u-hflex-nowrap">
                                     
                             <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="footer-menu_nav-link text-style-allcaps text-size-small">{{ child_link.title }}</a>
                             
