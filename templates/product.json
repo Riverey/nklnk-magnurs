@@ -71,6 +71,11 @@
       "type": "newsletter",
       "settings": {
       }
+    },
+    "octopus_MQbAny": {
+      "type": "octopus",
+      "settings": {
+      }
     }
   },
   "layout": "product",
@@ -78,6 +83,7 @@
   "order": [
     "product",
     "product_recommended_3rJ6mj",
+    "octopus_MQbAny",
     "newsletter_ii4HW7"
   ]
 }
