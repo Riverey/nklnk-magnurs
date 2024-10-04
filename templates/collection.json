@@ -13,7 +13,7 @@
       "type": "collection_hero",
       "settings": {
         "image": "{{ collection.image }}",
-        "heading": "Heading{{ collection.title }}"
+        "heading": "{{ collection.title }}"
       }
     },
     "collection_products": {
