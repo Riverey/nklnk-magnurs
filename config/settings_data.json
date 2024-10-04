@@ -29,10 +29,10 @@
             "settings": {
               "title": "Jewelry",
               "collection-list": [
-                "bracelets",
-                "earings",
-                "necklaces",
                 "rings",
+                "earings",
+                "bracelets",
+                "necklaces",
                 "pendants"
               ]
             }
