@@ -9,15 +9,18 @@
 */
 {
   "sections": {
-    "simple_page": {
-      "type": "simple_page",
+    "custom_qedRJX": {
+      "type": "custom",
       "settings": {
+        "image-1": "shopify://shop_images/magnurs_custom_hero.webp",
+        "richtext_heading": "<p><strong>MAGNURS</strong> is all about uniqueness. Let us help you to customize an jewellery piece, making it bespoke and one of.</p>",
+        "richtext_main_text": "<p>This is not a brand for the conformists; it is for the trailblazers, the trendsetters, and the bold spirits who believe in making a statement. MAGNURS is here to redefine luxury, to offer a new kind of diamond that aligns with the values and aspirations of a discerning, modern audience. It’s not just about wearing a piece of jewellery; it’s about wearing a piece of the future.<br/>                </p>"
       }
     }
   },
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
-    "simple_page"
+    "custom_qedRJX"
   ]
 }
