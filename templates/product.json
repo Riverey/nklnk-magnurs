@@ -64,16 +64,17 @@
     "product_recommended_3rJ6mj": {
       "type": "product_recommended",
       "settings": {
+        "default-recommended": "default-recommendations",
         "text_headline": "Recommended"
-      }
-    },
-    "newsletter_ii4HW7": {
-      "type": "newsletter",
-      "settings": {
       }
     },
     "octopus_MQbAny": {
       "type": "octopus",
+      "settings": {
+      }
+    },
+    "newsletter_ii4HW7": {
+      "type": "newsletter",
       "settings": {
       }
     }
