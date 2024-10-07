@@ -6,7 +6,7 @@
     <img loading="lazy" src="../images/Magnurs_product-thumb.png" alt="" class="product-card_image" x-bind:alt="selected_or_first_available_variant.featured_image.alt" x-bind:src="selected_or_first_available_variant.featured_image.src">
     </div>
 {% endif %}{% if product.has_only_default_variant == true %}    <div li-if="product.has_only_default_variant == true" class="li-if">
-    <img li-object:alt="product.featured_image.alt" loading="lazy" li-object:src="product.featured_image | img_url: '812x'" src="{{ product.featured_image | img_url: '812x' }}" alt="{{ product.featured_image.alt }}" class="product-card_image">
+    <img li-object:alt="product.featured_image.alt" loading="lazy" li-object:src="product.featured_image | img_url: '812'" src="{{ product.featured_image | img_url: '812' }}" alt="{{ product.featured_image.alt }}" class="product-card_image">
     </div>
 {% endif %}<div class="product-card_tag_list">{% if product.selected_or_first_available_variant.available != true %}    <div li-if="product.selected_or_first_available_variant.available != true" class="product-card_tag">
     Not in Stock    </div>
