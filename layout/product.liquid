@@ -208,6 +208,10 @@
     $('#searchContent').addClass('w--open');
     $('#searchToggle').addClass('w--open');
   });
+  $('#searchClose').click(function (e) {
+    $('#searchContent').removeClass('w--open');
+    $('#searchToggle').removeClass('w--open');
+  });
 </script><script>document.addEventListener('DOMContentLoaded', function () {
     const productRecommendationsSection = document.querySelector('.product-recommendations');
     if (!productRecommendationsSection) return; // Early exit if section not found
