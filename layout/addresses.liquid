@@ -54,6 +54,11 @@
     }
     // Set up click listeners for elements with lenis-element attribute
     setupLenisButtons();
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 </script><script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
 <body li-page="addresses" li-layout="account">
 
