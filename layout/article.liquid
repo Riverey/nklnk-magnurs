@@ -54,6 +54,11 @@
     }
     // Set up click listeners for elements with lenis-element attribute
     setupLenisButtons();
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 </script><script type="application/ld+json">{
       "@context": "https://schema.org",
       "@type": "BlogPosting",
