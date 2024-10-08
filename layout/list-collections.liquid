@@ -37,98 +37,23 @@
     .w-condition-invisible {
         display: revert !important;
     }
-</style><script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script><script>// Initialize Lenis with horizontal scroll handling
-    const lenis = new Lenis({
-        smoothWheel: true,
-        wheelEventTarget: window,
-        shouldScroll: event => {
-            // First check if shift key is pressed for horizontal scrolling
-            if (event.shiftKey) {
-                const element = document.elementFromPoint(event.clientX, event.clientY)
-                const hasHorizontalScroll = el => {
-                    if (!el) return false
-                    const style = window.getComputedStyle(el)
-                    const overflow = style.getPropertyValue('overflow-x')
-                    const isScrollable = overflow === 'scroll' || overflow === 'auto'
-                    const hasScroll = el.scrollWidth > el.clientWidth
-                    return isScrollable && hasScroll
+</style><script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script><script>// Initialize Lenis
+    const lenis = new Lenis();
+    // Function to handle enabling and disabling Lenis based on button clicks
+    const setupLenisButtons = () => {
+        const elements = document.querySelectorAll('[lenis-element]');
+        elements.forEach(element => {
+            element.addEventListener('click', () => {
+                if (element.getAttribute('lenis-element') === 'enable') {
+                    lenis.start();
+                } else if (element.getAttribute('lenis-element') === 'disable') {
+                    lenis.stop();
                 }
-                let currentElement = element
-                while (currentElement) {
-                    if (hasHorizontalScroll(currentElement)) {
-                        return false // Let native scroll handle horizontal scrolling
-                    }
-                    currentElement = currentElement.parentElement
-                }
-            }
-            // Return false if any modal is open to prevent scrolling
-            return !isAnyModalOpen()
-        }
-    })
-    // Function to check if any modal is open
-    function isAnyModalOpen() {
-        const modals = document.querySelectorAll('[modal]')
-        return Array.from(modals).some(modal => modal.classList.contains('w--open'))
+            });
+        });
     }
-    let isScrollBlocked = false
-    // Function to add window scroll listeners
-    function addScrollListeners() {
-        window.addEventListener('wheel', checkToUnblockScroll, { passive: true })
-        window.addEventListener('touchstart', checkToUnblockScroll, { passive: true })
-    }
-    // Function to remove window scroll listeners
-    function removeScrollListeners() {
-        window.removeEventListener('wheel', checkToUnblockScroll)
-        window.removeEventListener('touchstart', checkToUnblockScroll)
-    }
-    // Function to check if we should unblock scroll
-    function checkToUnblockScroll() {
-        if (isScrollBlocked && !isAnyModalOpen()) {
-            lenis.start()
-            isScrollBlocked = false
-            removeScrollListeners()
-        }
-    }
-    // Function to block scroll
-    function blockScroll() {
-        if (!isScrollBlocked) {
-            lenis.stop()
-            isScrollBlocked = true
-            addScrollListeners()
-        }
-    }
-    // Function to handle modal state changes
-    const observeModalChanges = () => {
-        const modals = document.querySelectorAll('[modal]')
-        modals.forEach(modal => {
-            const observer = new MutationObserver(mutations => {
-                mutations.forEach(mutation => {
-                    if (mutation.attributeName === 'class') {
-                        if (modal.classList.contains('w--open')) {
-                            blockScroll()
-                        } else {
-                            checkToUnblockScroll()
-                        }
-                    }
-                })
-            })
-            observer.observe(modal, { attributes: true })
-        })
-    }
-    // Lenis scroll handler
-    function raf(time) {
-        lenis.raf(time)
-        requestAnimationFrame(raf)
-    }
-    requestAnimationFrame(raf)
-    // Initial setup
-    lenis.on('scroll', () => {
-        if (isAnyModalOpen()) {
-            blockScroll()
-        }
-    })
-    // Start observing modals
-    observeModalChanges()
+    // Set up click listeners for elements with lenis-element attribute
+    setupLenisButtons();
 </script><script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
 <body li-page="list-collections">
 
