@@ -37,23 +37,35 @@
     .w-condition-invisible {
         display: revert !important;
     }
-</style><script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script><script>// Initialize Lenis
-    const lenis = new Lenis();
+</style><script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script><script>// Initialize Lenis with options
+    const lenis = new Lenis({
+        duration: 1.2,
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        // Add any other options you need
+    });
     // Function to handle enabling and disabling Lenis based on button clicks
     const setupLenisButtons = () => {
         const elements = document.querySelectorAll('[lenis-element]');
         elements.forEach(element => {
             element.addEventListener('click', () => {
-                if (element.getAttribute('lenis-element') === 'enable') {
-                    lenis.start();
-                } else if (element.getAttribute('lenis-element') === 'disable') {
-                    lenis.stop();
+                const action = element.getAttribute('lenis-element');
+                switch(action) {
+                    case 'enable':
+                        lenis.start();
+                        break;
+                    case 'disable':
+                        lenis.stop();
+                        break;
                 }
             });
         });
     }
     // Set up click listeners for elements with lenis-element attribute
-    setupLenisButtons();
+    document.addEventListener('DOMContentLoaded', () => {
+        setupLenisButtons();
+    });
+    // RAF loop
     function raf(time) {
         lenis.raf(time);
         requestAnimationFrame(raf);
