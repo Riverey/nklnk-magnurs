@@ -360,9 +360,11 @@ figcaption {
   width: 1.25em;
   height: 1.25em;
   margin: .125em 1em 0 0;
+  box-shadow: none !important;
 }
 
 .checkbox_button.w--redirected-focus {
+  box-shadow: none;
   border-radius: .125rem;
   margin-top: .125em;
   margin-bottom: 0;
@@ -370,7 +372,12 @@ figcaption {
 }
 
 .checkbox_button.w--redirected-focus-visible {
+  outline-color: var(--mappings--bg--background-secondary);
+  outline-offset: .125rem;
   box-shadow: none;
+  border-radius: 0;
+  outline-width: .125rem;
+  outline-style: solid;
 }
 
 .icon-1x1-small {
@@ -597,7 +604,6 @@ figcaption {
 
 .heading-style-h4 {
   font-size: 1.25rem;
-  font-weight: 500;
   line-height: 1.4;
 }
 
@@ -2243,7 +2249,7 @@ figcaption {
 
 .container-medium {
   width: 100%;
-  max-width: 64rem;
+  max-width: 74rem;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -3276,7 +3282,7 @@ figcaption {
 }
 
 .nav_shadow-wrap {
-  z-index: -1;
+  z-index: -2;
   opacity: 0;
   pointer-events: none;
   flex-flow: column;
@@ -3606,8 +3612,6 @@ figcaption {
 }
 
 .product-header_option-list {
-  grid-column-gap: .5rem;
-  grid-row-gap: .5rem;
   flex-direction: column;
   display: flex;
 }
@@ -3620,7 +3624,7 @@ figcaption {
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   flex-flow: row;
-  padding-top: .25rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   display: flex;
   overflow: auto;
@@ -3642,12 +3646,10 @@ figcaption {
 
 .product-header_radio_button {
   z-index: 2;
-  aspect-ratio: 1;
   border: .0625rem solid #0000;
   border-radius: 0;
   width: 100%;
   height: auto;
-  max-height: 100%;
   margin-top: 0;
   margin-left: 0;
   position: absolute;
@@ -4074,8 +4076,9 @@ figcaption {
   grid-column-gap: 3rem;
   grid-row-gap: 3rem;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   grid-auto-columns: 1fr;
+  justify-content: start;
   display: grid;
 }
 
@@ -4170,6 +4173,7 @@ figcaption {
 }
 
 .nav_bg {
+  z-index: -1;
   background-color: var(--mappings--bg--background-primary);
   position: absolute;
   inset: 0%;
