@@ -50,7 +50,7 @@
         elements.forEach(element => {
             element.addEventListener('click', () => {
                 const action = element.getAttribute('lenis-element');
-                switch(action) {
+                switch (action) {
                     case 'enable':
                         lenis.start();
                         break;
@@ -58,7 +58,11 @@
                         lenis.stop();
                         break;
                     case 'toggle':
-                        lenis.toggle();
+                        if (lenis.isStopped) {
+                            lenis.start();
+                        } else {
+                            lenis.stop();
+                        }
                         break;
                 }
             });
