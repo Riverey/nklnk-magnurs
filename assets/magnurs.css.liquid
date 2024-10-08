@@ -737,6 +737,7 @@ figcaption {
   background-color: var(--mappings--bg--background-primary);
   flex-direction: column;
   flex: 1;
+  min-height: calc(100vh - 12rem);
   display: flex;
   position: relative;
 }
@@ -1011,12 +1012,8 @@ figcaption {
 }
 
 .cart_info-order {
-  flex-direction: column;
   flex: 1;
-  justify-content: center;
-  align-items: flex-start;
   margin-left: 1.5rem;
-  display: flex;
 }
 
 .cart_price {
@@ -4172,6 +4169,12 @@ figcaption {
   color: var(--mappings--bg--background-secondary);
 }
 
+.nav_bg {
+  background-color: var(--mappings--bg--background-primary);
+  position: absolute;
+  inset: 0%;
+}
+
 @media screen and (max-width: 991px) {
   .padding-medium {
     padding: 1.5rem;
@@ -5667,7 +5670,7 @@ figcaption {
     margin-right: -1.25rem;
   }
 
-  .cart_price-wrapper.u-hflex-left-center.u-hflex-nowrap.u-gap-medium {
+  .cart_price-wrapper.u-vflex-left-top.u-vflex-nowrap.u-gap-xsmall {
     grid-column-gap: 0rem;
     grid-row-gap: 0rem;
     flex-flow: column;
