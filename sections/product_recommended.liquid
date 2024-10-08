@@ -3,7 +3,7 @@
 {{ section.settings.text_headline }}
 </h2>
 </div>{% if recommendations.products_count > 0 %}    <div li-if="recommendations.products_count > 0" class="products-row_list-wrapper w-dyn-list">
-    <div role="list" class="products-row_list w-dyn-items">{% for product in recommendations.products %}    <div li-for="product in recommendations.products" role="listitem" class="products-row_item w-dyn-item">
+    <div role="list" class="products-row_list w-dyn-items">{% for product in recommendations.products limit: 3 %}    <div li-for="product in recommendations.products limit: 3" role="listitem" class="products-row_item w-dyn-item">
                                     
                             {% render 'product_item', product: product %}
 
@@ -11,7 +11,7 @@
                         </div>
 {% endfor %}</div><div class="hide w-dyn-empty"><div>No items found.</div></div>    </div>
 {% endif %}{% if recommendations.products_count < 1 %}    <div li-cloak="hide" li-if="recommendations.products_count < 1" class="products-row_list-wrapper w-dyn-list">
-    <div role="list" class="products-row_list w-dyn-items">{% for product in section.settings.default-recommended.products %}    <div li-for="product in section.settings.default-recommended.products" role="listitem" class="products-row_item w-dyn-item">
+    <div role="list" class="products-row_list w-dyn-items">{% for product in section.settings.default-recommended.products limit: 3 %}    <div li-for="product in section.settings.default-recommended.products limit: 3" role="listitem" class="products-row_item w-dyn-item">
                                     
                             {% render 'product_item', product: product %}
 
