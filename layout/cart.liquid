@@ -94,6 +94,34 @@
     $('#searchContent').removeClass('w--open');
     $('#searchToggle').removeClass('w--open');
   });
+</script><script>document.addEventListener('DOMContentLoaded', function () {
+        const quantityInput = document.getElementById('{{section.id}}-{{section-index}}-quantityInput');
+        const incrementButton = document.getElementById('{{section.id}}-{{section-index}}-incrementButton');
+        const decrementButton = document.getElementById('{{section.id}}-{{section-index}}-decrementButton');
+        if (quantityInput && incrementButton && decrementButton) {
+            function updateInputValue(newValue) {
+                quantityInput.value = newValue;
+                quantityInput.dispatchEvent(new Event('input'));
+                quantityInput.dispatchEvent(new Event('change'));
+            }
+            incrementButton.addEventListener('click', function () {
+                let currentValue = parseInt(quantityInput.value, 10);
+                updateInputValue(currentValue + 1);
+            });
+            decrementButton.addEventListener('click', function () {
+                let currentValue = parseInt(quantityInput.value, 10);
+                if (currentValue > 1) {
+                    updateInputValue(currentValue - 1);
+                }
+            });
+            quantityInput.addEventListener('change', function () {
+                let currentValue = parseInt(this.value, 10);
+                if (isNaN(currentValue) || currentValue < 1) {
+                    updateInputValue(1);
+                }
+            });
+        }
+    });
 </script>
 </body>
 </html>

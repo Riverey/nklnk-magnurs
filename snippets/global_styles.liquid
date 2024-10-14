@@ -65,7 +65,7 @@
     }
     ::-webkit-scrollbar-track {
         background: var(--mappings--bg--background-primary);
-    }    
+    }
     ::-webkit-scrollbar-thumb {
         background: var(--mappings--bg--background-secondary);
         transition: background-color 0.3s ease;
@@ -174,5 +174,20 @@
     body:has(.nav_menu[data-nav-menu-open]) .nav_icon-dropdown.is-cart {
         opacity: 0.0;
         pointer-events: none;
+    }
+    @media (min-aspect-ratio: 16/9) and (min-height: 1080px) {
+        .container-large {
+            max-width: min(calc(100vw * 0.75), var(--sizes--size--container--max-width));
+        }
+    }
+    @media (min-aspect-ratio: 21/9) and (min-height: 1080px) {
+        .container-large {
+            max-width: min(calc(100vw * 0.8), var(--sizes--size--container--max-width));
+        }
+    }
+    @media (min-height: 1440px) {
+        .container-large {
+            max-width: min(calc(var(--sizes--size--container--max-width) * (100vh / var(--sizes--size--container--base-height))), var(--sizes--size--container--max-width));
+        }
     }
 </style>

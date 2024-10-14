@@ -161,59 +161,22 @@
     $('#searchContent').removeClass('w--open');
     $('#searchToggle').removeClass('w--open');
   });
-</script><script>document.addEventListener('DOMContentLoaded', function () {
+</script><script>document.addEventListener('DOMContentLoaded', function() {
     const productRecommendationsSection = document.querySelector('.product-recommendations');
-    if (!productRecommendationsSection) return; // Early exit if section not found
     const url = productRecommendationsSection.dataset.url;
     fetch(url)
       .then(response => response.text())
       .then(text => {
-        const html = document.createElement('div');
-        html.innerHTML = text;
-        const recommendations = html.querySelector('.product-recommendations');
-        if (recommendations && recommendations.innerHTML.trim().length) {
-          productRecommendationsSection.innerHTML = recommendations.innerHTML;
-          // Create an Intersection Observer
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                if (window.lenis) {
-                  console.log('Lenis found. Starting resize sequence...');
-                  // Resize Lenis multiple times with increasing delays
-                  [100, 500, 1000, 2000].forEach(delay => {
-                    setTimeout(() => {
-                      try {
-                        window.lenis.resize();
-                        console.log('Lenis successfully resized after ' + delay + 'ms');
-                      } catch (error) {
-                        console.error('Error resizing Lenis after ' + delay + 'ms:', error);
-                      }
-                    }, delay);
-                  });
-                } else {
-                  console.log('Lenis not found. Skipping resize operations.');
-                }
-                // Disconnect the observer after starting the resize sequence
-                observer.disconnect();
-              }
-            });
-          }, { threshold: 0.5 }); // 50% visibility threshold
-          // Use requestIdleCallback for non-critical task
-          const observeWhenIdle = () => {
-            requestIdleCallback(() => {
-              observer.observe(productRecommendationsSection);
-            });
-          };
-          // Wait for images to load before observing
-          Promise.all(Array.from(productRecommendationsSection.querySelectorAll('img'))
-            .filter(img => !img.complete)
-            .map(img => new Promise(resolve => { img.onload = img.onerror = resolve; })))
-            .then(observeWhenIdle);
-        }
-      })
+      const html = document.createElement('div');
+      html.innerHTML = text;
+      const recommendations = html.querySelector('.product-recommendations');
+      if (recommendations && recommendations.innerHTML.trim().length) {
+        productRecommendationsSection.innerHTML = recommendations.innerHTML;
+      }
+    })
       .catch(e => {
-        console.error('Error loading product recommendations:', e);
-      });
+      console.error(e);
+    });
   });
 </script>
 </body>
