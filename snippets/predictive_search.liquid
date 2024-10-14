@@ -6,7 +6,7 @@
     <div class="predictive-search_headline"><div class="text-style-muted">Collections</div></div><ul role="list" class="mini-cart_line-item_list w-list-unstyled">{% for collection in predictive_search.resources.collections %}    <li li-for="collection in predictive_search.resources.collections" class="mini-cart_line-item_item">
                                     
                             <a li-object:href="collection.url" href="{{ collection.url }}" class="mini-cart_line-item_item-layout u-hflex-left-center u-gap-medium u-hflex-nowrap w-inline-block"><img li-object:src="collection.featured_image | img_url: '128x128'" li-object:alt="collection.featured_image.alt" src="{{ collection.featured_image | img_url: '128x128' }}" loading="lazy" alt="{{ collection.featured_image.alt }}" class="mini-cart_line-item_img aspect-ratio-square is-small">
-<div li-object="collection.title">{{ collection.title }}</div></a>
+<div li-object="collection.title" class="mini-cart_product-title text-weight-medium">{{ collection.title }}</div></a>
                             
                         </li>
 {% endfor %}</ul>    </div>
@@ -14,7 +14,7 @@
     <div class="predictive-search_headline"><div class="text-style-muted">Products</div></div><ul role="list" class="mini-cart_line-item_list w-list-unstyled">{% for product in predictive_search.resources.products %}    <li li-for="product in predictive_search.resources.products" class="mini-cart_line-item_item">
                                     
                             <a li-object:href="product.url" href="{{ product.url }}" class="mini-cart_line-item_item-layout u-hflex-left-center u-gap-medium u-hflex-nowrap w-inline-block"><img li-object:src="product.featured_media | img_url: '300'" li-object:alt="product.featured_image.alt" src="{{ product.featured_media | img_url: '300' }}" loading="lazy" alt="{{ product.featured_image.alt }}" class="mini-cart_line-item_img aspect-ratio-square">
-<div class="mini-cart_line-item_product-info"><div li-object="product.title" class="text-size-regular text-weight-medium">{{ product.title }}</div><div class="mini-cart_line-item_price u-hflex-left-center u-gap-xxsmall"><div li-object="product.price | money" class="text-size-small">{{ product.price | money }}</div>{% if product.compare_at_price != blank %}    <div li-if="product.compare_at_price != blank" class="li-if">
+<div class="mini-cart_line-item_product-info"><div li-object="product.title" class="mini-cart_product-title text-weight-medium">{{ product.title }}</div><div class="mini-cart_line-item_price u-hflex-left-center u-gap-xxsmall"><div li-object="product.price | money" class="text-size-small">{{ product.price | money }}</div>{% if product.compare_at_price != blank %}    <div li-if="product.compare_at_price != blank" class="li-if">
     <div li-object="product.compare_at_price | money" class="text-size-small text-style-strikethrough text-style-muted">{{ product.compare_at_price | money }}</div>    </div>
 {% endif %}</div></div></a>
                             
@@ -48,7 +48,7 @@
 <li class="mini-cart_line-item_item">
     
     <a li-object:href="product.url" href="{{ product.url }}" class="mini-cart_line-item_item-layout u-hflex-left-center u-gap-medium w-inline-block"><img li-object:src="product.featured_image | img_url: 'master'" li-object:alt="product.featured_image.alt" src="{{ product.featured_image | img_url: 'master' }}" loading="lazy" alt="{{ product.featured_image.alt }}" class="mini-cart_line-item_img aspect-ratio-square">
-<div class="mini-cart_line-item_product-info"><div li-object="product.title" class="text-size-regular text-weight-medium">{{ product.title }}</div><div class="mini-cart_line-item_price u-hflex-left-center u-gap-xxsmall"><div li-object="product.price | money" class="text-size-small">{{ product.price | money }}</div>{% if product.compare_at_price != blank %}    <div li-if="product.compare_at_price != blank" class="li-if">
+<div class="mini-cart_line-item_product-info"><div li-object="product.title" class="mini-cart_product-title text-weight-medium">{{ product.title }}</div><div class="mini-cart_line-item_price u-hflex-left-center u-gap-xxsmall"><div li-object="product.price | money" class="text-size-small">{{ product.price | money }}</div>{% if product.compare_at_price != blank %}    <div li-if="product.compare_at_price != blank" class="li-if">
     <div li-object="product.compare_at_price | money" class="text-size-small text-style-strikethrough text-style-muted">{{ product.compare_at_price | money }}</div>    </div>
 {% endif %}</div></div></a>
     
