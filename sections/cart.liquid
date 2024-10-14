@@ -7,8 +7,8 @@
     <p li-object="item.original_price" class="text-size-small text-style-strikethrough">{{ item.original_price }}</p>    </div>
 {% endif %}</div></div><a li-object:href="item.url_to_remove" href="{{ item.url_to_remove }}" class="mini-cart_remove-link text-size-tiny text-style-link text-style-muted">Remove</a></div></div>
                             
-                            <div class="mini-cart_line-item_quantity"><button type="button" id="{{section.id}}-{{section-index}}-decrementButton" class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" name="quantity" id="{{section.id}}-{{section-index}}-quantityInput" class="mini-cart_line-item_quantity-input" value="1" x-model="quantity">
-<button type="button" id="{{section.id}}-{{section-index}}-incrementButton" class="mini-cart_line-item_quantity-adjust">+</button></div>
+                            <div class="mini-cart_line-item_quantity"><button type="button" data-id="{{section.id}}-{{item.id}}" cart-number-button="descrease" class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" name="quantity" cart-number-input="{{section.id}}-{{item.id}}" class="mini-cart_line-item_quantity-input" value="1" x-model="quantity">
+<button type="button" data-id="{{section.id}}-{{item.id}}" cart-number-button="increase" class="mini-cart_line-item_quantity-adjust">+</button></div>
                             
                             <div id="w-node-_3d7cbf18-159c-e09d-034b-aa8947f77c7f-78ccc15d" class="cart_price-info u-hflex-left-center u-gap-small"><div li-object="item.final_line_price | money" id="w-node-_51dd9338-e259-f546-1410-ab7878c921d0-78ccc15d">{{ item.final_line_price | money }}</div>{% if item.original_line_price > item.final_line_price %}    <div li-if="item.original_line_price > item.final_line_price" id="w-node-_3f61db21-129c-484c-c7db-5af0a16cea45-78ccc15d" class="li-if">
     <div li-object="item.original_line_price | money" id="w-node-_71195821-f29a-eb19-64c4-f0623c97c5cd-78ccc15d" class="text-size-small text-style-strikethrough">{{ item.original_line_price | money }}</div>    </div>
