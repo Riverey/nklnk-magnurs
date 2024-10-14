@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "custom_qedRJX": {
@@ -16,11 +16,20 @@
         "richtext_heading": "<p><strong>MAGNURS</strong> is all about uniqueness. Let us help you to customize an jewellery piece, making it bespoke and one of.</p>",
         "richtext_main_text": "<p>This is not a brand for the conformists; it is for the trailblazers, the trendsetters, and the bold spirits who believe in making a statement. MAGNURS is here to redefine luxury, to offer a new kind of diamond that aligns with the values and aspirations of a discerning, modern audience. It’s not just about wearing a piece of jewellery; it’s about wearing a piece of the future.<br/>                </p>"
       }
+    },
+    "contact_hCUUCY": {
+      "type": "contact",
+      "settings": {
+        "checkbox_show_details": false,
+        "richtext_description": "<p>Our team of experts is ready to assist you with any support you may need, whether it’s help with your orders, style guidance, or gift suggestions. Don’t hesitate to reach out to us through one of the channels below:</p>",
+        "text_headline": "GENERAL INQUIRIES"
+      }
     }
   },
   "layout": "page",
   "wrapper": "main.main-wrapper",
   "order": [
-    "custom_qedRJX"
+    "custom_qedRJX",
+    "contact_hCUUCY"
   ]
 }
