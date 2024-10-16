@@ -247,7 +247,7 @@
         {% endif %}
         <div class="product-header_add-to-cart w-form">
           {% form 'product', product, class: 'product-header_default-state u-vflex-stretch-top u-gap-large' %}
-            <input id="custom-input" name="properties[Test]">
+            <input id="custom-input" name="properties[Test]" form="{{ product_form_id }}>
             {% if product.has_only_default_variant != true %}
               <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
                 <template x-for="(option, optionKey) in product.options" :key="optionKey">
