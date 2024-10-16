@@ -102,7 +102,7 @@
             });
         });
     });
-</script></div><div class="padding-global"><div class="w-layout-blockcontainer container-large w-container"><div id="w-node-_09b817e0-2611-684b-6972-4b132a0a4e49-78ccc16a" class="breadcrumbs_wrapper"><div id="w-node-_09b817e0-2611-684b-6972-4b132a0a4e4a-78ccc16a" class="breadcrumbs_layout u-hflex-left-stretch u-gap-medium hide"><div class="breadcrumbs_group"><a class="breadcrumbs_link is-link" href="{{ section.settings.url_shop_all_url }}"> {{ section.settings.text_shop_all_text }} </a>
+</script></div><div class="padding-global"><div class="w-layout-blockcontainer container-large w-container"><div id="w-node-_09b817e0-2611-684b-6972-4b132a0a4e49-78ccc16a" class="breadcrumbs_wrapper"><div id="w-node-_09b817e0-2611-684b-6972-4b132a0a4e4a-78ccc16a" class="breadcrumbs_layout u-hflex-left-stretch u-gap-medium hide"><div class="breadcrumbs_group"><a href="{{ section.settings.url_shop_all_url }}" class="breadcrumbs_link is-link"> {{ section.settings.text_shop_all_text }} </a>
 </div><div class="breadcrumbs_group u-hflex-left-center u-gap-medium"><div>/</div><div li-object:text="product.title" class="breadcrumbs_link">
 {{ product.title }}
 </div></div></div></div><script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
@@ -142,13 +142,23 @@
     <div li-element="product-options-loop" class="product-header_option u-vflex-stretch-top u-gap-xxsmall" data-ProductVariantsLoop="true"><div class="product-header_radio-list"><template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
     <label li-element="product-option-loop" class="product-header_radio_component w-radio"><template x-if="option == 'Color'">
             <div li-js-if="option == 'Color'" class="li-if">
-        <img src="../images/Magnurs_product-thumb.png" loading="lazy" alt="" class="product-header_radio_image aspect-ratio-square" x-bind:src="variants.find(variant => variant.options.includes(variantName))?.featured_image.src" x-bind:alt="variants.find(variant => variant.options.includes(variantName))?.featured_image.alt">
+        <img alt="" src="../images/Magnurs_product-thumb.png" loading="lazy" class="product-header_radio_image aspect-ratio-square" x-bind:src="variants.find(variant => variant.options.includes(variantName))?.featured_image.src" x-bind:alt="variants.find(variant => variant.options.includes(variantName))?.featured_image.alt">
         </div>
     </template>
 <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio_button w-radio-input"></div><input type="radio" li-element="product-option-input" style="opacity:0;position:absolute;z-index:-1" x-on:click="setVariant" :name="option" :data-name="option" :value="variantName" :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" :checked="selected_or_first_available_variant?.options.includes(variantName)" data-selectorType="radio" :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
 <span li-element="product-option-name" class="product-header_radio_label text-size-small text-weight-medium w-form-label" for="radio" x-text="variantName" :for="variantName">Yellow Gold</span></label></template>
 </div></div></template>
-    </div>
+{% if product.metafields.shopify.ring-size %}    <div li-if="product.metafields.shopify.ring-size" class="product-header_option u-vflex-stretch-top u-gap-xxsmall">
+    <div class="product-header_radio-list">{% for item in product.metafields.shopify.ring-size %}    <label li-for="item in product.metafields.shopify.ring-size" class="product-header_radio_component w-radio">
+                                    
+                            <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio_button w-radio-input"></div>
+                            <input type="radio" li-element="product-option-input" style="opacity:0;position:absolute;z-index:-1" x-on:click="setVariant" :name="option" :data-name="option" :value="variantName" :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" :checked="selected_or_first_available_variant?.options.includes(variantName)" data-selectorType="radio" :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
+
+                            <span li-object="size-{{ size.label | handle }}" class="product-header_radio_label text-size-small text-weight-medium is-size w-form-label" for="size.value">{{ size-{{ size.label | handle }} }}</span>
+                            
+                        </label>
+{% endfor %}</div>    </div>
+{% endif %}    </div>
 {% endif %}<div class="product-header_add-to-cart-wrapper"><template x-if="selected_or_first_available_variant.available == true">
             <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity">
         <div class="mini-cart_line-item_quantity is-large"><button type="button" id="{{section.id}}-{{section-index}}-decrementButton" class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" name="quantity" id="{{section.id}}-{{section-index}}-quantityInput" class="mini-cart_line-item_quantity-input" value="1" x-model="quantity">
@@ -193,4 +203,4 @@
                             </div>
             {% endif %}
 {% endfor %}
-</div></div></div></div></div> {% schema %} {"tag":"section","name":"product","class":"section_product-header","blocks":[{"name":"Detail Block","type":"detail-block","settings":[{"id":"image","type":"image_picker","label":"Image"},{"id":"richtext_text","type":"richtext","label":"Text","default":"<p>\n                      Free worldwide shipping on all orders over $5000\n                    <\/p>"}]},{"name":"Accordeon","type":"accordeon","settings":[{"id":"heading","type":"text","label":"Heading","default":"Heading"},{"id":"richtext_text","type":"richtext","label":"Text","default":"<p>\n                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n                        <\/p>"}]}],"settings":[{"id":"url_shop_all_url","type":"url","label":"Shop All URL"},{"id":"text_shop_all_text","type":"text","label":"Shop All Text","default":"Shop All"},{"id":"text_heading","type":"text","label":"Heading","default":"Description"}],"presets":[{"name":"product","category":"Liquify"}]} {% endschema %}
+</div></div></div></div></div> {% schema %} {"tag":"section","name":"Product","class":"section_product-header","blocks":[{"name":"Detail Block","type":"detail-block","settings":[{"id":"image","type":"image_picker","label":"Image"},{"id":"richtext_text","type":"richtext","label":"Text","default":"<p>\n                      Free worldwide shipping on all orders over $5000\n                    <\/p>"}]},{"name":"Accordeon","type":"accordeon","settings":[{"id":"heading","type":"text","label":"Heading","default":"Heading"},{"id":"richtext_text","type":"richtext","label":"Text","default":"<p>\n                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n                        <\/p>"}]}],"settings":[{"id":"url_shop_all_url","type":"url","label":"Shop All URL"},{"id":"text_shop_all_text","type":"text","label":"Shop All Text","default":"Shop All"},{"id":"text_heading","type":"text","label":"Heading","default":"Description"}],"presets":[{"name":"Product","category":"Liquify"}]} {% endschema %}
