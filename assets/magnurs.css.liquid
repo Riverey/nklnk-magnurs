@@ -3158,16 +3158,20 @@ figcaption {
 }
 
 .main-hero_image-wrap {
+  aspect-ratio: 384 / 174;
   background-color: var(--mappings--bg--background-secondary);
   width: 100%;
-  height: 60vh;
   position: relative;
   overflow: hidden;
 }
 
 .main-hero_bg-image {
   position: absolute;
-  inset: 0%;
+  inset: 0% 0% auto;
+}
+
+.main-hero_bg-image.image-animation_image {
+  transform: translate(0, -20%);
 }
 
 .main-hero_text-wrap {
@@ -3417,7 +3421,7 @@ figcaption {
 }
 
 .feat-colect-slider_image-wrap {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 384 / 173;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -3735,6 +3739,10 @@ figcaption {
   display: block;
 }
 
+.product-header_radio_label.text-size-small.text-weight-medium.is-size {
+  min-width: 2.25rem;
+}
+
 .breadcrumbs_layout {
   z-index: 2;
   position: relative;
@@ -3962,7 +3970,7 @@ figcaption {
 .feat-colect-slider_nav {
   z-index: 2;
   pointer-events: none;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -4072,6 +4080,7 @@ figcaption {
   height: 120%;
   position: absolute;
   inset: 0%;
+  overflow: visible;
 }
 
 .product-slider_pagination-wrap {
@@ -4122,6 +4131,15 @@ figcaption {
   flex: 0 auto;
   padding: 1.5rem;
   overflow: auto scroll;
+}
+
+.icon-embed-xsmall-2 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
 }
 
 @media screen and (max-width: 991px) {
@@ -5291,6 +5309,7 @@ figcaption {
   }
 
   .main-hero_down-icon-wrap {
+    z-index: 2;
     display: flex;
   }
 
