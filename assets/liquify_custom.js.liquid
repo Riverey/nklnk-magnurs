@@ -419,30 +419,17 @@ document.addEventListener('alpine:init', () => {
             this.updateVariantStatuses()
         },
         
-        // Function to slugify properties
-        slugify(str) {
-            return str
-                .toString()
-                .toLowerCase()
-                .replace(/\s+/g, '-') // Replace spaces with hyphens
-                .replace(/[^\w\-]+/g, '') // Remove all non-word chars
-                .replace(/\-\-+/g, '-') // Replace multiple hyphens with a single hyphen
-                .trim(); // Trim whitespace
-        },
-
-        // Modify the getAddToCartBody function to include slugified properties
         getAddToCartBody(products) {
             return JSON.stringify({
                 'items': products.map(product => {
                     const properties = this.getLineItemProperties();
-                    const slugifiedProperties = Object.entries(properties)
-                        .map(([key, value]) => `${key}:${this.slugify(value)}`) // Slugify each property
-                        .join('-'); // Join properties with a hyphen
+                    const propertySlug = slugify(Object.entries(properties).map(([key, value]) => `${key}:${value}`).join(' '));
+                    const uniqueId = `${product.id}-${propertySlug}`; // Create unique ID
 
                     return {
-                        id: `${product.id}-${slugifiedProperties}`, // Include slugified properties in the ID
+                        id: uniqueId, // Use the unique ID
                         quantity: product.quantity ?? 1,
-                        properties: properties
+                        properties: properties // Ensure properties are retrieved
                     };
                 })
             });
@@ -582,17 +569,6 @@ document.addEventListener('alpine:init', () => {
          */
         moneyFormat(value, minor = true) {
             return LiquifyHelper.moneyFormat(value, minor)
-        },
-
-        // Update the logic for removing items and changing quantity
-        removeFromCart(itemId) {
-            // Logic to remove item from cart using the itemId
-            // Ensure that itemId includes the slugified properties
-        },
-
-        updateQuantity(itemId, newQuantity) {
-            // Logic to update the quantity of the item in the cart using the itemId
-            // Ensure that itemId includes the slugified properties
         },
     }));
 
@@ -896,3 +872,13 @@ document.addEventListener('alpine:init', () => {
         },
     }));
 })
+
+function slugify(text) {
+    return text
+        .toString()
+        .toLowerCase()
+        .replace(/\s+/g, '-') // Replace spaces with -
+        .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+        .replace(/\-\-+/g, '-') // Replace multiple - with single -
+        .trim(); // Trim - from start and end
+}
