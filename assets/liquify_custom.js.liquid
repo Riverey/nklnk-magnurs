@@ -420,6 +420,7 @@ document.addEventListener('alpine:init', () => {
         },
         
         getAddToCartBody(products) {
+            console.log('getAddToCartBody called'); // Debugging line
             return JSON.stringify({
                 'items': products.map(product => ({
                     id: product.id,
@@ -445,7 +446,7 @@ document.addEventListener('alpine:init', () => {
                     properties[name] = input.value;
                 }
             });
-            console.log('Properties:', properties);
+        
             return properties;
         },
 
@@ -510,10 +511,11 @@ document.addEventListener('alpine:init', () => {
          * Add a single product to cart.
          */
         async addToCart(toggleMiniCart = true, productId = undefined, quantity = undefined) {
-            console.log('Liquify - Add to cart called, selected_or_first_available_variant.id:', this.selected_or_first_available_variant?.id);
+            console.log('addToCart called'); // Debugging line
 
             if (!this.selected_or_first_available_variant?.available) {
-                return
+                console.log('Variant not available'); // Debugging line
+                return;
             }
 
             let body = JSON.stringify({
@@ -525,6 +527,8 @@ document.addEventListener('alpine:init', () => {
                 ]
             });
 
+            console.log('Body before fetch:', body); // Debugging line
+
             await fetch(window.Shopify.routes.root + 'cart/add.js', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -534,7 +538,7 @@ document.addEventListener('alpine:init', () => {
                 .then(data => {
                     this.products = data.items;
 
-                    console.log('Liquify - product(s) added');
+                    console.log('Liquify - product(s) added', data.items); // Debugging line
                     this.$dispatch('cartupdated');
 
                     if (toggleMiniCart) {
