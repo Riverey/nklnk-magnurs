@@ -317,6 +317,8 @@
                             x-on:blur="$dispatch('setcartitem', { product: product.key, quantity: product.quantity })"
                             class="mini-cart_line-item_quantity-input"
                             value="1"
+                            x-model="product.quantity"
+                            :productprop="product"
                           >
                           <button
                             x-on:click="$dispatch('increasecartitem', { product: product.key, quantity: product.quantity, action: 'increase' })"
