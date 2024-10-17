@@ -5,7 +5,16 @@
                             <div id="w-node-_51dd9338-e259-f546-1410-ab7878c921b7-78ccc15d" class="display-inlineflex"><img src="{{ item.image |  img_url: 'small' }}" li-object:src="item.image |  img_url: 'small'" alt="" class="cart_image">
 <div class="cart_info-order u-vflex-left-center u-gap-xsmall"><a li-object:href="item.url" href="{{ item.url }}" class="product-card_link w-inline-block"><h3 href="#" li-object="item.title" class="mini-cart_product-title text-weight-medium text-size-medium">{{ item.title }}</h3><div class="u-hflex-center-center u-gap-xxsmall"><div li-object="item.final_price | money">{{ item.final_price | money }}</div>{% if item.original_price > item.final_price %}    <div li-if="item.original_price > item.final_price" class="li-if">
     <p li-object="item.original_price | money" class="text-size-small text-style-strikethrough">{{ item.original_price | money }}</p>    </div>
-{% endif %}</div></a><div class="mini-cart_line-item_actions-wrapper"><a li-object:href="item.url_to_remove" href="{{ item.url_to_remove }}" class="mini-cart_remove-link text-size-tiny text-style-link text-style-muted">Remove</a></div></div></div>
+{% endif %}</div>{% if item.properties.length > 0 %}    <div li-if="item.properties.length > 0" class="mini-cart_properties-list u-hflex-left-center u-gap-xsmall">
+    {% for property in item.properties %}    <div li-for="property in item.properties" class="mini-cart_property-item u-hflex-center-center u-gap-xxsmall u-hflex-nowrap text-size-small">
+                                    
+                            <div li-object="property.first" class="mini-cart_property-heading text-weight-medium">{{ property.first }}</div>
+                            
+                            <div li-object="property.last" class="mini-cart_property-value">{{ property.last }}</div>
+                            
+                        </div>
+{% endfor %}    </div>
+{% endif %}</a><div class="mini-cart_line-item_actions-wrapper"><a li-object:href="item.url_to_remove" href="{{ item.url_to_remove }}" class="mini-cart_remove-link text-size-tiny text-style-link text-style-muted">Remove</a></div></div></div>
                             
                             <div id="w-node-_93a92d6a-6c9d-4947-7ebf-09fc568a99b4-78ccc15d" class="mini-cart_line-item_actions-wrapper"><div class="mini-cart_line-item_quantity"><button type="button" data-id="{{section.id}}-{{item.id}}" cart-number-button="decrease" class="mini-cart_line-item_quantity-adjust">-</button><input li-object:value="item.quantity" name="updates[]" cart-number-input="{{section.id}}-{{item.id}}" class="mini-cart_line-item_quantity-input" value="{{ item.quantity }}">
 <button type="button" data-id="{{section.id}}-{{item.id}}" cart-number-button="increase" class="mini-cart_line-item_quantity-adjust">+</button></div></div>
