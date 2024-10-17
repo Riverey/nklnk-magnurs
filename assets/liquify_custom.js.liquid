@@ -421,17 +421,11 @@ document.addEventListener('alpine:init', () => {
         
         getAddToCartBody(products) {
             return JSON.stringify({
-                'items': products.map(product => {
-                    const properties = this.getLineItemProperties();
-                    const propertySlug = slugify(Object.entries(properties).map(([key, value]) => `${key}:${value}`).join(' '));
-                    const uniqueId = `${product.id}-${propertySlug}`; // Create unique ID
-
-                    return {
-                        id: uniqueId, // Use the unique ID
-                        quantity: product.quantity ?? 1,
-                        properties: properties // Ensure properties are retrieved
-                    };
-                })
+                'items': products.map(product => ({
+                    id: product.id,
+                    quantity: product.quantity ?? 1,
+                    properties: this.getLineItemProperties() // Ensure properties are retrieved
+                }))
             });
         },
 
@@ -872,13 +866,3 @@ document.addEventListener('alpine:init', () => {
         },
     }));
 })
-
-function slugify(text) {
-    return text
-        .toString()
-        .toLowerCase()
-        .replace(/\s+/g, '-') // Replace spaces with -
-        .replace(/[^\w\-]+/g, '') // Remove all non-word chars
-        .replace(/\-\-+/g, '-') // Replace multiple - with single -
-        .trim(); // Trim - from start and end
-}
