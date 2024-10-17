@@ -418,14 +418,35 @@ document.addEventListener('alpine:init', () => {
 
             this.updateVariantStatuses()
         },
-
+        
         getAddToCartBody(products) {
             return JSON.stringify({
                 'items': products.map(product => ({
                     id: product.id,
                     quantity: product.quantity ?? 1,
+                    properties: this.getLineItemProperties()
                 }))
             });
+        },
+
+        getLineItemProperties() {
+            const properties = {};
+            const propertyInputs = document.querySelectorAll('[data-line-item-property]');
+            
+            propertyInputs.forEach(input => {
+                const name = input.getAttribute('data-line-item-property');
+                if (input.type === 'radio') {
+                    if (input.checked) {
+                        properties[name] = input.value;
+                    }
+                } else if (input.type === 'select-one') {
+                    properties[name] = input.options[input.selectedIndex].value;
+                } else {
+                    properties[name] = input.value;
+                }
+            });
+        
+            return properties;
         },
 
         callAddToCartApi(body) {
@@ -583,16 +604,37 @@ document.addEventListener('alpine:init', () => {
 
         getGlobalBundleCartBody() {
             let globalBundle = this.getGlobalBundleFromLocalStorage();
-
+        
             return JSON.stringify({
                 'items': globalBundle.map(item => ({
                     id: item.variant.id,
                     quantity: item.quantity,
                     properties: {
                         'bundle': `${this.bundleName} ${this.bundleIndex}`,
+                        ...this.getLineItemProperties()
                     }
                 }))
             })
+        },
+
+        getLineItemProperties() {
+            const properties = {};
+            const propertyInputs = document.querySelectorAll('[data-line-item-property]');
+            
+            propertyInputs.forEach(input => {
+                const name = input.getAttribute('data-line-item-property');
+                if (input.type === 'radio') {
+                    if (input.checked) {
+                        properties[name] = input.value;
+                    }
+                } else if (input.type === 'select-one') {
+                    properties[name] = input.options[input.selectedIndex].value;
+                } else {
+                    properties[name] = input.value;
+                }
+            });
+        
+            return properties;
         },
 
         /**
