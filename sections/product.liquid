@@ -246,7 +246,7 @@
           </div>
         {% endif %}
         <div class="product-header_add-to-cart w-form">
-          {% form 'product', product, class: 'product-header_default-state u-vflex-stretch-top u-gap-large' %}
+          {% form 'product', product, class: 'product-header_default-state u-vflex-stretch-top u-gap-large', id:'product-form-{{ section.id }}' %}
             <input id="custom-input" name="properties[Test]" form="product-form-{{ section.id }}>
             {% if product.has_only_default_variant != true %}
               <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
