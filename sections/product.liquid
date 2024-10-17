@@ -150,11 +150,11 @@
 {% if product.metafields.shopify.ring-size %}    <div li-if="product.metafields.shopify.ring-size" class="product-header_option u-vflex-stretch-top u-gap-xxsmall">
     <div class="product-header_radio-list">{% for item in product.metafields.shopify.ring-size.value %}    <div li-for="item in product.metafields.shopify.ring-size.value" class="li-for">
                                     {% if forloop.first %}    <label li-if="forloop.first" class="product-header_radio_component w-radio">
-    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio_button w-radio-input"></div><input name="Size" data-name="Size" data-line-item-property="Size" type="radio" id="size-{{ item.label }}" style="opacity:0;position:absolute;z-index:-1" checked="" value="{{ item.label }}">
+    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio_button w-radio-input"></div><input name="Size" data-name="Size" data-line-item-property="Size" type="radio" id="size-{{ item.label }}" style="opacity:0;position:absolute;z-index:-1" value="{{ item.label }}" class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio_button w-radio-input w--redirected-checked">
 <span li-object="item.label" class="product-header_radio_label text-size-small text-weight-medium is-size w-form-label" for="item.label">{{ item.label }}</span>    </label>
 {% endif %}
                             {% unless forloop.first %}    <label li-cloak="hide" li-unless="forloop.first" class="product-header_radio_component w-radio">
-    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio_button w-radio-input"></div><input name="Size" data-name="Size" data-line-item-property="Size" type="radio" id="size-{{ item.label }}" style="opacity:0;position:absolute;z-index:-1" value="{{ item.label }}" checked>
+    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio_button w-radio-input"></div><input name="Size" data-name="Size" data-line-item-property="Size" type="radio" id="size-{{ item.label }}" style="opacity:0;position:absolute;z-index:-1" value="{{ item.label }}">
 <span li-object="item.label" class="product-header_radio_label text-size-small text-weight-medium is-size w-form-label" for="item.label">{{ item.label }}</span>    </label>
 {% endunless %}
                         </div>
