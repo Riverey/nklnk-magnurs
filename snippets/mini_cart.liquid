@@ -309,7 +309,7 @@
                       <div class="mini-cart_line-item_actions-wrapper u-hflex-left-center u-gap-small">
                         <div class="mini-cart_line-item_quantity">
                           <button
-                            x-on:click="$dispatch('increasecartitem', { product: product.key, quantity: product.quantity, action: 'decrease' })"
+                            x-on:click="$dispatch('decreasecartitem', { product: product.key, quantity: product.quantity, action: 'decrease' })"
                             class="mini-cart_line-item_quantity-adjust"
                           >
                             -</button
