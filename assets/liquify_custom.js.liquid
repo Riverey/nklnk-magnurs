@@ -420,13 +420,11 @@ document.addEventListener('alpine:init', () => {
         },
         
         getAddToCartBody(products) {
-            console.log('getAddToCartBody called'); // Debugging line
-            console.log('Products:', products); // Debugging line
             return JSON.stringify({
                 'items': products.map(product => ({
                     id: product.id,
                     quantity: product.quantity ?? 1,
-                    properties: this.getLineItemProperties() // Check if this is being called
+                    properties: this.getLineItemProperties() // Ensure properties are retrieved
                 }))
             });
         },
@@ -512,51 +510,42 @@ document.addEventListener('alpine:init', () => {
          * Add a single product to cart.
          */
         async addToCart(toggleMiniCart = true, productId = undefined, quantity = undefined) {
-            console.log('addToCart called'); // Debugging line
-
-            // Directly call getLineItemProperties for debugging
-            const properties = this.getLineItemProperties();
-            console.log('Retrieved Properties:', properties); // Debugging line
-
             if (!this.selected_or_first_available_variant?.available) {
-                console.log('Variant not available'); // Debugging line
                 return;
             }
+
+            let properties = this.getLineItemProperties(); // Retrieve properties
 
             let body = JSON.stringify({
                 'items': [
                     {
                         id: productId ?? this.selectedProductId ?? this.selected_or_first_available_variant?.id,
                         quantity: quantity ?? this.quantity ?? 1,
-                        properties: properties // Add properties here for testing
+                        properties: properties // Add properties here
                     }
                 ]
             });
-
-            console.log('Body before fetch:', body); // Debugging line
 
             await fetch(window.Shopify.routes.root + 'cart/add.js', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: body
             })
-                .then(response => response.json())
-                .then(data => {
-                    this.products = data.items;
+            .then(response => response.json())
+            .then(data => {
+                this.products = data.items;
 
-                    console.log('Liquify - product(s) added', data.items); // Debugging line
-                    this.$dispatch('cartupdated');
+                this.$dispatch('cartupdated');
 
-                    if (toggleMiniCart) {
-                        this.$dispatch('toggleminicart');
-                    }
+                if (toggleMiniCart) {
+                    this.$dispatch('toggleminicart');
+                }
 
-                    this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
-                })
-                .catch((error) => {
-                    console.error('Liquify - addToCart error:', error);
-                    this.$dispatch('showcartmessage', { status: error.status, message: error.message, description: error.description });
-                });
+                this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
+            })
+            .catch((error) => {
+                this.$dispatch('showcartmessage', { status: error.status, message: error.message, description: error.description });
+            });
         },
 
         /**
