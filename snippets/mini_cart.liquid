@@ -115,7 +115,7 @@
             this.initAbortController();
             console.log('updateCartItemQuantity(): id, quantity: ', id, quantity);
             this.products.filter((product)  => {
-                if(parseInt(product.id) === parseInt(id)) {
+                if(parseInt(product.key) === parseInt(id)) {
                     product.quantity = quantity
                 }
             })
