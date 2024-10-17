@@ -1,37 +1,223 @@
-<div class="padding-global padding-section-small"><div class="w-layout-blockcontainer container-large w-container">{% if cart.item_count > 0 %}    <div li-if="cart.item_count > 0" class="w-form">
-    {% form 'cart', cart, class: 'cart_grid-wrapper' %}
-<div class="table_wrap outline-solid-1"><div class="table-row is-grid is-header w-hidden-tiny"><div id="w-node-e70215e6-46ed-17af-2aa7-195241f33afb-78ccc15d" class="cart_table-header"><p class="text-size-regular">Product</p></div><div class="cart_table-header"><p class="text-size-regular">Quantity</p></div><div class="cart_table-header"><p class="text-size-regular">Price</p></div></div><div class="cart_line-item">{% for item in cart.items %}    <div li-for="item in cart.items" class="table-row is-grid">
-                                    
-                            <div id="w-node-_51dd9338-e259-f546-1410-ab7878c921b7-78ccc15d" class="display-inlineflex"><img src="{{ item.image |  img_url: 'small' }}" li-object:src="item.image |  img_url: 'small'" alt="" class="cart_image">
-<div class="cart_info-order u-vflex-left-center u-gap-xsmall"><a li-object:href="item.url" href="{{ item.url }}" class="product-card_link w-inline-block"><h3 href="#" li-object="item.title" class="mini-cart_product-title text-weight-medium text-size-medium">{{ item.title }}</h3><div class="u-hflex-center-center u-gap-xxsmall"><div li-object="item.final_price | money">{{ item.final_price | money }}</div>{% if item.original_price > item.final_price %}    <div li-if="item.original_price > item.final_price" class="li-if">
-    <p li-object="item.original_price | money" class="text-size-small text-style-strikethrough">{{ item.original_price | money }}</p>    </div>
-{% endif %}</div>{% if item.properties.length > 0 %}    <div li-if="item.properties.length > 0" class="mini-cart_properties-list u-hflex-left-center u-gap-xsmall">
-    {% for property in item.properties %}    <div li-for="property in item.properties" class="mini-cart_property-item u-hflex-center-center u-gap-xxsmall u-hflex-nowrap text-size-small">
-                                    
-                            <div li-object="property.first" class="mini-cart_property-heading text-weight-medium">{{ property.first }}</div>
-                            
-                            <div li-object="property.last" class="mini-cart_property-value">{{ property.last }}</div>
-                            
+<div class="padding-global padding-section-small">
+  <div class="w-layout-blockcontainer container-large w-container">
+    {% if cart.item_count > 0 %}
+      <div li-if="cart.item_count > 0" class="w-form">
+        {% form 'cart', cart, class: 'cart_grid-wrapper' %}
+          <div class="table_wrap outline-solid-1">
+            <div class="table-row is-grid is-header w-hidden-tiny">
+              <div id="w-node-e70215e6-46ed-17af-2aa7-195241f33afb-78ccc15d" class="cart_table-header">
+                <p class="text-size-regular">Product</p>
+              </div>
+              <div class="cart_table-header"><p class="text-size-regular">Quantity</p></div>
+              <div class="cart_table-header"><p class="text-size-regular">Price</p></div>
+            </div>
+            <div class="cart_line-item">
+              {% for item in cart.items %}
+                <div li-for="item in cart.items" class="table-row is-grid">
+                  <div id="w-node-_51dd9338-e259-f546-1410-ab7878c921b7-78ccc15d" class="display-inlineflex">
+                    <img
+                      src="{{ item.image |  img_url: 'small' }}"
+                      li-object:src="item.image |  img_url: 'small'"
+                      alt=""
+                      class="cart_image"
+                    >
+                    <div class="cart_info-order u-vflex-left-center u-gap-xsmall">
+                      <a li-object:href="item.url" href="{{ item.url }}" class="product-card_link w-inline-block">
+                        <h3
+                          href="#"
+                          li-object="item.title"
+                          class="mini-cart_product-title text-weight-medium text-size-medium"
+                        >
+                          {{ item.title }}
+                        </h3>
+                        <div class="u-hflex-center-center u-gap-xxsmall">
+                          <div li-object="item.final_price | money">{{ item.final_price | money }}</div>
+                          {% if item.original_price > item.final_price %}
+                            <div li-if="item.original_price > item.final_price" class="li-if">
+                              <p
+                                li-object="item.original_price | money"
+                                class="text-size-small text-style-strikethrough"
+                              >
+                                {{ item.original_price | money }}
+                              </p>
+                            </div>
+                          {% endif %}
                         </div>
-{% endfor %}    </div>
-{% endif %}</a><div class="mini-cart_line-item_actions-wrapper"><a li-object:href="item.url_to_remove" href="{{ item.url_to_remove }}" class="mini-cart_remove-link text-size-tiny text-style-link text-style-muted">Remove</a></div></div></div>
-                            
-                            <div id="w-node-_93a92d6a-6c9d-4947-7ebf-09fc568a99b4-78ccc15d" class="mini-cart_line-item_actions-wrapper"><div class="mini-cart_line-item_quantity"><button type="button" data-id="{{section.id}}-{{item.id}}" cart-number-button="decrease" class="mini-cart_line-item_quantity-adjust">-</button><input li-object:value="item.quantity" name="updates[]" cart-number-input="{{section.id}}-{{item.id}}" class="mini-cart_line-item_quantity-input" value="{{ item.quantity }}">
-<button type="button" data-id="{{section.id}}-{{item.id}}" cart-number-button="increase" class="mini-cart_line-item_quantity-adjust">+</button></div></div>
-                            
-                            <div id="w-node-_3d7cbf18-159c-e09d-034b-aa8947f77c7f-78ccc15d" class="cart_price-info u-hflex-left-center u-gap-small"><div li-object="item.final_line_price | money" id="w-node-_51dd9338-e259-f546-1410-ab7878c921d0-78ccc15d">{{ item.final_line_price | money }}</div>{% if item.original_line_price > item.final_line_price %}    <div li-if="item.original_line_price > item.final_line_price" id="w-node-_3f61db21-129c-484c-c7db-5af0a16cea45-78ccc15d" class="li-if">
-    <div li-object="item.original_line_price | money" id="w-node-_71195821-f29a-eb19-64c4-f0623c97c5cd-78ccc15d" class="text-size-small text-style-strikethrough">{{ item.original_line_price | money }}</div>    </div>
-{% endif %}</div>
-                            
+                        {% if item.properties %}
+                          <div
+                            li-if="item.properties.length > 0"
+                            class="mini-cart_properties-list u-hflex-left-center u-gap-xsmall"
+                          >
+                            {% for property in item.properties %}
+                              <div
+                                li-for="property in item.properties"
+                                class="mini-cart_property-item u-hflex-center-center u-gap-xxsmall u-hflex-nowrap text-size-small"
+                              >
+                                <div li-object="property.first" class="mini-cart_property-heading text-weight-medium">
+                                  {{ property.first }}
+                                </div>
+
+                                <div li-object="property.last" class="mini-cart_property-value">
+                                  {{ property.last }}
+                                </div>
+                              </div>
+                            {% endfor %}
+                          </div>
+                        {% endif -%}
+                      </a>
+                      <div class="mini-cart_line-item_actions-wrapper">
+                        <a
+                          li-object:href="item.url_to_remove"
+                          href="{{ item.url_to_remove }}"
+                          class="mini-cart_remove-link text-size-tiny text-style-link text-style-muted"
+                          >Remove</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="w-node-_93a92d6a-6c9d-4947-7ebf-09fc568a99b4-78ccc15d"
+                    class="mini-cart_line-item_actions-wrapper"
+                  >
+                    <div class="mini-cart_line-item_quantity">
+                      <button
+                        type="button"
+                        data-id="{{section.id}}-{{item.id}}"
+                        cart-number-button="decrease"
+                        class="mini-cart_line-item_quantity-adjust"
+                      >
+                        -</button
+                      ><input
+                        li-object:value="item.quantity"
+                        name="updates[]"
+                        cart-number-input="{{section.id}}-{{item.id}}"
+                        class="mini-cart_line-item_quantity-input"
+                        value="{{ item.quantity }}"
+                      >
+                      <button
+                        type="button"
+                        data-id="{{section.id}}-{{item.id}}"
+                        cart-number-button="increase"
+                        class="mini-cart_line-item_quantity-adjust"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    id="w-node-_3d7cbf18-159c-e09d-034b-aa8947f77c7f-78ccc15d"
+                    class="cart_price-info u-hflex-left-center u-gap-small"
+                  >
+                    <div
+                      li-object="item.final_line_price | money"
+                      id="w-node-_51dd9338-e259-f546-1410-ab7878c921d0-78ccc15d"
+                    >
+                      {{ item.final_line_price | money }}
+                    </div>
+                    {% if item.original_line_price > item.final_line_price %}
+                      <div
+                        li-if="item.original_line_price > item.final_line_price"
+                        id="w-node-_3f61db21-129c-484c-c7db-5af0a16cea45-78ccc15d"
+                        class="li-if"
+                      >
+                        <div
+                          li-object="item.original_line_price | money"
+                          id="w-node-_71195821-f29a-eb19-64c4-f0623c97c5cd-78ccc15d"
+                          class="text-size-small text-style-strikethrough"
+                        >
+                          {{ item.original_line_price | money }}
                         </div>
-{% endfor %}</div></div><div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0a-78ccc15d" class="cart_wrapper-right"><div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0b-78ccc15d" class="table_wrap outline-solid-1"><div class="table-row is-grid is-header w-hidden-tiny"><div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0d-78ccc15d" class="cart_table-header"><p class="text-size-regular">Summary</p></div></div><div class="table_content u-vflex-stretch-top u-gap-medium"><div class="cart_wrapper"><div class="cart_details-wrapper"><div class="text-size-regular">Total</div><div class="cart_details-price u-hflex-left-center u-gap-small"><div li-object="cart.total_price | money" class="text-weight-medium">{{ cart.total_price | money }}</div>{% if cart.total_discounts > 0 %}    <div li-if="cart.total_discounts > 0" class="li-if">
-    <div li-object="cart.original_total_price | money" class="text-size-small text-style-strikethrough">{{ cart.original_total_price | money }}</div>    </div>
-{% endif %}</div></div>{% if cart.total_discounts > 0 %}    <div li-if="cart.total_discounts > 0" class="cart_details-wrapper">
-    <div class="text-size-regular">Discount</div><div li-object="cart.total_discount | money">{{ cart.total_discount | money }}</div>    </div>
-{% endif %}</div><div class="cart_action"><input type="submit" data-wait="Please wait..." class="button is-outline is-large w-button" value="Update cart">
-<input type="submit" data-wait="Please wait..." class="button is-large w-button" value="Checkout" name="checkout">
-</div></div></div><div class="table_wrap outline-solid-1"><div class="table-row is-grid is-header w-hidden-tiny"><div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b23-78ccc15d" class="cart_table-header"><p class="text-size-regular">Comment</p></div></div><div class="table_content"><div class="form_field-wrapper"><textarea class="input is-text-area w-input" maxlength="5000" name="note" data-name="field" placeholder="Comment" id="CartNote"></textarea></div></div></div></div>{% endform %}
-<div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>    </div>
-{% endif %}{% if cart.item_count == 0 %}    <div li-if="cart.item_count == 0" class="cart_empty outline-solid-1">
-    <div>No Products yet.</div><a href="../index.html" class="button w-button">Shop Now</a>    </div>
-{% endif %}</div></div> {% schema %} {"tag":"section","name":"Cart","class":"section_cart","presets":[{"name":"Cart","category":"Liquify"}]} {% endschema %}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0a-78ccc15d" class="cart_wrapper-right">
+            <div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0b-78ccc15d" class="table_wrap outline-solid-1">
+              <div class="table-row is-grid is-header w-hidden-tiny">
+                <div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b0d-78ccc15d" class="cart_table-header">
+                  <p class="text-size-regular">Summary</p>
+                </div>
+              </div>
+              <div class="table_content u-vflex-stretch-top u-gap-medium">
+                <div class="cart_wrapper">
+                  <div class="cart_details-wrapper">
+                    <div class="text-size-regular">Total</div>
+                    <div class="cart_details-price u-hflex-left-center u-gap-small">
+                      <div li-object="cart.total_price | money" class="text-weight-medium">
+                        {{ cart.total_price | money }}
+                      </div>
+                      {% if cart.total_discounts > 0 %}
+                        <div li-if="cart.total_discounts > 0" class="li-if">
+                          <div
+                            li-object="cart.original_total_price | money"
+                            class="text-size-small text-style-strikethrough"
+                          >
+                            {{ cart.original_total_price | money }}
+                          </div>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                  {% if cart.total_discounts > 0 %}
+                    <div li-if="cart.total_discounts > 0" class="cart_details-wrapper">
+                      <div class="text-size-regular">Discount</div>
+                      <div li-object="cart.total_discount | money">{{ cart.total_discount | money }}</div>
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="cart_action">
+                  <input
+                    type="submit"
+                    data-wait="Please wait..."
+                    class="button is-outline is-large w-button"
+                    value="Update cart"
+                  >
+                  <input
+                    type="submit"
+                    data-wait="Please wait..."
+                    class="button is-large w-button"
+                    value="Checkout"
+                    name="checkout"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="table_wrap outline-solid-1">
+              <div class="table-row is-grid is-header w-hidden-tiny">
+                <div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b23-78ccc15d" class="cart_table-header">
+                  <p class="text-size-regular">Comment</p>
+                </div>
+              </div>
+              <div class="table_content">
+                <div class="form_field-wrapper">
+                  <textarea
+                    class="input is-text-area w-input"
+                    maxlength="5000"
+                    name="note"
+                    data-name="field"
+                    placeholder="Comment"
+                    id="CartNote"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endform %}
+        <div class="w-form-done"><div>Thank you! Your submission has been received!</div></div>
+        <div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>
+      </div>
+    {% endif -%}
+    {%- if cart.item_count == 0 %}
+      <div li-if="cart.item_count == 0" class="cart_empty outline-solid-1">
+        <div>No Products yet.</div>
+        <a href="../index.html" class="button w-button">Shop Now</a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %} {"tag":"section","name":"Cart","class":"section_cart","presets":[{"name":"Cart","category":"Liquify"}]} {% endschema %}
