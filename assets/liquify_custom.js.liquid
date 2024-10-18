@@ -116,7 +116,7 @@
             console.log('updateCartItemQuantity(): id, quantity: ', id, quantity);            
             this.products.filter((product)  => {
                 if(parseInt(product.key) === parseInt(id)) {                  
-                    console.log("Matching product: " + product.title + ", product.key:" + parseInt(product.key) + ", passed id: " + parseInt(id) + ", properties " + Object.entries(product.properties).map(([key, value]) => `${key}: ${value}`).join(', '));
+                    
                     product.quantity = quantity
                 }
             })
