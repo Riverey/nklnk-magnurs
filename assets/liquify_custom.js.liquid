@@ -420,6 +420,7 @@ document.addEventListener('alpine:init', () => {
         },
         
         getAddToCartBody(products) {
+            console.log("adasdhaksjdhkajshdkjas");
             return JSON.stringify({
                 'items': products.map(product => ({
                     id: product.id,
