@@ -1,4 +1,6 @@
-<div class="section-custom-code w-embed w-script"><script>var assetsToLoad = [
+<div class="section-custom-code w-embed w-script">
+  <script>
+    var assetsToLoad = [
         { key: "swiper", src: "https://unpkg.com/swiper/swiper-bundle.min.js", defer: true, type: "script" },
         { key: "socialShare", src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-socialshare@1/socialshare.js", defer: true, type: "script" },
         { key: "fsA11y", src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-a11y@1/a11y.js", defer: true, type: "script" },
@@ -103,98 +105,508 @@
             });
         });
     });
-</script></div><div class="padding-global"><div class="w-layout-blockcontainer container-large w-container"><div id="w-node-_09b817e0-2611-684b-6972-4b132a0a4e49-78ccc16a" class="breadcrumbs_wrapper"><div id="w-node-_09b817e0-2611-684b-6972-4b132a0a4e4a-78ccc16a" class="breadcrumbs_layout u-hflex-left-stretch u-gap-medium hide"><div class="breadcrumbs_group"><a href="{{ section.settings.url_shop_all_url }}" class="breadcrumbs_link is-link"> {{ section.settings.text_shop_all_text }} </a>
-</div><div class="breadcrumbs_group u-hflex-left-center u-gap-medium"><div>/</div><div li-object:text="product.title" class="breadcrumbs_link">
-{{ product.title }}
-</div></div></div></div><script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
-<div li-element="product-variant-container" class="w-layout-grid product-header_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" data-productid="{{ product.id }}" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)"><div id="{{section.id}}-{{section.index}}-slider" class="product-slider_container swiper-container"><div id="w-node-_1e0d0a49-b5a4-9cbe-8e02-0333b8b96f3b-78ccc16a" class="product-slider_wrapper swiper-wrapper"><div class="product-slider_slide swiper-slide">{% if product.has_only_default_variant != true %}    <div li-if="product.has_only_default_variant != true" class="li-if">
-    <img alt="" src="../images/Magnurs_product-thumb.png" loading="lazy" class="thumbnail-image_image" x-bind:src="selected_or_first_available_variant.featured_image.src" x-bind:alt="selected_or_first_available_variant.featured_image.alt">
-    </div>
-{% endif %}{% if product.has_only_default_variant == true %}    <div li-if="product.has_only_default_variant == true" class="li-if">
-    <img li-object:src="product.featured_image | img_url: '1280x1520'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | img_url: '1280x1520' }}" loading="lazy" class="thumbnail-image_image">
-    </div>
-{% endif %}</div>{% for image in product.images %}    <div li-for="image in product.images" class="product-slider_slide swiper-slide">
-                                    <img li-object:src="image.src | img_url: '640x760'" li-object:alt="image.alt" alt="{{ image.alt }}" src="{{ image.src | img_url: '640x760' }}" loading="lazy" class="thumbnail-image_image">
-
-                        </div>
-{% endfor %}</div><div class="product-slider_pagination-wrap swiper-pagination" id="{{ section.id }}-{{ section.index }}-paginationWrap"><div class="product-slider_pagination-dot swiper-pagination-bullet swiper-pagination-bullet-active"><div class="product-slider_pagination-fill"></div></div></div></div><div id="w-node-_7048b639-be81-c25f-3e39-a62262971160-78ccc16a" class="product-header_product-details u-vflex-stretch-top u-gap-large"><div class="product-header_heading-wrapper u-vflex-left-top u-gap-medium"><h1 li-object:text="product.title" class="product-header_heading heading-style-h2 text-color-brand">
-{{ product.title }}
-</h1><div class="product-header_price-wrapper"><div li-object="product.price | money" li-js-price="price" class="text-size-large text-weight-bold">{{ product.price | money }}</div><template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
-            <div li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
-        <div li-object="product.compare_at_price | money" class="text-size-regular text-style-strikethrough text-align-right text-style-muted">{{ product.compare_at_price | money }}</div>        </div>
-    </template>
-<div class="product-header_tag-list"><template x-if="selected_or_first_available_variant.available != true">
-            <div li-js-if="selected_or_first_available_variant.available != true" class="product-card_tag">
-        Not in Stock        </div>
-    </template>
-<template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
-            <div li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price" class="product-card_tag is-red">
-        Sale        </div>
-    </template>
-</div></div><template x-if="selected_or_first_available_variant.sku != null">
-            <div href="#" li-js-if="selected_or_first_available_variant.sku != null" id="w-node-_85c246dc-e6fe-cf22-cf32-8935090ac0be-78ccc16a" class="product-header_sku u-hflex-left-center text-style-muted">
-        <div>SKU:</div><div li-js-object="selected_or_first_available_variant.sku" x-text="selected_or_first_available_variant.sku">00000000000</div>        </div>
-    </template>
-</div>{% if product.description != blank %}    <div li-if="product.description != blank">
-    <div li-object="product.description" class="w-richtext">{{ product.description }}</div>    </div>
-{% endif %}<div class="product-header_add-to-cart w-form">{% form 'product', product, class: 'product-header_default-state u-vflex-stretch-top u-gap-large' %}
-<div class="product-header_option-list"><template x-for="(option, optionKey) in product.options" :key="optionKey">
-    <div li-element="product-options-loop" class="product-header_option u-vflex-stretch-top u-gap-xxsmall" data-ProductVariantsLoop="true"><div class="product-header_radio-list"><template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
-    <label li-element="product-option-loop" class="product-header_radio_component w-radio"><template x-if="option == 'Color'">
-            <div li-js-if="option == 'Color'" class="li-if">
-        <img alt="" src="../images/Magnurs_product-thumb.png" loading="lazy" class="product-header_radio_image aspect-ratio-square" x-bind:src="variants.find(variant => variant.options.includes(variantName))?.featured_image.src" x-bind:alt="variants.find(variant => variant.options.includes(variantName))?.featured_image.alt">
-        </div>
-    </template>
-<div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio_button w-radio-input"></div><input type="radio" li-element="product-option-input" style="opacity:0;position:absolute;z-index:-1" x-on:click="setVariant" :name="option" :data-name="option" :value="variantName" :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" :checked="selected_or_first_available_variant?.options.includes(variantName)" data-selectorType="radio" :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
-<span li-element="product-option-name" class="product-header_radio_label text-size-small text-weight-medium w-form-label" for="radio" x-text="variantName" :for="variantName">Yellow Gold</span></label></template>
-</div></div></template>
-</div>{% if product.metafields.shopify.ring-size %}    <div li-if="product.metafields.shopify.ring-size" class="product-header_properties-list">
-    <div data-hover="false" data-delay="0" fs-selectcustom-element="dropdown" class="filter-dropdown_component w-dropdown"><div class="filter-dropdown_toggle w-dropdown-toggle"><div>Size</div><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M7 10L12 14L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div><nav class="filter-dropdown_content w-dropdown-list"><select data-line-item-property="Size" class="hide">{% for item in product.metafields.shopify.ring-size.value %}    <option value="{{ item.label }}" li-for="item in product.metafields.shopify.ring-size.value">
-                                    {{ item.label }}
-                        </option>
-{% endfor %}</select><a href="#" class="filter_form_checkbox">54</a></nav></div>    </div>
-{% endif %}<div class="product-header_add-to-cart-wrapper"><template x-if="selected_or_first_available_variant.available == true">
-            <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity">
-        <div class="mini-cart_line-item_quantity is-large"><button type="button" id="{{section.id}}-{{section-index}}-decrementButton" class="mini-cart_line-item_quantity-adjust">-</button><input li-element="add-to-cart-quantity" name="quantity" id="{{section.id}}-{{section-index}}-quantityInput" class="mini-cart_line-item_quantity-input" value="1" x-model="quantity">
-<button type="button" id="{{section.id}}-{{section-index}}-incrementButton" class="mini-cart_line-item_quantity-adjust">+</button></div><a li-element="add-to-cart" href="#" class="button w-button" @click="addToCart(true)" :disabled="!addToCartButton">Add to cart</a>        </div>
-    </template>
-<template x-if="selected_or_first_available_variant.available == false">
-            <div li-cloak="hide" li-js-if="selected_or_first_available_variant.available == false" class="product-header_error-message">
-        <div>The selected variant is out of stock.</div>        </div>
-    </template>
-</div>{% endform %}
-<div class="w-form-done"></div><div class="w-form-fail"></div></div><div class="product-header_details-grid">{% for block in section.blocks %}
-    {% if block.type == "detail-block" %}
-                    <div li-block="Detail Block" class="product-header_detail-box u-vflex-left-top u-gap-small">
-                                    <div class="li-settings w-embed"></div>
-
-                                    <img src="{{ block.settings.image.src | img_url: '128x128' }}" loading="lazy" li-object:src="block.settings.image.src | img_url: '128x128'" alt="" class="icon-1x1-large">
-
-                                    <div class="text-rich-text is-link-simple w-richtext"> {{ block.settings.richtext_text }} </div>
-
-                            </div>
-            {% endif %}
-{% endfor %}
-</div><div class="product-header_payment-options-wrap u-vflex-center-center u-gap-medium">{% unless shop.enabled_payment_types == blank or shop.enabled_payment_types.length == 0 %}    <ul li-unless="shop.enabled_payment_types == blank or shop.enabled_payment_types.length == 0" role="list" class="payment-options_list u-hflex-center-center u-gap-xxsmall w-list-unstyled">
-    {% for type in shop.enabled_payment_types %}    <li li-for="type in shop.enabled_payment_types" class="payment-options_item">
-                                    
-                            <div li-object="type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color'">{{ type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color' }}</div>
-                            
-                        </li>
-{% endfor %}    </ul>
-{% endunless %}<div>Guaranteed Safe Checkout</div></div><div class="payment-options_share-list u-hflex-between-stretch u-gap-large"><a fs-socialshare-element="Facebook" href="#" class="payment-options_share-item w-inline-block"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 320 512" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>facebook-f</title><g fill="currentColor"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"></path></g></svg></div></a><a fs-socialshare-element="Twitter" href="#" class="payment-options_share-item w-inline-block"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>x-twitter</title><g fill="currentColor"><path d="M18.42,14.009L27.891,3h-2.244l-8.224,9.559L10.855,3H3.28l9.932,14.455L3.28,29h2.244l8.684-10.095,6.936,10.095h7.576l-10.301-14.991h0Zm-3.074,3.573l-1.006-1.439L6.333,4.69h3.447l6.462,9.243,1.006,1.439,8.4,12.015h-3.447l-6.854-9.804h0Z"></path></g></svg></div></a><a fs-copyclip-text="{{ canonical_url | escape }}" fs-copyclip-element="click" href="#" class="payment-options_share-item w-inline-block"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>link</title><g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt"><path d="M11,6l2.575-2.575a5.011,5.011,0,0,1,7,0h0a5.011,5.011,0,0,1,0,7L18,13" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></path><path d="M13,18l-2.575,2.575a5.011,5.011,0,0,1-7,0h0a5.011,5.011,0,0,1,0-7L6,11" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></path><line x1="8" y1="16" x2="16" y2="8" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></line></g></svg></div></a><a nklnk-webshare_description="{{page_description}}" nklnk-webshare_trigger="{{section.index}}-{{section.id}}-copyButton" nklnk-webshare_title="{{page.title}}" href="#" class="payment-options_share-item w-inline-block"><div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><title>launch</title><g fill="none" stroke-linejoin="miter" stroke-linecap="butt"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 2.25C14.7051 2.25 13.25 3.70507 13.25 5.5C13.25 5.69591 13.2673 5.88776 13.3006 6.07412L8.56991 9.38558C8.54587 9.4024 8.52312 9.42038 8.50168 9.43939C7.94993 9.00747 7.25503 8.75 6.5 8.75C4.70507 8.75 3.25 10.2051 3.25 12C3.25 13.7949 4.70507 15.25 6.5 15.25C7.25503 15.25 7.94993 14.9925 8.50168 14.5606C8.52312 14.5796 8.54587 14.5976 8.56991 14.6144L13.3006 17.9259C13.2673 18.1122 13.25 18.3041 13.25 18.5C13.25 20.2949 14.7051 21.75 16.5 21.75C18.2949 21.75 19.75 20.2949 19.75 18.5C19.75 16.7051 18.2949 15.25 16.5 15.25C15.4472 15.25 14.5113 15.7506 13.9174 16.5267L9.43806 13.3911C9.63809 12.9694 9.75 12.4978 9.75 12C9.75 11.5022 9.63809 11.0306 9.43806 10.6089L13.9174 7.4733C14.5113 8.24942 15.4472 8.75 16.5 8.75C18.2949 8.75 19.75 7.29493 19.75 5.5C19.75 3.70507 18.2949 2.25 16.5 2.25ZM14.75 5.5C14.75 4.5335 15.5335 3.75 16.5 3.75C17.4665 3.75 18.25 4.5335 18.25 5.5C18.25 6.4665 17.4665 7.25 16.5 7.25C15.5335 7.25 14.75 6.4665 14.75 5.5ZM6.5 10.25C5.5335 10.25 4.75 11.0335 4.75 12C4.75 12.9665 5.5335 13.75 6.5 13.75C7.4665 13.75 8.25 12.9665 8.25 12C8.25 11.0335 7.4665 10.25 6.5 10.25ZM16.5 16.75C15.5335 16.75 14.75 17.5335 14.75 18.5C14.75 19.4665 15.5335 20.25 16.5 20.25C17.4665 20.25 18.25 19.4665 18.25 18.5C18.25 17.5335 17.4665 16.75 16.5 16.75Z" fill="currentColor"></path></g></svg></div></a></div><div fs-accordion-single="true" fs-accordion-element="group" class="product-header_description-wrap u-vflex-left-top u-gap-small">{% if product.metafields.custom.detailed_description != blank %}    <div li-if="product.metafields.custom.detailed_description != blank" fs-accordion-element="accordion" class="accordeon_item">
-    <div id="accordion-1-header-1" tabindex="0" role="button" aria-controls="accordion-1-content-1" aria-expanded="false" fs-accordion-element="trigger" class="accordeon_header"><h2 class="heading-style-h3 text-size-small text-color-brand">
-{{ section.settings.text_heading }}
-</h2>
-<div fs-accordion-element="arrow" class="accordeon_icon icon-embed-xsmall is-active-accordion w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M18 12L6 12" stroke="var(--mappings--text--primary)" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 6L12 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div><div id="accordion-1-content-1" aria-labelledby="accordion-header-1" fs-accordion-element="content" class="accordeon_content"><div class="accordeon_body"><div li-object="product.metafields.custom.detailed_description.value" class="text-rich-text max-width-large text-size-small w-richtext">{{ product.metafields.custom.detailed_description.value }}</div></div></div>    </div>
-{% endif %}{% for block in section.blocks %}
-    {% if block.type == "accordeon" %}
-                    <div li-block="Accordeon" fs-accordion-element="accordion" class="accordeon_item">
-                                    <div id="accordion-1-header-1" tabindex="0" role="button" aria-controls="accordion-1-content-1" aria-expanded="false" fs-accordion-element="trigger" class="accordeon_header"><h2 li-object="block.settings.heading" class="heading-style-h3 text-size-small text-color-brand">{{ block.settings.heading }}</h2><div fs-accordion-element="arrow" class="accordeon_icon icon-embed-xsmall is-active-accordion w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img"><path d="M18 12L6 12" stroke="var(--mappings--text--primary)" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 6L12 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="li-settings w-embed"></div>
+  </script>
 </div>
-                                    <div id="accordion-1-content-1" aria-labelledby="accordion-header-1" fs-accordion-element="content" class="accordeon_content"><div class="accordeon_body"><div class="text-rich-text max-width-large text-size-small w-richtext"> {{ block.settings.richtext_text }} </div>
-</div></div>
-                            </div>
+<div class="padding-global">
+  <div class="w-layout-blockcontainer container-large w-container">
+    <div id="w-node-_09b817e0-2611-684b-6972-4b132a0a4e49-78ccc16a" class="breadcrumbs_wrapper">
+      <div
+        id="w-node-_09b817e0-2611-684b-6972-4b132a0a4e4a-78ccc16a"
+        class="breadcrumbs_layout u-hflex-left-stretch u-gap-medium hide"
+      >
+        <div class="breadcrumbs_group">
+          <a href="{{ section.settings.url_shop_all_url }}" class="breadcrumbs_link is-link">
+            {{ section.settings.text_shop_all_text }}
+          </a>
+        </div>
+        <div class="breadcrumbs_group u-hflex-left-center u-gap-medium">
+          <div>/</div>
+          <div li-object:text="product.title" class="breadcrumbs_link">
+            {{ product.title }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
+    <div
+      li-element="product-variant-container"
+      class="w-layout-grid product-header_layout"
+      x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})"
+      x-init="$nextTick(() => { activateVariants() })"
+      data-productid="{{ product.id }}"
+      @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)"
+    >
+      <div id="{{section.id}}-{{section.index}}-slider" class="product-slider_container swiper-container">
+        <div id="w-node-_1e0d0a49-b5a4-9cbe-8e02-0333b8b96f3b-78ccc16a" class="product-slider_wrapper swiper-wrapper">
+          <div class="product-slider_slide swiper-slide">
+            {% if product.has_only_default_variant != true %}
+              <div li-if="product.has_only_default_variant != true" class="li-if">
+                <img
+                  alt=""
+                  src="../images/Magnurs_product-thumb.png"
+                  loading="lazy"
+                  class="thumbnail-image_image"
+                  x-bind:src="selected_or_first_available_variant.featured_image.src"
+                  x-bind:alt="selected_or_first_available_variant.featured_image.alt"
+                >
+              </div>
+            {% endif -%}
+            {%- if product.has_only_default_variant == true %}
+              <div li-if="product.has_only_default_variant == true" class="li-if">
+                <img
+                  li-object:src="product.featured_image | img_url: '1280x1520'"
+                  li-object:alt="product.featured_image.alt"
+                  alt="{{ product.featured_image.alt }}"
+                  src="{{ product.featured_image | img_url: '1280x1520' }}"
+                  loading="lazy"
+                  class="thumbnail-image_image"
+                >
+              </div>
             {% endif %}
-{% endfor %}
-</div></div></div></div></div> {% schema %} {"tag":"section","name":"Product","class":"section_product-header","blocks":[{"name":"Detail Block","type":"detail-block","settings":[{"id":"image","type":"image_picker","label":"Image"},{"id":"richtext_text","type":"richtext","label":"Text","default":"<p>\n                      Free worldwide shipping on all orders over $5000\n                    <\/p>"}]},{"name":"Accordeon","type":"accordeon","settings":[{"id":"heading","type":"text","label":"Heading","default":"Heading"},{"id":"richtext_text","type":"richtext","label":"Text","default":"<p>\n                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n                        <\/p>"}]}],"settings":[{"id":"url_shop_all_url","type":"url","label":"Shop All URL"},{"id":"text_shop_all_text","type":"text","label":"Shop All Text","default":"Shop All"},{"id":"text_heading","type":"text","label":"Heading","default":"Description"}],"presets":[{"name":"Product","category":"Liquify"}]} {% endschema %}
+          </div>
+          {% for image in product.images %}
+            <div li-for="image in product.images" class="product-slider_slide swiper-slide">
+              <img
+                li-object:src="image.src | img_url: '640x760'"
+                li-object:alt="image.alt"
+                alt="{{ image.alt }}"
+                src="{{ image.src | img_url: '640x760' }}"
+                loading="lazy"
+                class="thumbnail-image_image"
+              >
+            </div>
+          {% endfor %}
+        </div>
+        <div
+          class="product-slider_pagination-wrap swiper-pagination"
+          id="{{ section.id }}-{{ section.index }}-paginationWrap"
+        >
+          <div class="product-slider_pagination-dot swiper-pagination-bullet swiper-pagination-bullet-active">
+            <div class="product-slider_pagination-fill"></div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="w-node-_7048b639-be81-c25f-3e39-a62262971160-78ccc16a"
+        class="product-header_product-details u-vflex-stretch-top u-gap-large"
+      >
+        <div class="product-header_heading-wrapper u-vflex-left-top u-gap-medium">
+          <h1 li-object:text="product.title" class="product-header_heading heading-style-h2 text-color-brand">
+            {{ product.title }}
+          </h1>
+          <div class="product-header_price-wrapper">
+            <div li-object="product.price | money" li-js-price="price" class="text-size-large text-weight-bold">
+              {{ product.price | money }}
+            </div>
+            <template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
+              <div li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
+                <div
+                  li-object="product.compare_at_price | money"
+                  class="text-size-regular text-style-strikethrough text-align-right text-style-muted"
+                >
+                  {{ product.compare_at_price | money }}
+                </div>
+              </div>
+            </template>
+            <div class="product-header_tag-list">
+              <template x-if="selected_or_first_available_variant.available != true">
+                <div li-js-if="selected_or_first_available_variant.available != true" class="product-card_tag">
+                  Not in Stock
+                </div>
+              </template>
+              <template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
+                <div
+                  li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price"
+                  class="product-card_tag is-red"
+                >
+                  Sale
+                </div>
+              </template>
+            </div>
+          </div>
+          <template x-if="selected_or_first_available_variant.sku != null">
+            <div
+              href="#"
+              li-js-if="selected_or_first_available_variant.sku != null"
+              id="w-node-_85c246dc-e6fe-cf22-cf32-8935090ac0be-78ccc16a"
+              class="product-header_sku u-hflex-left-center text-style-muted"
+            >
+              <div>SKU:</div>
+              <div
+                li-js-object="selected_or_first_available_variant.sku"
+                x-text="selected_or_first_available_variant.sku"
+              >
+                00000000000
+              </div>
+            </div>
+          </template>
+        </div>
+        {% if product.description != blank %}
+          <div li-if="product.description != blank">
+            <div li-object="product.description" class="w-richtext">{{ product.description }}</div>
+          </div>
+        {% endif %}
+        <div class="product-header_add-to-cart w-form">
+          {% form 'product', product, class: 'product-header_default-state u-vflex-stretch-top u-gap-large' %}
+            <div class="product-header_option-list">
+              <template x-for="(option, optionKey) in product.options" :key="optionKey">
+                <div
+                  li-element="product-options-loop"
+                  class="product-header_option u-vflex-stretch-top u-gap-xxsmall"
+                  data-ProductVariantsLoop="true"
+                >
+                  <div class="product-header_radio-list">
+                    <template
+                      x-for="(variantName, variantKey) in options_by_name[option].option.values"
+                      :key="variantName"
+                    >
+                      <label li-element="product-option-loop" class="product-header_radio_component w-radio"
+                        ><template x-if="option == 'Color'">
+                          <div li-js-if="option == 'Color'" class="li-if">
+                            <img
+                              alt=""
+                              src="../images/Magnurs_product-thumb.png"
+                              loading="lazy"
+                              class="product-header_radio_image aspect-ratio-square"
+                              x-bind:src="variants.find(variant => variant.options.includes(variantName))?.featured_image.src"
+                              x-bind:alt="variants.find(variant => variant.options.includes(variantName))?.featured_image.alt"
+                            >
+                          </div>
+                        </template>
+                        <div
+                          class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio_button w-radio-input"
+                        ></div>
+                        <input
+                          type="radio"
+                          li-element="product-option-input"
+                          style="opacity:0;position:absolute;z-index:-1"
+                          x-on:click="setVariant"
+                          :name="option"
+                          :data-name="option"
+                          :value="variantName"
+                          :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')"
+                          :checked="selected_or_first_available_variant?.options.includes(variantName)"
+                          data-selectorType="radio"
+                          :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'"
+                        >
+                        <span
+                          li-element="product-option-name"
+                          class="product-header_radio_label text-size-small text-weight-medium w-form-label"
+                          for="radio"
+                          x-text="variantName"
+                          :for="variantName"
+                          >Yellow Gold</span
+                        ></label
+                      ></template
+                    >
+                  </div>
+                </div>
+              </template>
+            </div>
+            {% if product.metafields.shopify['ring-size'] %}
+              <div li-if="product.metafields.shopify.ring-size" class="product-header_properties-list">
+                <div
+                  data-hover="false"
+                  data-delay="0"
+                  fs-selectcustom-element="dropdown"
+                  class="filter-dropdown_component w-dropdown"
+                >
+                  <div class="filter-dropdown_toggle w-dropdown-toggle">
+                    <div class="filter-dropdown_label-wrap u-hflex-left-center u-gap-small">
+                      <div>Size:</div>
+                      <div fs-selectcustom-element="label">45</div>
+                    </div>
+                    <div class="icon-embed-xsmall w-embed">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="100%"
+                        viewbox="0 0 24 24"
+                        fill="none"
+                        preserveaspectratio="xMidYMid meet"
+                        aria-hidden="true"
+                        role="img"
+                      >
+                        <path d="M7 10L12 14L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <nav class="filter-dropdown_content w-dropdown-list">
+                    <select data-line-item-property="Size" class="hide">
+                      {% for item in product.metafields.shopify['ring-size'].value %}
+                        <option value="{{ item.label }}" li-for="item in product.metafields.shopify.ring-size.value">
+                          {{ item.label }}
+                        </option>
+                      {% endfor %}</select
+                    ><a href="#" class="filter_form_checkbox">54</a>
+                  </nav>
+                </div>
+              </div>
+            {% endif %}
+            <div class="product-header_add-to-cart-wrapper">
+              <template x-if="selected_or_first_available_variant.available == true">
+                <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_quantity">
+                  <div class="mini-cart_line-item_quantity is-large">
+                    <button
+                      type="button"
+                      id="{{section.id}}-{{section-index}}-decrementButton"
+                      class="mini-cart_line-item_quantity-adjust"
+                    >
+                      -</button
+                    ><input
+                      li-element="add-to-cart-quantity"
+                      name="quantity"
+                      id="{{section.id}}-{{section-index}}-quantityInput"
+                      class="mini-cart_line-item_quantity-input"
+                      value="1"
+                      x-model="quantity"
+                    >
+                    <button
+                      type="button"
+                      id="{{section.id}}-{{section-index}}-incrementButton"
+                      class="mini-cart_line-item_quantity-adjust"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <a
+                    li-element="add-to-cart"
+                    href="#"
+                    class="button w-button"
+                    @click="addToCart(true)"
+                    :disabled="!addToCartButton"
+                    >Add to cart</a
+                  >
+                </div>
+              </template>
+              <template x-if="selected_or_first_available_variant.available == false">
+                <div
+                  li-cloak="hide"
+                  li-js-if="selected_or_first_available_variant.available == false"
+                  class="product-header_error-message"
+                >
+                  <div>The selected variant is out of stock.</div>
+                </div>
+              </template>
+            </div>
+          {% endform %}
+          <div class="w-form-done"></div>
+          <div class="w-form-fail"></div>
+        </div>
+        <div class="product-header_details-grid">
+          {% for block in section.blocks %}
+            {% if block.type == 'detail-block' %}
+              <div li-block="Detail Block" class="product-header_detail-box u-vflex-left-top u-gap-small">
+                <div class="li-settings w-embed"></div>
+
+                <img
+                  src="{{ block.settings.image.src | img_url: '128x128' }}"
+                  loading="lazy"
+                  li-object:src="block.settings.image.src | img_url: '128x128'"
+                  alt=""
+                  class="icon-1x1-large"
+                >
+
+                <div class="text-rich-text is-link-simple w-richtext">{{ block.settings.richtext_text }}</div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="product-header_payment-options-wrap u-vflex-center-center u-gap-medium">
+          {% unless shop.enabled_payment_types == blank or shop.enabled_payment_types.length == 0 %}
+            <ul
+              li-unless="shop.enabled_payment_types == blank or shop.enabled_payment_types.length == 0"
+              role="list"
+              class="payment-options_list u-hflex-center-center u-gap-xxsmall w-list-unstyled"
+            >
+              {% for type in shop.enabled_payment_types %}
+                <li li-for="type in shop.enabled_payment_types" class="payment-options_item">
+                  <div li-object="type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color'">
+                    {{ type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color' }}
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endunless %}
+          <div>Guaranteed Safe Checkout</div>
+        </div>
+        <div class="payment-options_share-list u-hflex-between-stretch u-gap-large">
+          <a fs-socialshare-element="Facebook" href="#" class="payment-options_share-item w-inline-block">
+            <div class="icon-embed-xsmall w-embed">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewbox="0 0 320 512"
+                preserveaspectratio="xMidYMid meet"
+                aria-hidden="true"
+                role="img"
+              >
+                <title>facebook-f</title><g fill="currentColor"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"></path></g>
+              </svg>
+            </div></a
+          ><a fs-socialshare-element="Twitter" href="#" class="payment-options_share-item w-inline-block">
+            <div class="icon-embed-xsmall w-embed">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewbox="0 0 32 32"
+                preserveaspectratio="xMidYMid meet"
+                aria-hidden="true"
+                role="img"
+              >
+                <title>x-twitter</title><g fill="currentColor"><path d="M18.42,14.009L27.891,3h-2.244l-8.224,9.559L10.855,3H3.28l9.932,14.455L3.28,29h2.244l8.684-10.095,6.936,10.095h7.576l-10.301-14.991h0Zm-3.074,3.573l-1.006-1.439L6.333,4.69h3.447l6.462,9.243,1.006,1.439,8.4,12.015h-3.447l-6.854-9.804h0Z"></path></g>
+              </svg>
+            </div></a
+          ><a
+            fs-copyclip-text="{{ canonical_url | escape }}"
+            fs-copyclip-element="click"
+            href="#"
+            class="payment-options_share-item w-inline-block"
+          >
+            <div class="icon-embed-xsmall w-embed">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewbox="0 0 24 24"
+                preserveaspectratio="xMidYMid meet"
+                aria-hidden="true"
+                role="img"
+              >
+                <title>link</title><g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt"><path d="M11,6l2.575-2.575a5.011,5.011,0,0,1,7,0h0a5.011,5.011,0,0,1,0,7L18,13" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></path><path d="M13,18l-2.575,2.575a5.011,5.011,0,0,1-7,0h0a5.011,5.011,0,0,1,0-7L6,11" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></path><line x1="8" y1="16" x2="16" y2="8" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"></line></g>
+              </svg>
+            </div></a
+          ><a
+            nklnk-webshare_description="{{page_description}}"
+            nklnk-webshare_trigger="{{section.index}}-{{section.id}}-copyButton"
+            nklnk-webshare_title="{{page.title}}"
+            href="#"
+            class="payment-options_share-item w-inline-block"
+          >
+            <div class="icon-embed-xsmall w-embed">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewbox="0 0 24 24"
+                preserveaspectratio="xMidYMid meet"
+                aria-hidden="true"
+                role="img"
+              >
+                <title>launch</title><g fill="none" stroke-linejoin="miter" stroke-linecap="butt"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 2.25C14.7051 2.25 13.25 3.70507 13.25 5.5C13.25 5.69591 13.2673 5.88776 13.3006 6.07412L8.56991 9.38558C8.54587 9.4024 8.52312 9.42038 8.50168 9.43939C7.94993 9.00747 7.25503 8.75 6.5 8.75C4.70507 8.75 3.25 10.2051 3.25 12C3.25 13.7949 4.70507 15.25 6.5 15.25C7.25503 15.25 7.94993 14.9925 8.50168 14.5606C8.52312 14.5796 8.54587 14.5976 8.56991 14.6144L13.3006 17.9259C13.2673 18.1122 13.25 18.3041 13.25 18.5C13.25 20.2949 14.7051 21.75 16.5 21.75C18.2949 21.75 19.75 20.2949 19.75 18.5C19.75 16.7051 18.2949 15.25 16.5 15.25C15.4472 15.25 14.5113 15.7506 13.9174 16.5267L9.43806 13.3911C9.63809 12.9694 9.75 12.4978 9.75 12C9.75 11.5022 9.63809 11.0306 9.43806 10.6089L13.9174 7.4733C14.5113 8.24942 15.4472 8.75 16.5 8.75C18.2949 8.75 19.75 7.29493 19.75 5.5C19.75 3.70507 18.2949 2.25 16.5 2.25ZM14.75 5.5C14.75 4.5335 15.5335 3.75 16.5 3.75C17.4665 3.75 18.25 4.5335 18.25 5.5C18.25 6.4665 17.4665 7.25 16.5 7.25C15.5335 7.25 14.75 6.4665 14.75 5.5ZM6.5 10.25C5.5335 10.25 4.75 11.0335 4.75 12C4.75 12.9665 5.5335 13.75 6.5 13.75C7.4665 13.75 8.25 12.9665 8.25 12C8.25 11.0335 7.4665 10.25 6.5 10.25ZM16.5 16.75C15.5335 16.75 14.75 17.5335 14.75 18.5C14.75 19.4665 15.5335 20.25 16.5 20.25C17.4665 20.25 18.25 19.4665 18.25 18.5C18.25 17.5335 17.4665 16.75 16.5 16.75Z" fill="currentColor"></path></g>
+              </svg>
+            </div>
+          </a>
+        </div>
+        <div
+          fs-accordion-single="true"
+          fs-accordion-element="group"
+          class="product-header_description-wrap u-vflex-left-top u-gap-small"
+        >
+          {% if product.metafields.custom.detailed_description != blank %}
+            <div
+              li-if="product.metafields.custom.detailed_description != blank"
+              fs-accordion-element="accordion"
+              class="accordeon_item"
+            >
+              <div
+                id="accordion-1-header-1"
+                tabindex="0"
+                role="button"
+                aria-controls="accordion-1-content-1"
+                aria-expanded="false"
+                fs-accordion-element="trigger"
+                class="accordeon_header"
+              >
+                <h2 class="heading-style-h3 text-size-small text-color-brand">
+                  {{ section.settings.text_heading }}
+                </h2>
+                <div fs-accordion-element="arrow" class="accordeon_icon icon-embed-xsmall is-active-accordion w-embed">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100%"
+                    height="100%"
+                    viewbox="0 0 24 24"
+                    fill="none"
+                    preserveaspectratio="xMidYMid meet"
+                    aria-hidden="true"
+                    role="img"
+                  >
+                    <path d="M18 12L6 12" stroke="var(--mappings--text--primary)" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 6L12 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+              </div>
+              <div
+                id="accordion-1-content-1"
+                aria-labelledby="accordion-header-1"
+                fs-accordion-element="content"
+                class="accordeon_content"
+              >
+                <div class="accordeon_body">
+                  <div
+                    li-object="product.metafields.custom.detailed_description.value"
+                    class="text-rich-text max-width-large text-size-small w-richtext"
+                  >
+                    {{ product.metafields.custom.detailed_description.value }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif -%}
+          {%- for block in section.blocks %}
+            {% if block.type == 'accordeon' %}
+              <div li-block="Accordeon" fs-accordion-element="accordion" class="accordeon_item">
+                <div
+                  id="accordion-1-header-1"
+                  tabindex="0"
+                  role="button"
+                  aria-controls="accordion-1-content-1"
+                  aria-expanded="false"
+                  fs-accordion-element="trigger"
+                  class="accordeon_header"
+                >
+                  <h2 li-object="block.settings.heading" class="heading-style-h3 text-size-small text-color-brand">
+                    {{ block.settings.heading }}
+                  </h2>
+                  <div
+                    fs-accordion-element="arrow"
+                    class="accordeon_icon icon-embed-xsmall is-active-accordion w-embed"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="100%"
+                      height="100%"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      preserveaspectratio="xMidYMid meet"
+                      aria-hidden="true"
+                      role="img"
+                    >
+                      <path d="M18 12L6 12" stroke="var(--mappings--text--primary)" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 6L12 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                  <div class="li-settings w-embed"></div>
+                </div>
+                <div
+                  id="accordion-1-content-1"
+                  aria-labelledby="accordion-header-1"
+                  fs-accordion-element="content"
+                  class="accordeon_content"
+                >
+                  <div class="accordeon_body">
+                    <div class="text-rich-text max-width-large text-size-small w-richtext">
+                      {{ block.settings.richtext_text }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %} {"tag":"section","name":"Product","class":"section_product-header","blocks":[{"name":"Detail Block","type":"detail-block","settings":[{"id":"image","type":"image_picker","label":"Image"},{"id":"richtext_text","type":"richtext","label":"Text","default":"<p>\n                      Free worldwide shipping on all orders over $5000\n                    <\/p>"}]},{"name":"Accordeon","type":"accordeon","settings":[{"id":"heading","type":"text","label":"Heading","default":"Heading"},{"id":"richtext_text","type":"richtext","label":"Text","default":"<p>\n                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n                        <\/p>"}]}],"settings":[{"id":"url_shop_all_url","type":"url","label":"Shop All URL"},{"id":"text_shop_all_text","type":"text","label":"Shop All Text","default":"Shop All"},{"id":"text_heading","type":"text","label":"Heading","default":"Description"}],"presets":[{"name":"Product","category":"Liquify"}]} {% endschema %}
