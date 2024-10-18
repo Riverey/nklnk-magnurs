@@ -3604,8 +3604,9 @@ figcaption {
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   flex-flow: row;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  margin-left: -.25rem;
+  margin-right: -.25rem;
+  padding: 1rem .25rem;
   display: flex;
   overflow: auto;
 }
@@ -3626,7 +3627,7 @@ figcaption {
 
 .product-header_radio_button {
   z-index: 2;
-  border: .0625rem solid #0000;
+  border: .125rem solid #0000;
   border-radius: 0;
   width: 100%;
   height: auto;
@@ -3637,6 +3638,7 @@ figcaption {
 }
 
 .product-header_radio_button.w--redirected-checked {
+  border-width: .125rem;
   border-color: var(--mappings--border--border-alternate);
 }
 
@@ -4190,6 +4192,7 @@ figcaption {
 
 .product-header_styleguide-link {
   background-color: #0000;
+  margin-left: 3rem;
   text-decoration: underline;
 }
 
