@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main_hero": {
@@ -14,7 +14,7 @@
       "settings": {
         "richtext_heading": "<p><strong>MAGNURS</strong> is redefining luxury jewellery with a bold, modern approach.</p>",
         "richtext_description": "<p>Our lab-grown diamonds offer unmatched brilliance and quality, focusing on sustainability and ethical sourcing. Designed for those who dare to stand out, MAGNURS is for the trendsetters and trailblazers who value innovation and individuality.</p>",
-        "url_link_url": ""
+        "url_link_url": "shopify://pages/the-story"
       }
     },
     "categories_slider": {
