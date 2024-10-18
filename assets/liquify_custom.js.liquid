@@ -720,6 +720,7 @@ document.addEventListener('alpine:init', () => {
             }
 
             this.updateBundleObject(globalBundle);
+            console.log("ALALALA" + item);
         },
 
         addNewGlobalBundleItem(item) {
@@ -745,7 +746,7 @@ document.addEventListener('alpine:init', () => {
         updateBundleItem(bundleItemId, quantity) {
             this.loadGlobalBundle();
 
-            console.log("updateBundleItem was started, id: " + bundleItemId + ", quantity: " + quantity);
+            console.log("OLOLOLO, id: " + bundleItemId + ", quantity: " + quantity);
 
             if (quantity === 0) {
                 this.removeProductFromGlobalBundle(bundleItemId);
