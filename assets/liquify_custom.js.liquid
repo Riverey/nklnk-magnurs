@@ -745,6 +745,8 @@ document.addEventListener('alpine:init', () => {
         updateBundleItem(bundleItemId, quantity) {
             this.loadGlobalBundle();
 
+            console.log("updateBundleItem was started, id: " + bundleItemId + ", quantity: " + quantity);
+
             if (quantity === 0) {
                 this.removeProductFromGlobalBundle(bundleItemId);
                 return;
