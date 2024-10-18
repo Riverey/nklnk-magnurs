@@ -16,7 +16,6 @@
   --mappings--border--border-primary: var(--colours--neutral--grey);
   --colours--accent--brand: #b50000;
   --mappings--text--red: var(--colours--accent--red);
-  --mappings--text--brand: var(--colours--accent--brand);
   --colours--neutral--grey: #dfdfdf;
   --sizes--radius--medium: .5rem;
   --mappings--bg--background-error\<deleted\|variable-074a08ce-cbd7-92fa-1757-82377d8cfd9f\>: var(--colours--accent--brand);
@@ -25,6 +24,7 @@
   --mappings--bg--background-alternate\<deleted\|variable-b451443b-8de0-ec7e-436e-b729f973e641\>: var(--colours--neutral--white);
   --mappings--bg--background-success\<deleted\|variable-fac04a1e-a581-26c3-ff69-25ecf5bb25a9\>: var(--colours--accent--brand);
   --mappings--text--text-success\<deleted\|variable-eeda1f63-4623-702a-79e8-d76571a2bc56\>: var(--base-color-system--success-green-dark\<deleted\|variable-fba81e68\>);
+  --mappings--text--brand: var(--colours--accent--brand);
   --mappings--bg--background-alternate: var(--colours--neutral--grey);
   --accessible-components-dark-grey\<deleted\|variable-c4d8099c\>: #9b9b9b;
   --colours--accent--red: #ff4f4f;
@@ -2010,14 +2010,18 @@ figcaption {
 .filter_form_checkbox {
   align-items: center;
   margin-bottom: 0;
-  padding-top: .25rem;
-  padding-bottom: .25rem;
+  padding: 1rem;
+  transition: color .2s, background-color .2s;
   display: flex;
 }
 
+.filter_form_checkbox:hover {
+  background-color: color-mix(in srgb, var(--mappings--text--brand) 10%, transparent);
+}
+
 .filter_form_checkbox.w--current {
-  color: var(--mappings--text--brand);
-  font-weight: 600;
+  background-color: var(--mappings--bg--background-secondary);
+  color: var(--mappings--text--alternate);
 }
 
 .filter_form_checkbox-icon {
@@ -3953,7 +3957,7 @@ figcaption {
   background-color: var(--mappings--bg--background-primary);
   flex-flow: column;
   max-height: 60vh;
-  padding: 1rem;
+  padding: 0;
   display: none;
   overflow: auto;
 }
@@ -4186,6 +4190,7 @@ figcaption {
 
 .product-header_styleguide-link {
   background-color: #0000;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 991px) {
