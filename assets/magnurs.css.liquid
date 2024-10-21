@@ -3190,7 +3190,6 @@ figcaption {
   aspect-ratio: 384 / 174;
   background-color: var(--mappings--bg--background-secondary);
   width: 100%;
-  max-height: 70vh;
   position: relative;
   overflow: hidden;
 }
@@ -4193,6 +4192,15 @@ figcaption {
   text-decoration: underline;
   position: absolute;
   inset: 1.0625rem auto auto 10rem;
+}
+
+.main-hero_slider_component.swiper-container {
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+.main-hero_slider_wrap.swiper-wrapper {
+  height: 100%;
 }
 
 @media screen and (max-width: 991px) {
@@ -5385,6 +5393,10 @@ figcaption {
   .product-slider_pagination-wrap.swiper-pagination {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .main-hero_slider_component.swiper-container {
+    height: calc(100svh - 6rem);
   }
 }
 
