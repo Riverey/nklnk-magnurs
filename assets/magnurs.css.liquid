@@ -899,7 +899,6 @@ figcaption {
   z-index: 10;
   background-color: var(--mappings--bg--background-primary);
   height: 12rem;
-  margin-bottom: -.0625rem;
   position: static;
   top: 0;
 }
@@ -4194,8 +4193,9 @@ figcaption {
   inset: 1.0625rem auto auto 10rem;
 }
 
-.main-hero_slider_component.swiper-container {
+.main-hero_slider_component {
   max-height: 70vh;
+  position: relative;
   overflow: hidden;
 }
 
@@ -5397,6 +5397,7 @@ figcaption {
 
   .main-hero_slider_component.swiper-container {
     height: calc(100svh - 6rem);
+    max-height: none;
   }
 }
 
