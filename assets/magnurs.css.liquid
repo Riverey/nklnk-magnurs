@@ -1,15 +1,14 @@
 :root {
   --mappings--bg--background-primary: var(--colours--neutral--light-grey);
-  --colours--neutral--black: black;
+  --mappings--text--primary: var(--colours--neutral--black);
   --mappings--border--border-alternate: var(--colours--accent--brand);
   --mappings--bg--background-secondary: var(--colours--accent--brand);
   --colours--neutral--dark-grey: #6d6d6d;
   --mappings--links--link-secondary: var(--mappings--text--primary);
-  --mappings--text--secondary: var(--colours--neutral--dark-grey);
-  --mappings--text--primary: var(--colours--neutral--black);
+  --mappings--text--alternate: var(--colours--neutral--white);
+  --colours--neutral--black: black;
   --mappings--border--border-secondary: var(--colours--neutral--white);
   --colours--neutral--white: white;
-  --mappings--text--alternate: var(--colours--neutral--white);
   --mappings--bg--background-tertiary\<deleted\|variable-8905b868-e691-e604-2195-2c08eb398b7f\>: var(--colours--pink\<deleted\|variable-5d90780e-c6ff-a950-aff7-98d960409980\>);
   --colours--neutral--light-grey: #f7f7f7;
   --mappings--border--border-primary: var(--colours--neutral--grey);
@@ -20,6 +19,7 @@
   --mappings--bg--background-error\<deleted\|variable-074a08ce-cbd7-92fa-1757-82377d8cfd9f\>: var(--colours--accent--brand);
   --mappings--bg--background-warning\<deleted\|variable-d984c0b3-8802-535a-a38a-1f7e5e324f6f\>: var(--colours--accent--brand);
   --mappings--text--text-warning\<deleted\|variable-203f5a80-250d-b611-90ca-8384bf7b0026\>: var(--base-color-system--warning-yellow-dark\<deleted\|variable-acc7eada-d360-1452-718f-2bb35c9b1cd3\>);
+  --mappings--text--secondary: var(--colours--neutral--dark-grey);
   --mappings--bg--background-alternate\<deleted\|variable-b451443b-8de0-ec7e-436e-b729f973e641\>: var(--colours--neutral--white);
   --mappings--bg--background-success\<deleted\|variable-fac04a1e-a581-26c3-ff69-25ecf5bb25a9\>: var(--colours--accent--brand);
   --mappings--text--text-success\<deleted\|variable-eeda1f63-4623-702a-79e8-d76571a2bc56\>: var(--base-color-system--success-green-dark\<deleted\|variable-fba81e68\>);
@@ -133,7 +133,7 @@
 
 body {
   background-color: var(--mappings--bg--background-primary);
-  color: var(--colours--neutral--black);
+  color: var(--mappings--text--primary);
   scrollbar-gutter: stable;
   font-family: Neue Regrade Variable, sans-serif;
   font-size: 1rem;
@@ -508,7 +508,7 @@ figcaption {
 }
 
 .text-color-white {
-  color: var(--mappings--text--secondary);
+  color: var(--mappings--text--alternate);
 }
 
 .pointer-events-off {
@@ -2178,8 +2178,6 @@ figcaption {
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
   place-content: start;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
   position: relative;
 }
 
@@ -3185,7 +3183,7 @@ figcaption {
   text-transform: uppercase;
 }
 
-.main-hero_image-wrap {
+.main-hero_slider_slide {
   aspect-ratio: 384 / 174;
   background-color: var(--mappings--bg--background-secondary);
   width: 100%;
@@ -3977,14 +3975,16 @@ figcaption {
 }
 
 .slider-arrow {
-  border: .0625rem solid var(--mappings--text--primary);
   pointer-events: auto;
-  color: var(--mappings--text--primary);
   cursor: pointer;
+  color: currentColor;
   background-color: #0000;
+  border: .0625rem solid;
   border-radius: 999rem;
   padding: 1rem;
-  transition: border-color .2s, color .2s;
+  transition-property: border-color, color;
+  transition-duration: .2s, .2s;
+  transition-timing-function: ease, ease;
 }
 
 .slider-arrow:hover {
@@ -3995,6 +3995,7 @@ figcaption {
 .feat-colect-slider_nav {
   z-index: 2;
   pointer-events: none;
+  color: var(--mappings--text--primary);
   justify-content: space-between;
   align-items: center;
   padding-left: 1rem;
@@ -4006,6 +4007,10 @@ figcaption {
 
 .feat-colect-slider_nav.is-offset {
   padding-top: 2rem;
+}
+
+.feat-colect-slider_nav.text-color-white {
+  color: var(--mappings--text--alternate);
 }
 
 .feat-colect-slider_item-layout {
@@ -5279,13 +5284,13 @@ figcaption {
     flex: 1;
   }
 
-  .main-hero_image-wrap {
+  .main-hero_slider_slide {
     aspect-ratio: auto;
     height: calc(100svh - 6rem);
     max-height: none;
   }
 
-  .main-hero_image-wrap.is-collection {
+  .main-hero_slider_slide.is-collection {
     height: 50vh;
   }
 
@@ -5639,11 +5644,6 @@ figcaption {
   .sort_select.filter_checkbox {
     order: -1;
     margin-left: 0;
-  }
-
-  .main-hero_image-wrap {
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
   }
 
   .newsletter-form_component {
