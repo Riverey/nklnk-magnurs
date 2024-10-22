@@ -207,17 +207,13 @@ a {
 }
 
 a:focus-visible {
-  outline-color: var(--mappings--border--border-alternate);
   outline-offset: .125rem;
-  outline-width: .125rem;
-  outline-style: solid;
+  outline: .125rem solid;
 }
 
 a[data-wf-focus-visible] {
-  outline-color: var(--mappings--border--border-alternate);
   outline-offset: .125rem;
-  outline-width: .125rem;
-  outline-style: solid;
+  outline: .125rem solid;
 }
 
 ul, ol {
@@ -1912,6 +1908,7 @@ figcaption {
 .product-options_radio_button.w--redirected-focus-visible {
   outline-color: var(--mappings--border--border-alternate);
   outline-offset: 0rem;
+  box-shadow: none;
   outline-width: .125rem;
   outline-style: solid;
 }
