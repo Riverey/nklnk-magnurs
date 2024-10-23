@@ -175,6 +175,21 @@
         opacity: 0.0;
         pointer-events: none;
     }
+    /* Dropdown animation */
+    .nav_mini-cart_holder .mini-cart_overlay {
+        opacity: 0.0;
+        transition: opacity 0.3s ease; /* Add transition for opacity */
+    }
+    .nav_mini-cart_holder .mini-cart_fixed {
+        transform: translate(100%, 0px);
+        transition: transform 0.3s ease; /* Add transition for transform */
+    }
+    .nav_mini-cart_holder.w--open .mini-cart_overlay {
+        opacity: 1.0;
+    }
+    .nav_mini-cart_holder.w--open .mini-cart_fixed {
+        transform: translate(0%, 0%);
+    }
     /* Container size constraints
     @media (min-aspect-ratio: 16/9) and (min-height: 1080px) {
         .container-large {
