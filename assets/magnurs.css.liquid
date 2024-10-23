@@ -1659,14 +1659,24 @@ figcaption {
 
 .nav_mini-cart_holder {
   z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
   background-color: #0006;
   justify-content: flex-start;
   width: 100vw;
   position: fixed;
   inset: 0%;
+  display: block !important;
 }
 
 .nav_mini-cart_holder.w--open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition-property: opacity;
+  transition-duration: 1s;
+  transition-timing-function: ease;
   display: flex;
 }
 
@@ -1675,6 +1685,7 @@ figcaption {
   opacity: .8;
   mix-blend-mode: multiply;
   flex: 1;
+  transition: opacity .5s;
   position: fixed;
   inset: 0%;
 }
@@ -3579,6 +3590,7 @@ figcaption {
 }
 
 .mini-cart_fixed {
+  transition: transform .2s;
   position: absolute;
   inset: 0% 0% 0% auto;
 }
