@@ -79,7 +79,10 @@ const LiquifyHelper = {
             let closestDropdown = element.closest('.w-dropdown-toggle');
             if (closestDropdown) {
                 this.triggerClick(closestDropdown);
-                element.closest('.w-dropdown-list').focus();
+                const dropdownList = element.closest('.w-dropdown-list');
+                if (dropdownList) {
+                    dropdownList.focus();
+                }
             } else {
                 console.error('(helper.js) No dropdown found for minicart trigger');
             }
