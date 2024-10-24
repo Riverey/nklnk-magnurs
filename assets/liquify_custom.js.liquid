@@ -462,6 +462,7 @@ document.addEventListener('alpine:init', () => {
          * Add all products to cart.
          */
         async addToCartWithBundle(toggleMiniCart = true) {
+            console.log('addToCartWithBundle called. Current mini-cart state:', this.isMiniCartOpen);
             console.log('Liquify - addToCartWithBundle()', toggleMiniCart);
 
             // Map all bundle products
@@ -491,6 +492,7 @@ document.addEventListener('alpine:init', () => {
                 this.$dispatch('cartupdated');
                 if (toggleMiniCart) {
                     this.$dispatch('toggleminicart');
+                    console.log('Toggling mini-cart from addToCartWithBundle. Current state:', this.isMiniCartOpen);
                 }
                 this.$dispatch('showcartmessage', {
                     status: data.status,
@@ -511,6 +513,7 @@ document.addEventListener('alpine:init', () => {
          * Add a single product to cart.
          */
         async addToCart(toggleMiniCart = true, productId = undefined, quantity = undefined) {
+            console.log('addToCart called. Current mini-cart state:', this.isMiniCartOpen);
             if (!this.selected_or_first_available_variant?.available) {
                 return;
             }
@@ -540,6 +543,7 @@ document.addEventListener('alpine:init', () => {
 
                     if (toggleMiniCart) {
                         this.$dispatch('toggleminicart');
+                        console.log('Toggling mini-cart from addToCart. Current state:', this.isMiniCartOpen);
                     }
 
                     this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
@@ -870,3 +874,4 @@ document.addEventListener('alpine:init', () => {
         },
     }));
 })
+
