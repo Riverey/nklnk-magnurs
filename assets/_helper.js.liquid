@@ -79,7 +79,7 @@ const LiquifyHelper = {
             let closestDropdown = element.closest('.w-dropdown-toggle');
             if (closestDropdown) {
                 this.triggerClick(closestDropdown);
-                const dropdownList = element.closest('.w-dropdown-list');
+                const dropdownList = closestDropdown.parentElement.querySelector('.w-dropdown-list'); // One-liner to get the child
                 if (dropdownList) {
                     dropdownList.focus();
                 }
