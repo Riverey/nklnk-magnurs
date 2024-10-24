@@ -65,6 +65,11 @@
     }
     ::-webkit-scrollbar-track {
         background: var(--mappings--bg--background-primary);
+        transition: background 1s ease;
+    }
+    /* Change scrollbar color to white when dropdown is open */
+    html:has(.w-dropdown-list.w--open) ::-webkit-scrollbar-track {
+        background: white;
     }
     ::-webkit-scrollbar-thumb {
         background: var(--mappings--bg--background-secondary);
@@ -197,6 +202,13 @@
         opacity: 1.0;
     }
     .nav_mini-cart_holder:not(.w--open) {
-        transition: visibility 0s 1s, opacity 1s ease; /* Delay visibility change */
+        transition: visibility 0s 1s, opacity 1s ease;
+        /* Delay visibility change */
+    }
+    .products-header_sizeguide-text th {
+        font-weight: 500;
+    }
+    .products-header_sizeguide-text td {
+        padding: 0.25rem 0rem;
     }
 </style>
