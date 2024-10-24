@@ -2237,7 +2237,7 @@ figcaption {
 
 .container-medium {
   width: 100%;
-  max-width: 74rem;
+  max-width: 90rem;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -4032,6 +4032,10 @@ figcaption {
   color: var(--mappings--text--alternate);
 }
 
+.product-slider_container.swiper-container {
+  width: 50vw;
+}
+
 .feat-colect-slider_item-layout {
   width: 100%;
   position: relative;
@@ -4335,9 +4339,12 @@ figcaption {
     grid-template-columns: 2fr;
   }
 
-  .login-form_component {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .addresses_grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .auth_content {
+    padding-right: 3rem;
   }
 
   .mini-cart_component {
@@ -4854,6 +4861,7 @@ figcaption {
   }
 
   .product-slider_container.swiper-container {
+    width: 100%;
     position: relative;
     overflow: hidden;
   }
@@ -5086,30 +5094,31 @@ figcaption {
   }
 
   .addresses_grid {
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
   }
 
   .auth_layout {
+    grid-template-rows: 1fr;
     grid-template-columns: auto;
+    grid-auto-rows: 1fr;
     justify-content: stretch;
-    min-height: auto;
+    height: calc(100vh - 6rem);
   }
 
   .auth_content {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    padding-right: 0;
   }
 
   .login-form_component {
-    padding-left: 2.5em;
-    padding-right: 2.5em;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .auth_image {
-    height: 19.2rem;
-  }
-
-  .mini-cart_component {
+  .auth_image, .mini-cart_component {
     width: 100%;
   }
 
@@ -5312,6 +5321,12 @@ figcaption {
 
   .sort_select.filter_checkbox {
     flex: 1;
+  }
+
+  .auth_image-wrap {
+    width: auto;
+    margin-left: -2rem;
+    margin-right: -2rem;
   }
 
   .main-hero_slider_slide {
@@ -5898,6 +5913,10 @@ figcaption {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
+#w-node-_9b6e9317-b983-28d6-c4d5-5f055c20bc03-78ccc16a {
+  justify-self: end;
+}
+
 #w-node-_7048b639-be81-c25f-3e39-a62262971160-78ccc16a {
   align-self: end;
 }
@@ -5986,9 +6005,17 @@ figcaption {
   #w-node-e70215e6-46ed-17af-2aa7-195241f33b0b-78ccc15d {
     order: 9999;
   }
+
+  #w-node-_9b6e9317-b983-28d6-c4d5-5f055c20bc03-78ccc16a {
+    justify-self: stretch;
+  }
 }
 
 @media screen and (max-width: 767px) {
+  #w-node-a51bc4af-d3bd-1d11-ec0e-9a869485bb80-78ccc157 {
+    grid-column: span 1 / span 1;
+  }
+
   #w-node-_38c40376-33fa-a2e9-4ce0-15ce2260afd6-78ccc158 {
     order: -9999;
     justify-self: stretch;
