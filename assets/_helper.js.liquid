@@ -83,8 +83,10 @@ const LiquifyHelper = {
                 if (lineItem) {
                     const link = lineItem.querySelector('a'); // Select the link inside lineItem
                     if (link) {
-                        link.focus(); // Focus the link if it exists
-                        console.log("Focusing the link inside the item");
+                        setTimeout(() => {
+                            link.focus(); // Focus the link after a short delay
+                            console.log("Focusing the link inside the item");
+                        }, 100); // Delay of 100ms
                     }
                 }
             } else {
