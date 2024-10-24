@@ -82,7 +82,7 @@
             this.total.weight = data.total_weight;
             this.total.discount = data.total_discount;
 
-            this.$dispatch('carttotalitems', data.item_count);
+            // this.$dispatch('carttotalitems', data.item_count);
           })
           .catch((error) => {
             console.error('Error:', error);
@@ -133,7 +133,7 @@
             this.resetAbortController();
             console.log('updateCartItemQuantity(): ', data);
 
-            // this.$dispatch('cartupdated');
+            this.$dispatch('cartupdated');
             this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
           })
           .catch((error) => {
