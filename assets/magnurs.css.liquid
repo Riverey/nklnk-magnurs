@@ -1662,9 +1662,12 @@ figcaption {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  background-color: #0006;
+  background-color: #0000;
   justify-content: flex-start;
   width: 100vw;
+  transition-property: opacity;
+  transition-duration: 1s;
+  transition-timing-function: ease;
   position: fixed;
   inset: 0%;
   display: block !important;
@@ -1674,9 +1677,6 @@ figcaption {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
-  transition-property: opacity;
-  transition-duration: 1s;
-  transition-timing-function: ease;
   display: flex;
 }
 
@@ -3590,7 +3590,7 @@ figcaption {
 }
 
 .mini-cart_fixed {
-  transition: transform .2s;
+  transition: opacity .3s, transform .3s;
   position: absolute;
   inset: 0% 0% 0% auto;
 }

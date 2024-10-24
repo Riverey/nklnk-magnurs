@@ -131,21 +131,21 @@ document.addEventListener('alpine:init', () => {
         },
 
         observeVariants() {
-            if (this.isMainProduct) {
+            if(this.isMainProduct) {
                 // todo: maybe via $dispatch or helper?!
                 let $this = this;
-                window.onpopstate = function (event) {
+                window.onpopstate = function(event) {
 
                     const urlParams = new URLSearchParams(window.location.search);
                     const variantId = urlParams.get('variant');
                     const observer = new MutationObserver(mutationCallback);
                     //fixme: maybe in helper?!
                     function mutationCallback(mutations) {
-                        mutations.forEach(function (mutation) {
+                        mutations.forEach(function(mutation) {
                             if (mutation.type === "attributes" && (mutation.attributeName === "checked" || mutation.attributeName === "selected")) {
                                 // fixme: kann/muss theoretisch weg, da über :class gelöst werden muss
                                 mutation.target.previousElementSibling.classList.remove('w--redirected-checked', 'w--redirected-focus')
-                                if (mutation?.target?.checked || mutation?.target?.selected) {
+                                if(mutation?.target?.checked || mutation?.target?.selected) {
                                     mutation.target.previousElementSibling.classList.add('w--redirected-checked', 'w--redirected-focus')
                                     $this.setVariant(false)
                                 }
@@ -160,10 +160,10 @@ document.addEventListener('alpine:init', () => {
 
                     $this.options.forEach(function (option) {
                         let selector = $this.formSelector + " [data-productVariantsLoop] input[name='" + option + "']"
-                        if ($this.selectorType === 'select') {
+                        if($this.selectorType === 'select') {
                             selector = $this.formSelector + " [data-productVariantsLoop] select[name='" + option + "'] option"
                         }
-                        document.querySelectorAll(selector).values().forEach(function (element) {
+                        document.querySelectorAll(selector).values().forEach(function(element) {
                             observer.observe(element, {
                                 attributes: true
                             });
@@ -175,12 +175,12 @@ document.addEventListener('alpine:init', () => {
 
         updateVariantStatuses() {
             const selectedOptionOneVariants = this.variants.filter((variant) => {
-                let querySelector = this.formSelector + ' [data-productVariantsLoop] input[type="radio"]:checked'
-                if (this.selectorType === 'select') {
-                    querySelector = this.formSelector + ' [data-productVariantsLoop] select'
+                    let querySelector = this.formSelector + ' [data-productVariantsLoop] input[type="radio"]:checked'
+                    if (this.selectorType === 'select') {
+                        querySelector = this.formSelector + ' [data-productVariantsLoop] select'
+                    }
+                    return document.querySelector(querySelector)?.value === variant.option1
                 }
-                return document.querySelector(querySelector)?.value === variant.option1
-            }
             );
 
             const inputWrappers = [...document.querySelectorAll(this.formSelector + ' [data-ProductVariantsLoop]')];
@@ -366,7 +366,7 @@ document.addEventListener('alpine:init', () => {
             const urlParams = new URLSearchParams(window.location.search);
             urlParams.set('variant', this.selected_product_id);
 
-            window.history.pushState({ ...window.history.state }, '', '?' + urlParams.toString());
+            window.history.pushState({ ...window.history.state}, '', '?' + urlParams.toString());
         },
 
         findAvailableVariant() {
@@ -396,7 +396,7 @@ document.addEventListener('alpine:init', () => {
         setVariant(pushState = true) {
             const product = this.findAvailableVariant()
 
-            if (!product) {
+            if (! product) {
                 console.log('Liquify - No product found to set active')
 
                 return
@@ -420,40 +420,18 @@ document.addEventListener('alpine:init', () => {
         },
 
         getAddToCartBody(products) {
-            console.log("adasdhaksjdhkajshdkjas");
             return JSON.stringify({
                 'items': products.map(product => ({
                     id: product.id,
                     quantity: product.quantity ?? 1,
-                    properties: this.getLineItemProperties() // Ensure properties are retrieved
                 }))
             });
-        },
-
-        getLineItemProperties() {
-            const properties = {};
-            const propertyInputs = document.querySelectorAll('[data-line-item-property]');
-
-            propertyInputs.forEach(input => {
-                const name = input.getAttribute('data-line-item-property');
-                if (input.type === 'radio') {
-                    if (input.checked) {
-                        properties[name] = input.value;
-                    }
-                } else if (input.type === 'select-one') {
-                    properties[name] = input.options[input.selectedIndex].value;
-                } else {
-                    properties[name] = input.value;
-                }
-            });
-
-            return properties;
         },
 
         callAddToCartApi(body) {
             return fetch(window.Shopify.routes.root + 'cart/add.js', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {'Content-Type': 'application/json'},
                 body: body
             })
         },
@@ -468,16 +446,16 @@ document.addEventListener('alpine:init', () => {
             const products = Object.entries(this.bundle).map(([key, value]) => ({
                 id: value,
                 quantity: 1
-            }));
+            }))
 
             // Add selected product
             products.push({
                 id: this.selected_product_id ?? this.selected_or_first_available_variant?.id,
                 quantity: this.quantity ?? 1,
-            });
+            })
 
             // Create body with all products
-            let body = this.getAddToCartBody(products); // Ensure this line is present
+            let body = this.getAddToCartBody(products);
 
             // Single API call for all products
             try {
@@ -491,7 +469,6 @@ document.addEventListener('alpine:init', () => {
                 this.$dispatch('cartupdated');
                 if (toggleMiniCart) {
                     this.$dispatch('toggleminicart');
-                    console.log("I'm here");
                 }
                 this.$dispatch('showcartmessage', {
                     status: data.status,
@@ -512,31 +489,31 @@ document.addEventListener('alpine:init', () => {
          * Add a single product to cart.
          */
         async addToCart(toggleMiniCart = true, productId = undefined, quantity = undefined) {
-            if (!this.selected_or_first_available_variant?.available) {
-                return;
-            }
+            console.log('Liquify - Add to cart called, selected_or_first_available_variant.id:', this.selected_or_first_available_variant?.id);
 
-            let properties = this.getLineItemProperties(); // Retrieve properties
+            if (!this.selected_or_first_available_variant?.available) {
+                return
+            }
 
             let body = JSON.stringify({
                 'items': [
                     {
                         id: productId ?? this.selectedProductId ?? this.selected_or_first_available_variant?.id,
                         quantity: quantity ?? this.quantity ?? 1,
-                        properties: properties // Add properties here
                     }
                 ]
             });
 
             await fetch(window.Shopify.routes.root + 'cart/add.js', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {'Content-Type': 'application/json'},
                 body: body
             })
                 .then(response => response.json())
                 .then(data => {
                     this.products = data.items;
 
+                    console.log('Liquify - product(s) added');
                     this.$dispatch('cartupdated');
 
                     if (toggleMiniCart) {
@@ -546,6 +523,7 @@ document.addEventListener('alpine:init', () => {
                     this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
                 })
                 .catch((error) => {
+                    console.error('Liquify - addToCart error:', error);
                     this.$dispatch('showcartmessage', { status: error.status, message: error.message, description: error.description });
                 });
         },
@@ -612,30 +590,9 @@ document.addEventListener('alpine:init', () => {
                     quantity: item.quantity,
                     properties: {
                         'bundle': `${this.bundleName} ${this.bundleIndex}`,
-                        ...this.getLineItemProperties()
                     }
                 }))
             })
-        },
-
-        getLineItemProperties() {
-            const properties = {};
-            const propertyInputs = document.querySelectorAll('[data-line-item-property]');
-
-            propertyInputs.forEach(input => {
-                const name = input.getAttribute('data-line-item-property');
-                if (input.type === 'radio') {
-                    if (input.checked) {
-                        properties[name] = input.value;
-                    }
-                } else if (input.type === 'select-one') {
-                    properties[name] = input.options[input.selectedIndex].value;
-                } else {
-                    properties[name] = input.value;
-                }
-            });
-
-            return properties;
         },
 
         /**
@@ -644,7 +601,7 @@ document.addEventListener('alpine:init', () => {
         callAddToCartApi(body) {
             return fetch(window.Shopify.routes.root + 'cart/add.js', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {'Content-Type': 'application/json'},
                 body: body
             })
         },
@@ -722,7 +679,6 @@ document.addEventListener('alpine:init', () => {
             }
 
             this.updateBundleObject(globalBundle);
-            console.log("ALALALA" + item);
         },
 
         addNewGlobalBundleItem(item) {
@@ -747,8 +703,6 @@ document.addEventListener('alpine:init', () => {
          */
         updateBundleItem(bundleItemId, quantity) {
             this.loadGlobalBundle();
-
-            console.log("OLOLOLO, id: " + bundleItemId + ", quantity: " + quantity);
 
             if (quantity === 0) {
                 this.removeProductFromGlobalBundle(bundleItemId);
@@ -825,7 +779,7 @@ document.addEventListener('alpine:init', () => {
         loadBundleIndex() {
             let bundleIndex = localStorage.getItem('globalBundleIndex');
 
-            if (!bundleIndex) {
+            if (! bundleIndex) {
                 localStorage.setItem('globalBundleIndex', '1');
                 this.bundleIndex = 1;
 
@@ -842,16 +796,16 @@ document.addEventListener('alpine:init', () => {
         getBundleName() {
             if (document.querySelector('[data-bundlename]')) {
                 this.bundleName = document.querySelector('[data-bundlename]')
-                    .textContent
-                    .trim();
+                                                .textContent
+                                                .trim();
 
                 return
             }
 
             if (document.querySelector('[data-bundlename] *')) {
                 this.bundleName = document.querySelector('[data-bundlename] *')
-                    .textContent
-                    .trim();
+                                                .textContent
+                                                .trim();
 
                 return
             }
