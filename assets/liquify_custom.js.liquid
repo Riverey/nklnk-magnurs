@@ -491,6 +491,7 @@ document.addEventListener('alpine:init', () => {
                 this.$dispatch('cartupdated');
                 if (toggleMiniCart) {
                     this.$dispatch('toggleminicart');
+                    console.log("I'm here");
                 }
                 this.$dispatch('showcartmessage', {
                     status: data.status,
