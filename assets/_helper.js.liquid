@@ -79,10 +79,13 @@ const LiquifyHelper = {
             let closestDropdown = element.closest('.w-dropdown-toggle');
             if (closestDropdown) {
                 this.triggerClick(closestDropdown);
-                const dropdownList = closestDropdown.parentElement.querySelector('.w-dropdown-list');
-                if (dropdownList) {
-                    dropdownList.focus();
-                    console.log("Focusing the list");
+                const lineItem = closestDropdown.parentElement.querySelector('[li-element="mini-cart-item"]');
+                if (lineItem) {
+                    const link = lineItem.querySelector('a'); // Select the link inside lineItem
+                    if (link) {
+                        link.focus(); // Focus the link if it exists
+                        console.log("Focusing the link inside the item");
+                    }
                 }
             } else {
                 console.error('(helper.js) No dropdown found for minicart trigger');
