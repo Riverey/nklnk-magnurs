@@ -4335,9 +4335,12 @@ figcaption {
     grid-template-columns: 2fr;
   }
 
-  .login-form_component {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .addresses_grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .auth_content {
+    padding-right: 3rem;
   }
 
   .mini-cart_component {
@@ -5086,30 +5089,31 @@ figcaption {
   }
 
   .addresses_grid {
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
   }
 
   .auth_layout {
+    grid-template-rows: 1fr;
     grid-template-columns: auto;
+    grid-auto-rows: 1fr;
     justify-content: stretch;
-    min-height: auto;
+    height: calc(100vh - 6rem);
   }
 
   .auth_content {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    padding-right: 0;
   }
 
   .login-form_component {
-    padding-left: 2.5em;
-    padding-right: 2.5em;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .auth_image {
-    height: 19.2rem;
-  }
-
-  .mini-cart_component {
+  .auth_image, .mini-cart_component {
     width: 100%;
   }
 
@@ -5312,6 +5316,12 @@ figcaption {
 
   .sort_select.filter_checkbox {
     flex: 1;
+  }
+
+  .auth_image-wrap {
+    width: auto;
+    margin-left: -2rem;
+    margin-right: -2rem;
   }
 
   .main-hero_slider_slide {
@@ -5989,6 +5999,10 @@ figcaption {
 }
 
 @media screen and (max-width: 767px) {
+  #w-node-a51bc4af-d3bd-1d11-ec0e-9a869485bb80-78ccc157 {
+    grid-column: span 1 / span 1;
+  }
+
   #w-node-_38c40376-33fa-a2e9-4ce0-15ce2260afd6-78ccc158 {
     order: -9999;
     justify-self: stretch;
