@@ -17,10 +17,17 @@
           "settings": {
             "image": "shopify://shop_images/Magnurs_main-hero_image.webp"
           }
+        },
+        "slide_dGnbkV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/magnurs_story-1.webp"
+          }
         }
       },
       "block_order": [
-        "slide_WE99a9"
+        "slide_WE99a9",
+        "slide_dGnbkV"
       ],
       "settings": {
         "richtext_heading": "<p><strong>MAGNURS</strong> is redefining luxury jewellery with a bold, modern approach.</p>",
