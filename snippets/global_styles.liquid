@@ -180,8 +180,14 @@
         opacity: 0.0;
     }
     .nav_mini-cart_holder .mini-cart_fixed {
-        transform: translate(100%, 0px);
+        transform: translate(100%, 0%);
         opacity: 0.0;
+    }
+    @media screen and (max-width: 767px) {
+        .nav_mini-cart_holder .mini-cart_fixed {
+            transform: translate(0%, 25%);
+            opacity: 0.0;
+        }
     }
     .nav_mini-cart_holder.w--open .mini-cart_overlay {
         opacity: 1.0;
@@ -193,21 +199,4 @@
     .nav_mini-cart_holder:not(.w--open) {
         transition: visibility 0s 1s, opacity 1s ease; /* Delay visibility change */
     }
-    /* Container size constraints
-    @media (min-aspect-ratio: 16/9) and (min-height: 1080px) {
-        .container-large {
-            max-width: min(calc(100vw * 0.75), var(--sizes--size--container--max-width));
-        }
-    }
-    @media (min-aspect-ratio: 21/9) and (min-height: 1080px) {
-        .container-large {
-            max-width: min(calc(100vw * 0.8), var(--sizes--size--container--max-width));
-        }
-    }
-    @media (min-height: 1440px) {
-        .container-large {
-            max-width: min(calc(var(--sizes--size--container--max-width) * (100vh / var(--sizes--size--container--base-height))), var(--sizes--size--container--max-width));
-        }
-    }
-    */
 </style>

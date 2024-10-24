@@ -139,7 +139,7 @@
     <div li-object="product.description" class="w-richtext">{{ product.description }}</div>    </div>
 {% endif %}<div class="product-header_add-to-cart w-form">{% form 'product', product, class: 'product-header_default-state u-vflex-stretch-top u-gap-large' %}
 <div class="product-header_option-list"><template x-for="(option, optionKey) in product.options" :key="optionKey">
-    <div li-element="product-options-loop" class="product-header_option u-vflex-stretch-top u-gap-xxsmall" data-ProductVariantsLoop="true"><div class="product-header_radio-list"><template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
+    <div li-element="product-options-loop" class="product-header_option u-vflex-stretch-top u-gap-xxsmall" data-ProductVariantsLoop="true"><div data-lenis-prevent="" class="product-header_radio-list"><template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
     <label li-element="product-option-loop" class="product-header_radio_component w-radio"><template x-if="option == 'Color'">
             <div li-js-if="option == 'Color'" class="li-if">
         <img alt="" src="../images/Magnurs_product-thumb.png" loading="lazy" class="product-header_radio_image aspect-ratio-square" x-bind:src="variants.find(variant => variant.options.includes(variantName))?.featured_image.src" x-bind:alt="variants.find(variant => variant.options.includes(variantName))?.featured_image.alt">
