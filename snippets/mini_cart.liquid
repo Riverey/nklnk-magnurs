@@ -340,7 +340,8 @@
                         </div>
                         <button
                           data-wf-ignore="true"
-                          x-on:click="event.stopPropagation(); $dispatch('setcartitem', { product: product.key, quantity: 0 })"
+                          data-modal-ignore="true"
+                          x-on:click="event.preventDefault(); $dispatch('setcartitem', { product: product.key, quantity: 0 })"
                           class="mini-cart_remove-link text-size-tiny text-style-link text-style-muted"
                         >
                           Remove
