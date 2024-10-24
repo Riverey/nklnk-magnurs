@@ -133,7 +133,7 @@
             this.resetAbortController();
             console.log('updateCartItemQuantity(): ', data);
 
-            this.$dispatch('cartupdated');
+            // this.$dispatch('cartupdated');
             this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
           })
           .catch((error) => {
