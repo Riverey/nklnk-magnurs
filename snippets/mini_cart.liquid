@@ -326,6 +326,7 @@
                             -</button
                           ><input
                             x-model="product.quantity"
+                            x-on:blur="$dispatch('setcartitem', { product: product.key, quantity: product.quantity })"
                             :productprop="product"
                             class="mini-cart_line-item_quantity-input"
                             value="1"
